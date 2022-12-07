@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Buchstabenrad</h1>
+  </div>
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="switchPlayer(1)">Display Player 1</button>
+    <button class="btn btn-dark" (click)="switchPlayer(2)">Display Player 2</button>
+  </div>
+  <div class="card-footer">
+  </div>
+</div>
+
+<hr>
+
+<div [ngClass]="{'invisible': !player1}">
+  <app-wheel name="Player1"></app-wheel>
+</div>
+
+<div [ngClass]="{'invisible': !player2}">
+  <app-wheel name="Player2"></app-wheel>
+</div>

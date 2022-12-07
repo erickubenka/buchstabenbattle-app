@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Buchstabenrad {{name}}</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          Timer: {{timer}}
+        </p>
+
+        <ng-container *ngIf="timer>0">
+          <p>
+            <span>Richtige Antworten: {{rightAnswersGiven}}</span>
+          </p>
+        </ng-container>
+      </div>
+      <div class="card-footer">
+          <button type="button" class="btn btn-primary" (click)="startTimer()" [disabled]="isTimerStarted">START</button>
+          <button type="button" class="btn btn-danger" (click)="stopTimer()" [disabled]="!isTimerStarted">STOP</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <ng-container *ngIf="isTimerStarted">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Aktuelle Frage</h3>
+        </div>
+        <ng-container *ngFor="let question of questionList; let index=index;">
+          <div class="card-body" *ngIf="index == nextQuestionIndex">
+            <p>
+              {{ question.letter }}
+              {{ question.question }}
+            </p>
+            <p>
+              {{ question.answer }}
+            </p>
+          </div>
+          <div class="card-footer" *ngIf="index == nextQuestionIndex">
+            <input type="button" (click)="giveCorrectAnswer(question, index)" value="Richtig!" class="btn btn-success"
+                   [disabled]="!isTimerStarted"/>
+            <input type="button" (click)="giveWrongAnswer(question, index)" value="Falsch!" class="btn btn-danger"
+                   [disabled]="!isTimerStarted"/>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<hr>
+
+<ng-container>
+  <div class="card">
+    <div class="circle-wrapper">
+      <div *ngFor="let question of questionList; let index=index;" class="circle deg-{{index}}"
+           [ngClass]="{'disabled': question.answeredCorrectly}">
+        {{question.letter}}
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!--<div>-->
+<!--  ALL QUESTIONS-->
+
+<!--  <div *ngFor="let question of questionList">-->
+<!--    {{ question.letter }}-->
+<!--    {{ question.question }}-->
+<!--    {{ question.answer }}-->
+<!--    <input type="checkbox" disabled [ngModel]="question.answeredCorrectly"/>-->
+<!--  </div>-->
+<!--</div>-->
