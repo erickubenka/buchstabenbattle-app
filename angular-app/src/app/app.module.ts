@@ -8,6 +8,7 @@ import {WheelComponent} from './wheel/wheel.component';
 import {DisplayComponent} from './display/display.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {CrosswordComponent} from './crossword/crossword.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     WheelComponent,
     DisplayComponent,
-    WheelsComponent
+    WheelsComponent,
+    CrosswordComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import {FormsModule} from "@angular/forms";
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'admin/wheels', component: WheelsComponent},
+      {path: 'admin/crossword', component: CrosswordComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule

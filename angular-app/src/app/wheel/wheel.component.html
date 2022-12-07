@@ -2,18 +2,23 @@
   <div class="col-6">
     <div class="card">
       <div class="card-header">
-        <h3>{{name}}</h3>
+        <h4>{{name}}</h4>
       </div>
       <div class="card-body">
-        <p>
-          Timer: {{timer}}
-        </p>
-
-        <ng-container *ngIf="timer>0">
-          <p>
-            <span>Richtige Antworten: {{correctAnswersGiven}}</span>
-          </p>
-        </ng-container>
+        <div class="row">
+          <div class="col-6">
+            <p>
+              Timer: {{timer}}
+            </p>
+          </div>
+          <div class="col-6">
+            <ng-container *ngIf="timer>0">
+              <p>
+                Richtige Antworten: {{correctAnswersGiven}}
+              </p>
+            </ng-container>
+          </div>
+        </div>
       </div>
       <div class="card-footer">
         <button type="button" class="btn btn-primary" (click)="startTimer()" [disabled]="isTimerStarted">START</button>
@@ -25,17 +30,27 @@
     <ng-container *ngIf="isTimerStarted">
       <div class="card text-center">
         <div class="card-header">
-          <h3>Aktuelle Frage</h3>
+          <h4>Aktuelle Frage</h4>
         </div>
         <ng-container *ngFor="let question of questionList; let index=index;">
           <div class="card-body" *ngIf="index == nextQuestionIndex">
-            <p>
-              {{ question.letter }}
-              {{ question.question }}
-            </p>
-            <p>
-              {{ question.answer }}
-            </p>
+            <div class="row">
+              <div class="col-2">
+                <p>
+                  {{ question.letter }}
+                </p>
+              </div>
+              <div class="col-4">
+                <p>
+                  {{ question.question }}
+                </p>
+              </div>
+              <div class="col-6">
+                <p>
+                  {{ question.answer }}
+                </p>
+              </div>
+            </div>
           </div>
           <div class="card-footer" *ngIf="index == nextQuestionIndex">
             <input type="button" (click)="giveCorrectAnswer(question, index)" value="Richtig!" class="btn btn-success"
