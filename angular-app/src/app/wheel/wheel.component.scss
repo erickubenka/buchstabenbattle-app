@@ -12,6 +12,14 @@ $translate-size: ($circle-wrapper-size/2)+1;
   margin: 0 10px;
 }
 
+.timer-circle {
+  background-color: $circle-color;
+  height: $circle-size;
+  width: $circle-size;
+  line-height: $circle-size;
+  font-size: x-large;
+}
+
 .circle-wrapper {
   width: $circle-wrapper-size;
   height: $circle-wrapper-size;

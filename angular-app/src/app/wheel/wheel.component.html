@@ -2,7 +2,7 @@
   <div class="col-6">
     <div class="card">
       <div class="card-header">
-        <h3>Buchstabenrad {{name}}</h3>
+        <h3>{{name}}</h3>
       </div>
       <div class="card-body">
         <p>
@@ -11,13 +11,13 @@
 
         <ng-container *ngIf="timer>0">
           <p>
-            <span>Richtige Antworten: {{rightAnswersGiven}}</span>
+            <span>Richtige Antworten: {{correctAnswersGiven}}</span>
           </p>
         </ng-container>
       </div>
       <div class="card-footer">
-          <button type="button" class="btn btn-primary" (click)="startTimer()" [disabled]="isTimerStarted">START</button>
-          <button type="button" class="btn btn-danger" (click)="stopTimer()" [disabled]="!isTimerStarted">STOP</button>
+        <button type="button" class="btn btn-primary" (click)="startTimer()" [disabled]="isTimerStarted">START</button>
+        <button type="button" class="btn btn-danger" (click)="stopTimer()" [disabled]="!isTimerStarted">STOP</button>
       </div>
     </div>
   </div>
@@ -52,23 +52,42 @@
 <hr>
 
 <ng-container>
-  <div class="card">
-    <div class="circle-wrapper">
-      <div *ngFor="let question of questionList; let index=index;" class="circle deg-{{index}}"
-           [ngClass]="{'disabled': question.answeredCorrectly}">
-        {{question.letter}}
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12">
+          <p>Punkte</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="rounded-circle timer-circle text-center font-weight-bold">
+            {{correctAnswersGiven}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12">
+          <div class="float-end">
+            <p>Zeit</p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="float-end">
+            <div class="rounded-circle timer-circle text-center font-weight-bold">
+              {{timer}}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="circle-wrapper">
+    <div *ngFor="let question of questionList; let index=index;" class="circle deg-{{index}}"
+         [ngClass]="{'disabled': question.answeredCorrectly}">
+      {{question.letter}}
+    </div>
+  </div>
 </ng-container>
-
-<!--<div>-->
-<!--  ALL QUESTIONS-->
-
-<!--  <div *ngFor="let question of questionList">-->
-<!--    {{ question.letter }}-->
-<!--    {{ question.question }}-->
-<!--    {{ question.answer }}-->
-<!--    <input type="checkbox" disabled [ngModel]="question.answeredCorrectly"/>-->
-<!--  </div>-->
-<!--</div>-->

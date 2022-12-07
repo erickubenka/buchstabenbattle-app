@@ -39,7 +39,7 @@ export class WheelComponent {
     new Question("Z", "Test1", "Antwort1", false),
   ];
 
-  rightAnswersGiven = 0;
+  correctAnswersGiven = 0;
   nextQuestionIndex = 0;
   timer = 60;
   isTimerStarted = false;
@@ -66,11 +66,11 @@ export class WheelComponent {
 
   giveCorrectAnswer(question: Question, index: number) {
     question.answeredCorrectly = true;
-    this.rightAnswersGiven = this.questionList.filter(q => q.answeredCorrectly).length;
+    this.correctAnswersGiven = this.questionList.filter(q => q.answeredCorrectly).length;
     this.nextQuestionIndex = this.getNextQuestionIndex(index);
 
     // end game because every thing was right.
-    if (this.rightAnswersGiven == this.questionList.length) {
+    if (this.correctAnswersGiven == this.questionList.length) {
       console.log("Game ended: timer stopped.");
       this.stopTimer();
     }
@@ -89,7 +89,7 @@ export class WheelComponent {
 
   private getNextQuestionIndex(index: number): number {
 
-    if (this.rightAnswersGiven == this.questionList.length) {
+    if (this.correctAnswersGiven == this.questionList.length) {
       return -1;
     }
 
