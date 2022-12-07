@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card-header">
-    <h1>Buchstabenrad</h1>
+    <h2>Buchstabenrad</h2>
   </div>
   <div class="card-body">
-    <button class="btn btn-primary" (click)="switchPlayer(1)">Display Player 1</button>
-    <button class="btn btn-dark" (click)="switchPlayer(2)">Display Player 2</button>
+    <button class="btn btn-primary" [disabled]="player1" (click)="switchPlayer(1)">Display Player 1</button>
+    <button class="btn btn-primary" [disabled]="player2" (click)="switchPlayer(2)">Display Player 2</button>
   </div>
-  <div class="card-footer">
-  </div>
+<!--  <div class="card-footer">-->
+<!--  </div>-->
 </div>
 
 <hr>

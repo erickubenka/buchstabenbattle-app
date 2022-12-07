@@ -3,7 +3,8 @@
 $circle-wrapper-color: rgb(103, 174, 210);
 $circle-color: rgb(37, 110, 169);
 $circle-color-disabled: rgb(86, 86, 86);
-$circle-wrapper-size: 1000px;
+
+$circle-wrapper-size: 900px;
 $circle-size: ($circle-wrapper-size/10);
 $translate-size: ($circle-wrapper-size/2)+1;
 
@@ -17,7 +18,7 @@ $translate-size: ($circle-wrapper-size/2)+1;
   border-radius: 51%;
   background: $circle-wrapper-color;
   position: relative;
-  margin: 100px;
+  margin: $circle-size auto;
 }
 
 .circle {
@@ -27,11 +28,11 @@ $translate-size: ($circle-wrapper-size/2)+1;
   left: 51%;
   width: $circle-size;
   height: $circle-size;
-  margin: -65px;
+  margin: (-1*($circle-size/2)-15);
   background: $circle-color;
   border-radius: 51%;
   text-align: center;
-  line-height: 100px;
+  line-height: $circle-size;
 
   &.disabled {
     background: $circle-color-disabled;
