@@ -1,1 +1,35 @@
-<p>crossword works!</p>
+<div class="card">
+  <div class="card-header text-center">
+    <h3>Buchstabensalat</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <table class="crossword">
+          <tr *ngFor="let row of crossword.rows">
+            <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <p>
+            Timer: {{timer}}
+          </p>
+          <p>
+            Gelöste Rätsel: {{ gamesWon }}
+          </p>
+        </div>
+        <div class="row row-word">
+          <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
+        </div>
+        <hr>
+        <div class="row row-word" *ngFor="let word of crossword.words">
+          <button class="btn btn-primary" (click)="solve(word)"
+                  [disabled]="crossword.solvedWords.includes(word)">{{word}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
