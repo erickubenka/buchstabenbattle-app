@@ -6,17 +6,20 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-6">
+          <div class="col-4">
             <p>
               Timer: {{timer}}
             </p>
           </div>
-          <div class="col-6">
-            <ng-container *ngIf="timer>0">
+          <div class="col-4">
               <p>
-                Richtige Antworten: {{correctAnswersGiven}}
+                Richtige Antworten: {{answersGivenCorrectly}}
               </p>
-            </ng-container>
+          </div>
+          <div class="col-4">
+            <p>
+              Falsche Antworten: {{answersGiven - answersGivenCorrectly}}
+            </p>
           </div>
         </div>
       </div>
@@ -55,6 +58,8 @@
           <div class="card-footer" *ngIf="index == nextQuestionIndex">
             <input type="button" (click)="giveCorrectAnswer(question, index)" value="Richtig!" class="btn btn-success"
                    [disabled]="!isTimerStarted"/>
+            <input type="button" (click)="skipAnswer(question, index)" value="Weiter!" class="btn btn-warning"
+                   [disabled]="!isTimerStarted"/>
             <input type="button" (click)="giveWrongAnswer(question, index)" value="Falsch!" class="btn btn-danger"
                    [disabled]="!isTimerStarted"/>
           </div>
@@ -77,7 +82,7 @@
       <div class="row">
         <div class="col-12">
           <div class="rounded-circle timer-circle text-center font-weight-bold">
-            {{correctAnswersGiven}}
+            {{answersGivenCorrectly}}
           </div>
         </div>
       </div>
@@ -101,7 +106,7 @@
   </div>
   <div class="circle-wrapper">
     <div *ngFor="let question of questionList; let index=index;" class="circle deg-{{index}}"
-         [ngClass]="{'disabled': question.answeredCorrectly}">
+         [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly}">
       {{question.letter}}
     </div>
   </div>

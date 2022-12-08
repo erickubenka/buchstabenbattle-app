@@ -11,35 +11,36 @@ export class WheelComponent {
   @Input() name: string = "";
 
   questionList = [
-    new Question("A", "Test1", "Antwort1", false),
-    new Question("B", "Test1", "Antwort1", false),
-    new Question("C", "Test1", "Antwort1", false),
-    new Question("D", "Test1", "Antwort1", false),
-    new Question("E", "Test1", "Antwort1", false),
-    new Question("F", "Test1", "Antwort1", false),
-    new Question("G", "Test1", "Antwort1", false),
-    new Question("H", "Test1", "Antwort1", false),
-    new Question("I", "Test1", "Antwort1", false),
-    new Question("J", "Test1", "Antwort1", false),
-    new Question("K", "Test1", "Antwort1", false),
-    new Question("L", "Test1", "Antwort1", false),
-    new Question("M", "Test1", "Antwort1", false),
-    new Question("N", "Test1", "Antwort1", false),
-    new Question("O", "Test1", "Antwort1", false),
-    new Question("P", "Test1", "Antwort1", false),
-    new Question("Q", "Test1", "Antwort1", false),
-    new Question("R", "Test1", "Antwort1", false),
-    new Question("S", "Test1", "Antwort1", false),
-    new Question("T", "Test1", "Antwort1", false),
-    new Question("U", "Test1", "Antwort1", false),
-    new Question("V", "Test1", "Antwort1", false),
-    new Question("W", "Test1", "Antwort1", false),
-    new Question("X", "Test1", "Antwort1", false),
-    new Question("Y", "Test1", "Antwort1", false),
-    new Question("Z", "Test1", "Antwort1", false),
+    new Question("A", "Frage1", "Antwort1", false, false),
+    new Question("B", "Frage1", "Antwort1", false, false),
+    new Question("C", "Frage1", "Antwort1", false, false),
+    new Question("D", "Frage1", "Antwort1", false, false),
+    new Question("E", "Frage1", "Antwort1", false, false),
+    new Question("F", "Frage1", "Antwort1", false, false),
+    new Question("G", "Frage1", "Antwort1", false, false),
+    new Question("H", "Frage1", "Antwort1", false, false),
+    new Question("I", "Frage1", "Antwort1", false, false),
+    new Question("J", "Frage1", "Antwort1", false, false),
+    new Question("K", "Frage1", "Antwort1", false, false),
+    new Question("L", "Frage1", "Antwort1", false, false),
+    new Question("M", "Frage1", "Antwort1", false, false),
+    new Question("N", "Frage1", "Antwort1", false, false),
+    new Question("O", "Frage1", "Antwort1", false, false),
+    new Question("P", "Frage1", "Antwort1", false, false),
+    new Question("Q", "Frage1", "Antwort1", false, false),
+    new Question("R", "Frage1", "Antwort1", false, false),
+    new Question("S", "Frage1", "Antwort1", false, false),
+    new Question("T", "Frage1", "Antwort1", false, false),
+    new Question("U", "Frage1", "Antwort1", false, false),
+    new Question("V", "Frage1", "Antwort1", false, false),
+    new Question("W", "Frage1", "Antwort1", false, false),
+    new Question("X", "Frage1", "Antwort1", false, false),
+    new Question("Y", "Frage1", "Antwort1", false, false),
+    new Question("Z", "Frage1", "Antwort1", false, false),
   ];
 
-  correctAnswersGiven = 0;
+  answersGivenCorrectly = 0;
+  answersGiven = 0;
   nextQuestionIndex = 0;
   timer = 60;
   isTimerStarted = false;
@@ -61,58 +62,65 @@ export class WheelComponent {
   stopTimer() {
     this.isTimerStarted = false;
     clearInterval(this.timerInterval);
-    console.log("Timer stopped: " + this.timer);
+    console.log("Timer stopped at " + this.timer);
   }
 
   giveCorrectAnswer(question: Question, index: number) {
-    question.answeredCorrectly = true;
-    this.correctAnswersGiven = this.questionList.filter(q => q.answeredCorrectly).length;
+    question.isAnswered = true;
+    question.isAnsweredCorrectly = true;
+    this.answersGiven = this.questionList.filter(q => q.isAnswered).length;
+    this.answersGivenCorrectly = this.questionList.filter(q => q.isAnswered && q.isAnsweredCorrectly).length;
+
     this.nextQuestionIndex = this.getNextQuestionIndex(index);
 
-    // end game because every thing was right.
-    if (this.correctAnswersGiven == this.questionList.length) {
-      console.log("Game ended: timer stopped.");
+    if (this.answersGiven == this.questionList.length) {
+      console.log("Game ended: Every Question done.");
       this.stopTimer();
     }
   }
 
   giveWrongAnswer(question: Question, index: number) {
-    // determine if other player is eliminated
+
+    question.isAnswered = true;
+    question.isAnsweredCorrectly = false;
+    this.answersGiven = this.questionList.filter(q => q.isAnswered).length;
+    // handling wrong answer is like skipped answer
+    this.skipAnswer(question, index);
+  }
+
+  skipAnswer(question: Question, index: number) {
+
+    // todo:: determine if other player is eliminated
     // if no, stop time, switch component
     this.stopTimer();
-    console.log("Wrong answer given. Other players turn.");
 
     // if yes, show next question
     this.nextQuestionIndex = this.getNextQuestionIndex(index);
-    console.log("Wrong answer given. Other player eliminated. Still your turn.");
   }
 
   private getNextQuestionIndex(index: number): number {
 
-    if (this.correctAnswersGiven == this.questionList.length) {
+    // early exit because every answer given was already right.
+    if (this.answersGiven == this.questionList.length) {
       return -1;
     }
 
-    // next index available?
     let nextIndex = index + 1;
 
-    // no : is it a run over?
     if (nextIndex >= this.questionList.length) {
       nextIndex = 0;
     }
 
     do {
-      // no: add index once again.
-      if (this.questionList[nextIndex].answeredCorrectly) {
+      if (this.questionList[nextIndex].isAnswered) {
         nextIndex++;
       }
 
-      // no : is it a run over?
       if (nextIndex >= this.questionList.length) {
         nextIndex = 0;
       }
 
-    } while (this.questionList[nextIndex].answeredCorrectly)
+    } while (this.questionList[nextIndex].isAnswered)
 
     return nextIndex;
   }
@@ -123,12 +131,14 @@ export class Question {
   public letter: string;
   public question: string;
   public answer: string;
-  public answeredCorrectly: boolean;
+  public isAnswered: boolean;
+  public isAnsweredCorrectly: boolean;
 
-  constructor(letter: string, question: string, answer: string, answeredCorrectly: boolean) {
+  constructor(letter: string, question: string, answer: string, isAnswered: boolean, answeredCorrectly: boolean) {
     this.letter = letter;
     this.question = question;
     this.answer = answer;
-    this.answeredCorrectly = answeredCorrectly;
+    this.isAnswered = isAnswered
+    this.isAnsweredCorrectly = answeredCorrectly;
   }
 }

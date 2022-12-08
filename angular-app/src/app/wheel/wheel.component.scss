@@ -1,8 +1,9 @@
 @import "src/assets/styles/app.scss";
 
-$circle-wrapper-color: rgb(103, 174, 210);
+$circle-wrapper-color: #FFFFF;
 $circle-color: rgb(37, 110, 169);
-$circle-color-disabled: rgb(86, 86, 86);
+$circle-color-correctly: rgb(23, 169, 0);
+$circle-color-wrong: rgb(232, 64, 64);
 
 $circle-wrapper-size: 900px;
 $circle-size: ($circle-wrapper-size/10);
@@ -27,6 +28,7 @@ $translate-size: ($circle-wrapper-size/2)+1;
   background: $circle-wrapper-color;
   position: relative;
   margin: $circle-size auto;
+  border: 1px dashed #000000;
 }
 
 .circle {
@@ -42,8 +44,12 @@ $translate-size: ($circle-wrapper-size/2)+1;
   text-align: center;
   line-height: $circle-size;
 
-  &.disabled {
-    background: $circle-color-disabled;
+  &.circle-correctly {
+    background: $circle-color-correctly;
+  }
+
+  &.circle-wrong {
+    background: $circle-color-wrong;
   }
 }
 
