@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
 export class CrosswordComponent {
 
   crossword = new Crossword();
-  gamesWon = 0;
+  points = 0;
   timer = 60;
   isStarted = false;
 
@@ -19,7 +19,7 @@ export class CrosswordComponent {
 
     if (this.crossword.solvedWords.length == this.crossword.words.length) {
       this.crossword = new Crossword();
-      this.gamesWon++;
+      this.points++;
     }
   }
 

@@ -9,6 +9,7 @@ import {DisplayComponent} from './display/display.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {CrosswordComponent} from './crossword/crossword.component';
+import { GallowsgameComponent } from './gallowsgame/gallowsgame.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {CrosswordComponent} from './crossword/crossword.component';
     WheelComponent,
     DisplayComponent,
     WheelsComponent,
-    CrosswordComponent
+    CrosswordComponent,
+    GallowsgameComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import {CrosswordComponent} from './crossword/crossword.component';
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'admin/wheels', component: WheelsComponent},
       {path: 'admin/crossword', component: CrosswordComponent},
+      {path: 'admin/gallowsgame', component: GallowsgameComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule

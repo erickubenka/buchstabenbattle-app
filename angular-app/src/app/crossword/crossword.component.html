@@ -13,20 +13,26 @@
       </div>
       <div class="col-6">
         <div class="row">
-          <p>
-            Timer: {{timer}}
-          </p>
-          <p>
-            Gelöste Rätsel: {{ gamesWon }}
-          </p>
+          <div class="col-12">
+            <p>
+              Timer: {{timer}}
+            </p>
+            <p>
+              Gelöste Rätsel: {{ points }}
+            </p>
+          </div>
         </div>
         <div class="row row-word">
-          <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
+          <div class="col-12">
+            <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
+          </div>
         </div>
         <hr>
         <div class="row row-word" *ngFor="let word of crossword.words">
-          <button class="btn btn-primary" (click)="solve(word)"
-                  [disabled]="crossword.solvedWords.includes(word)">{{word}}</button>
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="solve(word)"
+                    [disabled]="crossword.solvedWords.includes(word) || !isStarted">{{word}}</button>
+          </div>
         </div>
       </div>
     </div>
