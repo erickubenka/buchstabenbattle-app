@@ -1,11 +1,18 @@
 <div class="card">
-  <div class="card-header">
+  <div class="card-header text-center">
     <h3>Mut zur Lücke</h3>
   </div>
   <div class="card">
     <div class="row">
       <div class="col-6">
-        <p>Wort here....</p>
+        <table class="gallowsgame-word">
+          <tr>
+            <td *ngFor="let letter of word.withGaps.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+          <tr>
+            <td *ngFor="let letter of word.full.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+        </table>
       </div>
       <div class="col-6">
         <div class="row">
@@ -14,7 +21,10 @@
               Timer: {{timer}}
             </p>
             <p>
-              Gelöste Wörter: {{ points }}
+              Gelöste Wörter: {{ solvedWords.length }}
+            </p>
+            <p>
+              Nicht gelöste Wörter: {{ unsolvedWords.length }}
             </p>
             <p>
               Punkte: {{ points }}
@@ -27,6 +37,20 @@
           </div>
         </div>
         <hr>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Aktueller Fehler im Wort: {{errors}}
+            </p>
+            <button class="btn btn-primary btn-letters" *ngFor="let letter of word.missingLetters"
+                    [disabled]="!isStarted || word.solvedLetters.includes(letter)"
+                    (click)="word.solve(letter)">{{letter}}</button>
+            <button class="btn btn-danger btn-letters" [disabled]="!isStarted" (click)="addError()">Falscher Buchstabe</button>
+            <button class="btn btn-warning btn-letters" [disabled]="!isStarted" (click)="addError()">Weiter</button>
+            <button class="btn btn-success btn-letters" [disabled]="!isStarted" (click)="solveWord()">Wort richtig!
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -46,6 +46,6 @@ export class Crossword {
     "PTSAL",
   ];
 
-  public words: string[] = ["total", "last", "ball"];
+  public words: string[] = ["Total", "Last", "Ball"];
   public solvedWords: string[] = [];
 }
