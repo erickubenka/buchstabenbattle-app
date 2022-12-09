@@ -5,11 +5,12 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {WheelsComponent} from './wheels/wheels.component';
 import {WheelComponent} from './wheel/wheel.component';
+import {CrosswordComponent} from './crossword/crossword.component';
+import {GallowsGameComponent} from './gallows-game/gallows-game.component';
+import {ConnectionWantedComponent} from './connection-wanted/connection-wanted.component';
 import {DisplayComponent} from './display/display.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-import {CrosswordComponent} from './crossword/crossword.component';
-import { GallowsgameComponent } from './gallowsgame/gallowsgame.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GallowsgameComponent } from './gallowsgame/gallowsgame.component';
     DisplayComponent,
     WheelsComponent,
     CrosswordComponent,
-    GallowsgameComponent
+    GallowsGameComponent,
+    ConnectionWantedComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { GallowsgameComponent } from './gallowsgame/gallowsgame.component';
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'admin/wheels', component: WheelsComponent},
       {path: 'admin/crossword', component: CrosswordComponent},
-      {path: 'admin/gallowsgame', component: GallowsgameComponent},
+      {path: 'admin/gallows-game', component: GallowsGameComponent},
+      {path: 'admin/connection-wanted', component: ConnectionWantedComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule

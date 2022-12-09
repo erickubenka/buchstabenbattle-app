@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-gallowsgame',
-  templateUrl: './gallowsgame.component.html',
-  styleUrls: ['./gallowsgame.component.scss']
+  selector: 'app-gallows-game',
+  templateUrl: './gallows-game.component.html',
+  styleUrls: ['./gallows-game.component.scss']
 })
-export class GallowsgameComponent {
+export class GallowsGameComponent {
 
   points: number = 0;
   solvedWords: Word[] = []

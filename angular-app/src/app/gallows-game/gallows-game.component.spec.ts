@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GallowsgameComponent } from './gallowsgame.component';
+import { GallowsGameComponent } from './gallows-game.component';
 
 describe('GallowsgameComponent', () => {
-  let component: GallowsgameComponent;
-  let fixture: ComponentFixture<GallowsgameComponent>;
+  let component: GallowsGameComponent;
+  let fixture: ComponentFixture<GallowsGameComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GallowsgameComponent ]
+      declarations: [ GallowsGameComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GallowsgameComponent);
+    fixture = TestBed.createComponent(GallowsGameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
