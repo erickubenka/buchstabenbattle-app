@@ -8,22 +8,101 @@ import {Component} from '@angular/core';
 export class ConnectionWantedComponent {
   points: number = 0;
 
-  timer: number = 60;
+  timer: number = 90;
+  timerInterval: any;
   isStarted: boolean = false;
+  questionIndex = 0;
+
+  connections: Connection[] = [
+    new Connection("Ein Traumpaar bildeteten jahrelang Schlager-Queen Helene Fischer und der heutige Traumschiffkapitätn Florian ...?", "SILBE", "REISEN"),
+    new Connection("Jürgen Drews bezeichnet sich selbst als König dieser beliebtesten Insel der Deutschen.", "MALLO", "RCA"),
+    new Connection("Diesen \"Berg der Berge\" bestieg die Sängerin und Moderatorin Beatrice Egli im August 2021", "MATTE", "RHORN"),
+    new Connection("Wie wird die deutsche Musiklegende aus Südafrika Howard Carpendale in Kurzform genannt?", "HOW", "WIE"),
+    new Connection("So heißt das mehrtägige Festival, das Andrea Berg alljährlich in Großaspach veranstaltet.", "HEIMS", "PIEL"),
+    new Connection("Seine schwarzen Haare waren nur eine Perücke und diese Fiesta wurde für Rex Gildo zum größten hit.", "MEX", "ICANA"),
+    new Connection("Als Schlagersänger trug Udo Bockelmann diesen Nachnamen.", "JÜRG", "ENS"),
+    new Connection("Vor seiner Umbenennung hieß der ESC \"Grand Prix Eurovision de la ...\"?", "CHANS", "ON"),
+    new Connection("Bei der Nr. 1 aller europäischen Schlagerspektakel kann man beim Schlagermove in dieser Stadt feiern.", "HAMB", "URG"),
+    new Connection("Der Hit \"Weine nicht kleine Eva\" geht auf's Konto dieser Schlagerband.", "FLI", "PPERS"),
+  ]
+
+  randomAnswerStart: Connection[] = shuffle(this.connections);
+  randomAnswerEnd: Connection[] = shuffle(this.connections);
 
   start() {
     this.isStarted = true;
-    let timerInterval = setInterval(() => {
+    this.timerInterval = setInterval(() => {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
-        clearInterval(timerInterval);
-
+        clearInterval(this.timerInterval);
       }
     }, 1000);
   }
+
+  solve(connection: Connection) {
+    this.points = this.points + 2;
+    connection.isAnswered = true;
+    connection.isAnsweredCorrectly = true;
+    this.increaseIndex();
+  }
+
+  solveWithError(connection: Connection) {
+    connection.isAnswered = true;
+    connection.isAnsweredCorrectly = false;
+    this.increaseIndex();
+  }
+
+  private increaseIndex() {
+    this.questionIndex++;
+    if (this.questionIndex >= this.connections.length) {
+      this.isStarted = false;
+      clearInterval(this.timerInterval);
+    }
+  }
 }
 
-export class Connections {
+function shuffle(input: Connection[]) {
+  let result: Connection[] = [];
+  input.forEach(i => {
+    result.push(i);
+  })
 
+  let counter = input.length;
 
+  // While there are elements in the array
+  while (counter > 0) {
+    // Pick a random index
+    let index = Math.floor(Math.random() * counter);
+
+    // Decrease counter by 1
+    counter--;
+
+    // And swap the last element with it
+    let temp = result[counter];
+    result[counter] = result[index];
+    result[index] = temp;
+  }
+
+  return result;
 }
+
+export class Connection {
+
+  question: string = "";
+  answerStart: string = "";
+  answerEnd: string = "";
+
+  isAnswered: boolean = false;
+  isAnsweredCorrectly: boolean = false;
+
+  constructor(question: string, answerStart: string, answerEnd: string) {
+    this.question = question;
+    this.answerStart = answerStart;
+    this.answerEnd = answerEnd;
+  }
+}
+
+
+// 10 Fragen
+// Wenn eine Frage richtig beantwortet wurde, verschwinden die Silben
+// Wird die Frage falsch beantwortet oder weiter gesagt bleiben die Silben da

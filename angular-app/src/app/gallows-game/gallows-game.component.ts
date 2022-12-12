@@ -13,7 +13,8 @@ export class GallowsGameComponent {
 
   word: Word = new Word("Handbremse");
 
-  timer = 60;
+  // start timer defaults to 90 seconds
+  timer = 90;
   isStarted = false;
   errors: number = 0;
 

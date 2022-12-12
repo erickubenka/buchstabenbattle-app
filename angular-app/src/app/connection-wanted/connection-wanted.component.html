@@ -3,8 +3,54 @@
     <h3>Anschluss gesucht!</h3>
   </div>
   <div class="card-body">
-    <p>connection-wanted works!</p>
+    <div class="row">
+      <div class="col-12">
+        <p>Timer: {{timer}}</p>
+        <p>Punkte: {{points}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row" *ngFor="let q of connections; let index  = index">
+      <div class="col-3">
+        <button class="btn"
+                [disabled]="randomAnswerStart[index].isAnswered"
+                [ngClass]="{
+                'btn-primary': !randomAnswerStart[index].isAnswered,
+                'btn-success': randomAnswerStart[index].isAnswered && randomAnswerStart[index].isAnsweredCorrectly,
+                'btn-danger': randomAnswerStart[index].isAnswered && !randomAnswerStart[index].isAnsweredCorrectly}">{{randomAnswerStart[index].answerStart}}</button>
+      </div>
+      <div class="col-6">
+
+      </div>
+      <div class="col-3 text-end">
+        <button class="btn"
+                [disabled]="randomAnswerEnd[index].isAnswered"
+                [ngClass]="{
+                'btn-primary': !randomAnswerEnd[index].isAnswered,
+                'btn-success': randomAnswerEnd[index].isAnswered && randomAnswerEnd[index].isAnsweredCorrectly,
+                'btn-danger': randomAnswerEnd[index].isAnswered && !randomAnswerEnd[index].isAnsweredCorrectly}">{{randomAnswerEnd[index].answerEnd}}</button>
+      </div>
+    </div>
   </div>
+  <hr>
+  <div class="row text-center" *ngIf="isStarted">
+    <div class="col-12">
+      <p>
+        {{connections[questionIndex].question}}
+      </p>
+      <button class="btn btn-success"
+              (click)="solve(connections[questionIndex])">{{connections[questionIndex].answerStart}}{{connections[questionIndex].answerEnd}}</button>
+      <button class="btn btn-danger"
+              (click)="solveWithError(connections[questionIndex])">Falsch!
+      </button>
+    </div>
+  </div>
+
   <div class="card-footer">
     Footer
   </div>

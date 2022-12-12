@@ -9,7 +9,7 @@ export class CrosswordComponent {
 
   crossword = new Crossword();
   points = 0;
-  timer = 60;
+  timer = 90;
   isStarted = false;
 
   solve(word: string) {
