@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {WebSocketService} from "../web-socket.service";
+import {WebSocketService} from "../../services/web-socket.service";
+import {GameData} from "../../data/game-data";
+import {Games} from "../../data/games";
 
 @Component({
   selector: 'app-gallows-game',
@@ -9,6 +11,7 @@ import {WebSocketService} from "../web-socket.service";
 export class GallowsGameComponent {
 
   constructor(private webSocketService: WebSocketService) {
+    this.webSocketService.sendMessage("demo", this.prepareData());
   }
 
   points: number = 0;
@@ -28,10 +31,7 @@ export class GallowsGameComponent {
       if (this.timer <= 0) {
         clearInterval(timerInterval);
       }
-
-      let message = this.prepareData();
-      this.webSocketService.sendMessage("Mut zur Luecke", message);
-
+      this.webSocketService.sendMessage("demo", this.prepareData());
     }, 1000);
   }
 
@@ -56,13 +56,16 @@ export class GallowsGameComponent {
     this.word = new Word("Ruecklicht");
   }
 
-  private prepareData() {
-
+  private prepareData(): GameData {
     return {
-      isStarted: this.isStarted,
-      timer: this.timer,
-      points: this.points,
-      word: this.word
+      currentGameSelected: Games.GallowsGame,
+      isStarted: true,
+      specificData: {
+        isStarted: this.isStarted,
+        timer: this.timer,
+        points: this.points,
+        word: this.word
+      }
     }
   }
 }

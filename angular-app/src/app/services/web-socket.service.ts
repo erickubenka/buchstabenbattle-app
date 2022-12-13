@@ -8,8 +8,8 @@ import {map} from 'rxjs/operators';
 const CHAT_URL = "ws://localhost:8080";
 
 export interface Message {
-  source: string;
-  content: any;
+  key: string;
+  data: any;
 }
 
 @Injectable({
@@ -33,10 +33,10 @@ export class WebSocketService {
     );
   }
 
-  public sendMessage(source: string, content: any) {
+  public sendMessage(key: string, data: any) {
     let message = {
-      source: source,
-      content: content
+      key: key,
+      data: data
     };
     this.messages.next(message);
   }
@@ -57,7 +57,6 @@ export class WebSocketService {
       ws.onclose = obs.complete.bind(obs);
       return ws.close.bind(ws);
     });
-
 
     let observer = {
       error: (err: any) => {

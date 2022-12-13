@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {WebSocketService} from "../../services/web-socket.service";
+import {Games} from "../../data/games";
+import {GameData} from "../../data/game-data";
 
 @Component({
   selector: 'app-crossword',
@@ -6,11 +9,14 @@ import {Component} from '@angular/core';
   styleUrls: ['./crossword.component.scss']
 })
 export class CrosswordComponent {
-
   crossword = new Crossword();
   points = 0;
   timer = 90;
   isStarted = false;
+
+  constructor(private webSocketService: WebSocketService) {
+    this.webSocketService.sendMessage("demo", this.prepareData());
+  }
 
   solve(word: string) {
     if (!this.crossword.solvedWords.includes(word)) {
@@ -29,9 +35,24 @@ export class CrosswordComponent {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
         clearInterval(timerInterval);
-
       }
+
+      this.webSocketService.sendMessage("demo", this.prepareData());
+
     }, 1000);
+  }
+
+  private prepareData(): GameData {
+    return {
+      currentGameSelected: Games.Crossword,
+      isStarted: true,
+      specificData: {
+        isStarted: this.isStarted,
+        timer: this.timer,
+        points: this.points,
+        crossword: this.crossword
+      }
+    }
   }
 }
 

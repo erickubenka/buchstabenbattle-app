@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h3>Anzeige</h3>
+  </div>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 0">
+    <div class="card-body">
+      <p>
+        Der Moderator sucht aktuell das Spiel aus.
+      </p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 1">
+    <div class="card-body">
+      Das jetzige Spiel ist "Mut zur Lücke".
+    </div>
+  </ng-container>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 2">
+    <div class="card-body">
+      Das jetzige Spiel ist "Buchstabensalat".
+    </div>
+  </ng-container>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 3">
+    <div class="card-body">
+      Das jetzige Spiel ist "Anschluss gesucht".
+    </div>
+  </ng-container>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 4">
+    <div class="card-body">
+      Das jetzige Spiel ist "Der entscheidende Hinweis".
+    </div>
+  </ng-container>
+  <ng-container *ngIf="displayData.data.currentGameSelected == 5">
+    <div class="card-body">
+      Das jetzige Spiel ist "Buchstabenrad".
+    </div>
+  </ng-container>
+
+
+  <p>
+    {{ displayData | json}}
+  </p>
+</div>

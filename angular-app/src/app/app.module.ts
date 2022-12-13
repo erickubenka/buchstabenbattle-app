@@ -3,14 +3,15 @@ import {BrowserModule, Title} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {WheelsComponent} from './wheels/wheels.component';
-import {WheelComponent} from './wheel/wheel.component';
-import {CrosswordComponent} from './crossword/crossword.component';
-import {GallowsGameComponent} from './gallows-game/gallows-game.component';
-import {ConnectionWantedComponent} from './connection-wanted/connection-wanted.component';
-import {DisplayComponent} from './display/display.component';
+import {WheelsComponent} from './admin/wheels/wheels.component';
+import {WheelComponent} from './admin/wheel/wheel.component';
+import {CrosswordComponent} from './admin/crossword/crossword.component';
+import {GallowsGameComponent} from './admin/gallows-game/gallows-game.component';
+import {ConnectionWantedComponent} from './admin/connection-wanted/connection-wanted.component';
+import {DisplayComponent} from './display/display/display.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {HomeAdminComponent} from './admin/admin/home-admin.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,15 @@ import {FormsModule} from "@angular/forms";
     WheelsComponent,
     CrosswordComponent,
     GallowsGameComponent,
-    ConnectionWantedComponent
+    ConnectionWantedComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'admin', component: HomeAdminComponent},
       {path: 'admin/wheels', component: WheelsComponent},
       {path: 'admin/crossword', component: CrosswordComponent},
       {path: 'admin/gallows-game', component: GallowsGameComponent},

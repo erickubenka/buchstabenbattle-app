@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {GameData} from "../../data/game-data";
+import {Games} from "../../data/games";
+import {WebSocketService} from "../../services/web-socket.service";
 
 @Component({
   selector: 'app-connection-wanted',
@@ -29,6 +32,10 @@ export class ConnectionWantedComponent {
   randomAnswerStart: Connection[] = shuffle(this.connections);
   randomAnswerEnd: Connection[] = shuffle(this.connections);
 
+  constructor(private webSocketService: WebSocketService) {
+    this.webSocketService.sendMessage("demo", this.prepareData());
+  }
+
   start() {
     this.isStarted = true;
     this.timerInterval = setInterval(() => {
@@ -36,6 +43,7 @@ export class ConnectionWantedComponent {
       if (this.timer <= 0) {
         clearInterval(this.timerInterval);
       }
+      this.webSocketService.sendMessage("demo", this.prepareData());
     }, 1000);
   }
 
@@ -57,6 +65,20 @@ export class ConnectionWantedComponent {
     if (this.questionIndex >= this.connections.length) {
       this.isStarted = false;
       clearInterval(this.timerInterval);
+    }
+  }
+
+  private prepareData(): GameData {
+    return {
+      currentGameSelected: Games.ConnectionWanted,
+      isStarted: true,
+      specificData: {
+        isStarted: this.isStarted,
+        timer: this.timer,
+        points: this.points,
+        connections: this.connections,
+        questionIndex: this.questionIndex
+      }
     }
   }
 }

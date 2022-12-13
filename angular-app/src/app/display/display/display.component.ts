@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {Message, WebSocketService} from "../web-socket.service";
+import {Message, WebSocketService} from "../../services/web-socket.service";
+import {GameData} from "../../data/game-data";
 
 @Component({
   selector: 'app-display',
@@ -8,14 +9,14 @@ import {Message, WebSocketService} from "../web-socket.service";
 })
 export class DisplayComponent {
 
-  public data: Message = {
-    source: "Mut zur Luecke",
-    content: "- SPIEL NICHT GESTARTET"
+  public displayData: Message = {
+    key: "demo",
+    data: new GameData(),
   };
 
   constructor(private webSocketService: WebSocketService) {
     webSocketService.messages.subscribe(value => {
-      this.data = value;
+      this.displayData = value;
     });
   }
 }
