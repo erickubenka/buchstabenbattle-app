@@ -20,3 +20,17 @@ services:
         cd angular-app/
         npm install
         npm start
+#  server:
+#    image: "node:18"
+#    container_name: server
+#    working_dir: /home/node/app
+#    volumes:
+#      - ./server:/home/node/app
+#    ports:
+#      - "8080:8080"
+#    command:
+#      - /bin/bash
+#      - -c
+#      - |
+#        npm install ws
+#        node server.mjs

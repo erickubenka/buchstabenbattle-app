@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {WebSocketService} from "../web-socket.service";
 
 @Component({
   selector: 'app-gallows-game',
@@ -7,10 +8,12 @@ import {Component} from '@angular/core';
 })
 export class GallowsGameComponent {
 
+  constructor(private webSocketService: WebSocketService) {
+  }
+
   points: number = 0;
   solvedWords: Word[] = []
   unsolvedWords: Word[] = []
-
   word: Word = new Word("Handbremse");
 
   // start timer defaults to 90 seconds
@@ -24,8 +27,11 @@ export class GallowsGameComponent {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
         clearInterval(timerInterval);
-
       }
+
+      let message = this.prepareData();
+      this.webSocketService.sendMessage("Mut zur Luecke", message);
+
     }, 1000);
   }
 
@@ -48,6 +54,16 @@ export class GallowsGameComponent {
     this.errors = 0;
     this.solvedWords.push(this.word);
     this.word = new Word("Ruecklicht");
+  }
+
+  private prepareData() {
+
+    return {
+      isStarted: this.isStarted,
+      timer: this.timer,
+      points: this.points,
+      word: this.word
+    }
   }
 }
 
@@ -106,3 +122,5 @@ export class Word {
     this.solvedLetters.push(letter);
   }
 }
+
+
