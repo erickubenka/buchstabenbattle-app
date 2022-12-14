@@ -1,0 +1,14 @@
+<div class="card-header">
+<div class="row">
+  <div class="col-12">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/admin">Home</a>
+      <li class="nav-item" *ngFor="let item of items;">
+        <a class="nav-link" aria-current="page" routerLink="{{item.href}}"
+           routerLinkActive="active">{{item.displayName}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

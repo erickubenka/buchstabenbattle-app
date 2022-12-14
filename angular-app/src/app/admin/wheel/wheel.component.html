@@ -1,22 +1,18 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
     <div class="card">
-      <div class="card-header">
-        <h4>{{name}}</h4>
+      <div class="card-header text-center">
+        <h3>{{name}}</h3>
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-4">
+          <div class="col-12">
             <p>
               Timer: {{timer}}
             </p>
-          </div>
-          <div class="col-4">
-              <p>
-                Richtige Antworten: {{answersGivenCorrectly}}
-              </p>
-          </div>
-          <div class="col-4">
+            <p>
+              Richtige Antworten: {{answersGivenCorrectly}}
+            </p>
             <p>
               Falsche Antworten: {{answersGiven - answersGivenCorrectly}}
             </p>
@@ -29,26 +25,22 @@
       </div>
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-8">
     <ng-container *ngIf="isTimerStarted">
       <div class="card text-center">
         <div class="card-header">
-          <h4>Aktuelle Frage</h4>
+          <h3>Aktuelle Frage</h3>
         </div>
         <ng-container *ngFor="let question of questionList; let index=index;">
           <div class="card-body" *ngIf="index == nextQuestionIndex">
             <div class="row">
-              <div class="col-2">
+              <div class="col-12">
                 <p>
                   {{ question.letter }}
                 </p>
-              </div>
-              <div class="col-4">
                 <p>
                   {{ question.question }}
                 </p>
-              </div>
-              <div class="col-6">
                 <p>
                   {{ question.answer }}
                 </p>

@@ -1,0 +1,35 @@
+@import "src/assets/styles/app.scss";
+
+@mixin transition($property) {
+
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  transition: $property;
+
+}
+
+.navbar {
+  background-color: $color-white;
+}
+
+.nav-item {
+  margin: 5px
+}
+
+a.nav-link {
+
+  color: $color-purple-navy !important;
+  border-bottom: 2px solid $color-purple-navy;
+  @include transition(0.3s border-bottom);
+
+
+  &.active {
+    border-bottom: 2px solid $color-blue-bolt;
+    color: $color-blue-bolt !important;
+    font-weight: bold;
+  }
+
+  &:hover {
+    border-bottom: 2px solid $color-blue-bolt;
+  }
+}

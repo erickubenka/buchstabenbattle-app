@@ -1,19 +1,25 @@
 <div class="card">
+  <app-navigation></app-navigation>
   <div class="card-header text-center">
-    <h3>Mut zur Lücke</h3>
+    <h2>Mut zur Lücke</h2>
   </div>
-  <div class="card">
+  <div class="card-body">
     <div class="row">
-      <div class="col-6">
-        <table class="gallowsgame-word">
-          <tr>
-            <td *ngFor="let letter of word.withGaps.split('')" class="text-uppercase">{{letter}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let letter of word.full.split('')" class="text-uppercase">{{letter}}</td>
-          </tr>
-        </table>
+      <div class="col-12">
+        <p>
+          Jedes Team hat eines von zwei Kategorien
+          (bspw.
+          'Handball und Fußball' oder 'Tag und Nacht'). Die
+          Team-Mitglieder nennen nun solange Buchstaben, bis das zu erratende Wort gelöst wurde oder fünf falsche, nicht im
+          Wort vorkommende Buchstaben genannt wurden. Wird ein falscher Buchstabe genannt, wechselt das Team-Mitglied und es
+          konnte eine Sekunde weniger gewonnen werden. Für die Lösung jedes Wortes können bis zu 5 Sekunden für das
+          Team-Konto
+          gesammelt werden.
+        </p>
       </div>
+    </div>
+    <hr>
+    <div class="row">
       <div class="col-6">
         <div class="row">
           <div class="col-12">
@@ -45,12 +51,23 @@
             <button class="btn btn-primary btn-letters" *ngFor="let letter of word.missingLetters"
                     [disabled]="!isStarted || word.solvedLetters.includes(letter)"
                     (click)="word.solve(letter)">{{letter}}</button>
-            <button class="btn btn-danger btn-letters" [disabled]="!isStarted" (click)="addError()">Falscher Buchstabe</button>
+            <button class="btn btn-danger btn-letters" [disabled]="!isStarted" (click)="addError()">Falscher Buchstabe
+            </button>
             <button class="btn btn-warning btn-letters" [disabled]="!isStarted" (click)="addError()">Weiter</button>
             <button class="btn btn-success btn-letters" [disabled]="!isStarted" (click)="solveWord()">Wort richtig!
             </button>
           </div>
         </div>
+      </div>
+      <div class="col-6">
+        <table class="gallowsgame-word">
+          <tr>
+            <td *ngFor="let letter of word.withGaps.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+          <tr>
+            <td *ngFor="let letter of word.full.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
