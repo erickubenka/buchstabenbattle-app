@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {WebSocketService} from "../../services/web-socket.service";
 import {Games} from "../../data/games";
 import {GameData} from "../../data/game-data";
+import {Crossword} from "../../data/crossword";
 
 @Component({
   selector: 'app-crossword',
@@ -54,19 +55,4 @@ export class CrosswordComponent {
       }
     }
   }
-}
-
-export class Crossword {
-
-  // 5x5
-  public rows: string[] = [
-    "TLSAE",
-    "AODEB",
-    "ABTDA",
-    "GBUAL",
-    "PTSAL",
-  ];
-
-  public words: string[] = ["Total", "Last", "Ball"];
-  public solvedWords: string[] = [];
 }

@@ -13,6 +13,7 @@
     <div class="card-body">
       Das jetzige Spiel ist "Mut zur Lücke".
     </div>
+    <app-gallows-game-display [gameData]="displayData.data" [gallowsGameData]="displayData.data.specificData"></app-gallows-game-display>
   </ng-container>
   <ng-container *ngIf="displayData.data.currentGameSelected == 2">
     <div class="card-body">

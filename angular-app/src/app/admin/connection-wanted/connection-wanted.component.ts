@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {GameData} from "../../data/game-data";
 import {Games} from "../../data/games";
 import {WebSocketService} from "../../services/web-socket.service";
+import {Connection} from "../../data/connection";
 
 @Component({
   selector: 'app-connection-wanted',
@@ -108,23 +109,3 @@ function shuffle(input: Connection[]) {
   return result;
 }
 
-export class Connection {
-
-  question: string = "";
-  answerStart: string = "";
-  answerEnd: string = "";
-
-  isAnswered: boolean = false;
-  isAnsweredCorrectly: boolean = false;
-
-  constructor(question: string, answerStart: string, answerEnd: string) {
-    this.question = question;
-    this.answerStart = answerStart;
-    this.answerEnd = answerEnd;
-  }
-}
-
-
-// 10 Fragen
-// Wenn eine Frage richtig beantwortet wurde, verschwinden die Silben
-// Wird die Frage falsch beantwortet oder weiter gesagt bleiben die Silben da

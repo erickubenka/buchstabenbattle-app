@@ -12,6 +12,8 @@ import {DisplayComponent} from './display/display/display.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HomeAdminComponent} from './admin/admin/home-admin.component';
+import {GallowsGameDisplayComponent} from './display/gallows-game-display/gallows-game-display.component';
+import { CrosswordDisplayComponent } from './display/crossword-display/crossword-display.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {HomeAdminComponent} from './admin/admin/home-admin.component';
     CrosswordComponent,
     GallowsGameComponent,
     ConnectionWantedComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    GallowsGameDisplayComponent,
+    CrosswordDisplayComponent
   ],
   imports: [
     BrowserModule,
