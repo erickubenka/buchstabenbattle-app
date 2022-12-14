@@ -1,43 +1,50 @@
-<div class="card">
-  <div class="card-header text-center">
-    <h3>Anzeige</h3>
-  </div>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 0">
-    <div class="card-body">
+<div class="container-fluid">
+  <div class="row align-content-center box"
+       [ngClass]="{
+       'bg-black': displayData.data.currentScreenSelected == 0 && !displayData.data.isStarted}">
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 0 && !displayData.data.isStarted">
+      <!-- Black Screen -->
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 99 && displayData.data.isStarted">
       <p>
-        Der Moderator sucht aktuell das Spiel aus.
+        INTRO!
       </p>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 1">
-    <div class="card-body">
-      Das jetzige Spiel ist "Mut zur Lücke".
-    </div>
-    <app-gallows-game-display [gameData]="displayData.data" [gallowsGameData]="displayData.data.specificData"></app-gallows-game-display>
-  </ng-container>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 2">
-    <div class="card-body">
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 0 && displayData.data.isStarted">
+      <p>
+        Der Moderator wählt gerade ein Spiel aus.
+      </p>
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 98 && displayData.data.isStarted">
+      <p>
+        Spielstand!
+      </p>
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 1">
+      <app-gallows-game-display [gameData]="displayData.data"
+                                [gallowsGameData]="displayData.data.specificData"></app-gallows-game-display>
+    </ng-container>
+
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 2">
       Das jetzige Spiel ist "Buchstabensalat".
-    </div>
-  </ng-container>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 3">
-    <div class="card-body">
+    </ng-container>
+
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 3">
       Das jetzige Spiel ist "Anschluss gesucht".
-    </div>
-  </ng-container>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 4">
-    <div class="card-body">
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 4">
       Das jetzige Spiel ist "Der entscheidende Hinweis".
-    </div>
-  </ng-container>
-  <ng-container *ngIf="displayData.data.currentGameSelected == 5">
-    <div class="card-body">
+    </ng-container>
+    <ng-container *ngIf="displayData.data.currentScreenSelected == 5">
       Das jetzige Spiel ist "Buchstabenrad".
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
+</div>
 
-
-  <p>
-    {{ displayData | json}}
-  </p>
+<div class="card">
+  <div class="card-body">
+    <code>
+      {{ displayData | json}}
+    </code>
+  </div>
 </div>

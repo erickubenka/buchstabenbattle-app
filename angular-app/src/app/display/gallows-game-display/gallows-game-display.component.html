@@ -1,13 +1,30 @@
-<p>gallows-game-display works!</p>
-<p>
-  Timer: {{ gallowsGameData.timer}}
-</p>
-<p>
-  Gestartet: {{gallowsGameData.isStarted}}
-</p>
-<p>
-  Punkte: {{gallowsGameData.points}}
-</p>
-<p>
-  Suchwort: {{gallowsGameData.word.withGaps}}
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-question">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center">
+                {{gallowsGameData.timer}}
+              </div>
+            </div>
+            <div class="col-6">
+              <table class="gallowsgame-word">
+                <tr>
+                  <td *ngFor="let letter of gallowsGameData.word.withGaps.split('')"
+                      class="text-uppercase">{{letter}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center float-end">
+                {{gallowsGameData.points}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

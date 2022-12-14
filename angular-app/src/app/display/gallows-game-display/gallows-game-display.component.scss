@@ -1,0 +1,26 @@
+@import "src/assets/styles/app.scss";
+@import "../display/display.component.scss";
+
+$cell-size: 70px;
+
+table, th, td {
+  border-bottom: 1px solid black;
+}
+
+td {
+  height: $cell-size;
+  width: $cell-size;
+  line-height: $cell-size;
+  text-align: center;
+  font-weight: bold;
+  font-size: $cell-size;
+}
+
+.gallowsgame-word {
+  margin: 50px auto 50px auto;
+}
+
+.btn-letters {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}

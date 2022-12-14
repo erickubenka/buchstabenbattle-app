@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {WebSocketService} from "../../services/web-socket.service";
 import {GameData} from "../../data/game-data";
-import {Games} from "../../data/games";
+import {Screens} from "../../data/screens";
 import {GallowsGameWord} from "../../data/gallows-game-word";
 
 @Component({
@@ -59,7 +59,7 @@ export class GallowsGameComponent {
 
   private prepareData(): GameData {
     return {
-      currentGameSelected: Games.GallowsGame,
+      currentScreenSelected: Screens.GallowsGame,
       isStarted: true,
       specificData: {
         isStarted: this.isStarted,

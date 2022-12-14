@@ -1,8 +1,8 @@
-import {Games} from "./games";
+import {Screens} from "./screens";
 
 export class GameData {
 
   isStarted: boolean = false;
-  currentGameSelected: Games = Games.None;
+  currentScreenSelected: Screens = Screens.None;
   specificData: object = {};
 }

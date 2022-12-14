@@ -1,0 +1,31 @@
+@import "src/assets/styles/app.scss";
+
+$circle-wrapper-color: #FFFFF;
+$circle-color: rgb(37, 110, 169);
+$circle-color-correctly: rgb(23, 169, 0);
+$circle-color-wrong: rgb(232, 64, 64);
+
+$circle-size: 180px;
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.box {
+  height: 100vh;
+}
+
+.timer-circle {
+  background-color: $circle-color;
+  height: $circle-size;
+  width: $circle-size;
+  line-height: $circle-size;
+  font-size: $circle-size/2.5;
+}
+
+.card-question {
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
