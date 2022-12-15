@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row" *ngFor="let q of connectionWantedGameData.connections; let index  = index">
+        <div class="col-3">
+          <div class="cwd-answer text-center" [ngClass]="{
+                'cwd-answer-correct': connectionWantedGameData.answerStart[index].isAnswered && connectionWantedGameData.answerStart[index].isAnsweredCorrectly,
+                'cwd-answer-incorrect': connectionWantedGameData.answerStart[index].isAnswered && !connectionWantedGameData.answerStart[index].isAnsweredCorrectly}">
+            {{connectionWantedGameData.answerStart[index].answerStart}}
+          </div>
+        </div>
+        <div class="col-6">
+        </div>
+        <div class="col-3">
+          <div class="cwd-answer text-center float-end" [ngClass]="{
+                'cwd-answer-correct': connectionWantedGameData.answerEnd[index].isAnswered && connectionWantedGameData.answerEnd[index].isAnsweredCorrectly,
+                'cwd-answer-incorrect': connectionWantedGameData.answerEnd[index].isAnswered && !connectionWantedGameData.answerEnd[index].isAnsweredCorrectly}">{{connectionWantedGameData.answerEnd[index].answerEnd}}</div>
+        </div>
+      </div>
+      <div class="card card-question">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <div class="rounded-circle timer-circle text-center">
+                {{connectionWantedGameData.timer}}
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <div class="cwd-question">
+                    {{connectionWantedGameData.connections[connectionWantedGameData.questionIndex].question}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="rounded-circle timer-circle text-center float-end">
+                {{connectionWantedGameData.points}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,58 +1,64 @@
-<div class="card">
-  <app-navigation></app-navigation>
-  <div class="card-header text-center">
-    <h3>Anschluss gesucht!</h3>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-12">
-        <p>
-          Dem Team werden die zehn Antworten getrennt angezeigt. Dabei muss die grammatikalisch richtige Trennung der
-          Antworten nicht übereinstimmen. Jede Frage muss mit Beginn und Endung zusammen gepuzzelt werden. Bei einer
-          falschen Antwort ist das nächste Team-Mitglied an der Reihe. Für jede richtige Antwort erhält das Team 2
-          Sekunden für das Team-Konto.
-        </p>
+<div class="container">
+  <div class="col-12">
+    <div class="card">
+      <app-navigation></app-navigation>
+      <div class="card-header text-center">
+        <h3>Anschluss gesucht!</h3>
       </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-4">
-        <p>Timer: {{timer}}</p>
-        <p>Punkte: {{points}}</p>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Dem Team werden die zehn Antworten getrennt angezeigt. Dabei muss die grammatikalisch richtige Trennung
+              der
+              Antworten nicht übereinstimmen. Jede Frage muss mit Beginn und Endung zusammen gepuzzelt werden. Bei einer
+              falschen Antwort ist das nächste Team-Mitglied an der Reihe. Für jede richtige Antwort erhält das Team 2
+              Sekunden für das Team-Konto.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-3">
+            <p>Timer: {{timer}}</p>
+            <p>Punkte: {{points}}</p>
 
-        <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
-      </div>
-      <div class="col-8">
-        <p>
-          {{connections[questionIndex].question}}
-        </p>
-        <button class="btn btn-success btn-margin-right"
-                (click)="solve(connections[questionIndex])">{{connections[questionIndex].answerStart}}{{connections[questionIndex].answerEnd}}</button>
-        <button class="btn btn-danger"
-                (click)="solveWithError(connections[questionIndex])">Falsch!
-        </button>
-      </div>
-    </div>
-    <hr>
-    <div class="row" *ngFor="let q of connections; let index  = index">
-      <div class="col-3">
-        <button class="btn btn-space"
-                [disabled]="randomAnswerStart[index].isAnswered"
-                [ngClass]="{
+            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
+            <button class="btn btn-danger" (click)="stop()" [disabled]="!isStarted">STOP</button>
+          </div>
+          <div class="col-9">
+            <p>
+              {{connections[questionIndex].question}}
+            </p>
+            <button class="btn btn-success btn-margin-right"
+                    (click)="solve(connections[questionIndex])">{{connections[questionIndex].answerStart}}{{connections[questionIndex].answerEnd}}</button>
+            <button class="btn btn-danger"
+                    (click)="solveWithError(connections[questionIndex])">Falsch!
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="row" *ngFor="let q of connections; let index  = index">
+          <div class="col-3">
+            <button class="btn btn-space"
+                    [disabled]="randomAnswerStart[index].isAnswered"
+                    [ngClass]="{
                 'btn-primary': !randomAnswerStart[index].isAnswered,
                 'btn-success': randomAnswerStart[index].isAnswered && randomAnswerStart[index].isAnsweredCorrectly,
                 'btn-danger': randomAnswerStart[index].isAnswered && !randomAnswerStart[index].isAnsweredCorrectly}">{{randomAnswerStart[index].answerStart}}</button>
-      </div>
-      <div class="col-6">
+          </div>
+          <div class="col-6">
 
-      </div>
-      <div class="col-3 text-end">
-        <button class="btn btn-space"
-                [disabled]="randomAnswerEnd[index].isAnswered"
-                [ngClass]="{
+          </div>
+          <div class="col-3 text-end">
+            <button class="btn btn-space"
+                    [disabled]="randomAnswerEnd[index].isAnswered"
+                    [ngClass]="{
                 'btn-primary': !randomAnswerEnd[index].isAnswered,
                 'btn-success': randomAnswerEnd[index].isAnswered && randomAnswerEnd[index].isAnsweredCorrectly,
                 'btn-danger': randomAnswerEnd[index].isAnswered && !randomAnswerEnd[index].isAnsweredCorrectly}">{{randomAnswerEnd[index].answerEnd}}</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

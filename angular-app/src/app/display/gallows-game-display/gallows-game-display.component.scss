@@ -1,21 +1,16 @@
 @import "src/assets/styles/app.scss";
 @import "../display/display.component.scss";
 
-$cell-size: 70px;
-
-table, th, td {
-  border-bottom: 1px solid black;
-}
+$cell-size: 5vh;
 
 td {
   height: $cell-size;
   width: $cell-size;
-  line-height: $cell-size;
+  line-height: $cell-size*2.5;
   text-align: center;
   font-weight: bold;
   font-size: $cell-size;
-}
 
-.gallowsgame-word {
-  margin: 50px auto 50px auto;
+  margin-right: 5px;
+  text-decoration: underline black;
 }

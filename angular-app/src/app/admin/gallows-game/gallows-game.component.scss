@@ -2,10 +2,6 @@
 
 $cell-size: 40px;
 
-table, th, td {
-  border-bottom: 1px solid black;
-}
-
 td {
   height: $cell-size;
   width: $cell-size;
@@ -13,6 +9,10 @@ td {
   text-align: center;
   font-weight: bold;
   font-size: $cell-size;
+
+  margin-right: 5px;
+  text-decoration: underline black;
+  font-family: monospace;
 }
 
 .gallowsgame-word {

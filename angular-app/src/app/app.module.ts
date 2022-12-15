@@ -15,6 +15,7 @@ import {ConnectionWantedComponent} from './admin/connection-wanted/connection-wa
 import {DisplayComponent} from './display/display/display.component';
 import {GallowsGameDisplayComponent} from './display/gallows-game-display/gallows-game-display.component';
 import {CrosswordDisplayComponent} from './display/crossword-display/crossword-display.component';
+import { ConnectionWantedDisplayComponent } from './display/connection-wanted-display/connection-wanted-display.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {CrosswordDisplayComponent} from './display/crossword-display/crossword-d
     AdminComponent,
     GallowsGameDisplayComponent,
     CrosswordDisplayComponent,
-    NavigationComponent
+    NavigationComponent,
+    ConnectionWantedDisplayComponent
   ],
   imports: [
     BrowserModule,

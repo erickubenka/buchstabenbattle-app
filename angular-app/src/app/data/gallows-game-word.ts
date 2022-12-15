@@ -34,7 +34,7 @@ export class GallowsGameWord {
 
     // remove them
     this.missingLetters.forEach((letter) => {
-      this.withGaps = this.withGaps.replaceAll(letter, " ");
+      this.withGaps = this.withGaps.replaceAll(letter, "_");
     });
   }
 

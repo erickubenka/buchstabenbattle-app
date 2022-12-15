@@ -1,7 +1,7 @@
 @import "src/assets/styles/app.scss";
 @import "../display/display.component.scss";
 
-$cell-size: 70px;
+$cell-size: 7vh;
 
 table, th, td {
   border: 1px solid black;

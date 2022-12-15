@@ -32,7 +32,7 @@ export class GallowsGameComponent {
     this.timerInterval = setInterval(() => {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
-        stop();
+        this.stop();
       }
       this.webSocketService.sendMessage("demo", this.prepareData());
     }, 1000);

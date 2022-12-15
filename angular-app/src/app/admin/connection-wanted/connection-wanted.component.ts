@@ -3,6 +3,7 @@ import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {WebSocketService} from "../../services/web-socket.service";
 import {Connection} from "../../data/connection";
+import {ConnectionGameData} from "../../data/connection-game-data";
 
 @Component({
   selector: 'app-connection-wanted',
@@ -13,7 +14,7 @@ export class ConnectionWantedComponent {
   points: number = 0;
 
   timer: number = 90;
-  timerInterval: any;
+  private timerInterval: any;
   isStarted: boolean = false;
   questionIndex = 0;
 
@@ -42,10 +43,16 @@ export class ConnectionWantedComponent {
     this.timerInterval = setInterval(() => {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
-        clearInterval(this.timerInterval);
+        this.stop()
       }
       this.webSocketService.sendMessage("demo", this.prepareData());
     }, 1000);
+  }
+
+  stop() {
+    this.isStarted = false;
+    clearInterval(this.timerInterval);
+    this.webSocketService.sendMessage("demo", this.prepareData());
   }
 
   solve(connection: Connection) {
@@ -62,24 +69,29 @@ export class ConnectionWantedComponent {
   }
 
   private increaseIndex() {
-    this.questionIndex++;
-    if (this.questionIndex >= this.connections.length) {
-      this.isStarted = false;
-      clearInterval(this.timerInterval);
+    if (this.questionIndex + 1 < this.connections.length) {
+      this.questionIndex++;
+    } else {
+      this.stop();
     }
   }
 
   private prepareData(): GameData {
+
+    let connectionWantedGameData: ConnectionGameData = {
+      isStarted: this.isStarted,
+      timer: this.timer,
+      points: this.points,
+      connections: this.connections,
+      questionIndex: this.questionIndex,
+      answerStart: this.randomAnswerStart,
+      answerEnd: this.randomAnswerEnd,
+    }
+
     return {
       currentScreenSelected: Screens.ConnectionWanted,
       isStarted: true,
-      specificData: {
-        isStarted: this.isStarted,
-        timer: this.timer,
-        points: this.points,
-        connections: this.connections,
-        questionIndex: this.questionIndex
-      }
+      specificData: connectionWantedGameData
     }
   }
 }

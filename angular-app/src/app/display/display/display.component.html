@@ -31,7 +31,8 @@
     </ng-container>
 
     <ng-container *ngIf="displayData.data.currentScreenSelected == 3">
-      Das jetzige Spiel ist "Anschluss gesucht".
+      <app-connection-wanted-display [gameData]="displayData.data"
+                                     [connectionWantedGameData]="displayData.data.specificData"></app-connection-wanted-display>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 4">
       Das jetzige Spiel ist "Der entscheidende Hinweis".

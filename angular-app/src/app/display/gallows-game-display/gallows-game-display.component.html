@@ -10,10 +10,10 @@
               </div>
             </div>
             <div class="col-6">
-              <table class="gallowsgame-word">
+              <table>
                 <tr>
-                  <td *ngFor="let letter of gallowsGameData.word.withGaps.split('')"
-                      class="text-uppercase">{{letter}}</td>
+                  <td rowspan="2" *ngFor="let letter of gallowsGameData.word.withGaps.split('')"
+                      class="font-monospace text-uppercase align-content-center">{{letter}}</td>
                 </tr>
               </table>
             </div>
