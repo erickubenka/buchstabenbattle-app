@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-question">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center timer-crossword">
+                {{crosswordGameData.timer}}
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <h3>
+                    {{crosswordGameData.crossword.category}}
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <table class="crossword">
+                    <tr *ngFor="let row of crosswordGameData.crossword.rows">
+                      <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center timer-crossword float-end">
+                {{crosswordGameData.points}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

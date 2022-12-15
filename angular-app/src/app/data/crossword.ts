@@ -9,6 +9,8 @@ export class Crossword {
     "PTSAL",
   ];
 
+  public category: string = "Zufälliges";
+
   public words: string[] = ["Total", "Last", "Ball"];
   public solvedWords: string[] = [];
 }

@@ -1,53 +1,63 @@
-<div class="card">
-  <app-navigation></app-navigation>
-  <div class="card-header text-center">
-    <h2>Buchstabensalat</h2>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-12">
-        <p>
-          Die Kandidaten müssen in einem 5 × 5 Felder großen Gitter drei Wörter mit 3 bis 5 Buchstaben Länge finden.
-          Dabei sind alle Leserichtungen erlaubt – waagerecht, senkrecht und diagonal sowie rückwärts und von unten nach
-          oben. Für falsche Antworten oder das Weitergeben an das nächste Team-Mitglied wird eine Sekunde für das
-          Team-Konto abgezogen.
-        </p>
+<div class="container">
+  <div class="col-12">
+    <div class="card">
+      <app-navigation></app-navigation>
+      <div class="card-header text-center">
+        <h2>Buchstabensalat</h2>
       </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-6">
+      <div class="card-body">
         <div class="row">
           <div class="col-12">
             <p>
-              Timer: {{timer}}
+              Die Kandidaten müssen in einem 5 × 5 Felder großen Gitter drei Wörter mit 3 bis 5 Buchstaben Länge finden.
+              Dabei sind alle Leserichtungen erlaubt – waagerecht, senkrecht und diagonal sowie rückwärts und von unten
+              nach
+              oben. Für falsche Antworten oder das Weitergeben an das nächste Team-Mitglied wird eine Sekunde für das
+              Team-Konto abgezogen.
             </p>
-            <p>
-              Gelöste Rätsel: {{ points }}
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-12">
-            <button class="btn btn-primary btn-word" *ngFor="let word of crossword.words" (click)="solve(word)"
-                    [disabled]="crossword.solvedWords.includes(word) || !isStarted">{{word}}</button>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-12">
+                <p>
+                  Timer: {{timer}}
+                </p>
+                <p>
+                  Punkte: {{ points }}
+                </p>
+                <p>
+                  Aktuelles Wort: {{5 - errors}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
+                <button class="btn btn-danger" (click)="stop()" [disabled]="!isStarted">STOP</button>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary btn-margin-right" *ngFor="let word of crossword.words" (click)="solve(word)"
+                        [disabled]="crossword.solvedWords.includes(word) || !isStarted">{{word}}</button>
+                <button class="btn btn-danger" [disabled]="!isStarted" (click)="addError()">Weiter/Falsch
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <table class="crossword">
+              <tr *ngFor="let row of crossword.rows">
+                <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
-      <div class="col-6">
-        <table class="crossword">
-          <tr *ngFor="let row of crossword.rows">
-            <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
-          </tr>
-        </table>
       </div>
     </div>
   </div>
 </div>
-

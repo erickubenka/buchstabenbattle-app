@@ -1,73 +1,83 @@
-<div class="card">
-  <app-navigation></app-navigation>
-  <div class="card-header text-center">
-    <h2>Mut zur Lücke</h2>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-12">
-        <p>
-          Jedes Team hat eines von zwei Kategorien
-          (bspw.
-          'Handball und Fußball' oder 'Tag und Nacht'). Die
-          Team-Mitglieder nennen nun solange Buchstaben, bis das zu erratende Wort gelöst wurde oder fünf falsche, nicht im
-          Wort vorkommende Buchstaben genannt wurden. Wird ein falscher Buchstabe genannt, wechselt das Team-Mitglied und es
-          konnte eine Sekunde weniger gewonnen werden. Für die Lösung jedes Wortes können bis zu 5 Sekunden für das
-          Team-Konto
-          gesammelt werden.
-        </p>
+<div class="container">
+  <div class="col-12">
+    <div class="card">
+      <app-navigation></app-navigation>
+      <div class="card-header text-center">
+        <h2>Mut zur Lücke</h2>
       </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-6">
+      <div class="card-body">
         <div class="row">
           <div class="col-12">
             <p>
-              Timer: {{timer}}
+              Jedes Team hat eines von zwei Kategorien
+              (bspw.
+              'Handball und Fußball' oder 'Tag und Nacht'). Die
+              Team-Mitglieder nennen nun solange Buchstaben, bis das zu erratende Wort gelöst wurde oder fünf falsche,
+              nicht im
+              Wort vorkommende Buchstaben genannt wurden. Wird ein falscher Buchstabe genannt, wechselt das
+              Team-Mitglied und es
+              konnte eine Sekunde weniger gewonnen werden. Für die Lösung jedes Wortes können bis zu 5 Sekunden für das
+              Team-Konto
+              gesammelt werden.
             </p>
-            <p>
-              Gelöste Wörter: {{ solvedWords.length }}
-            </p>
-            <p>
-              Nicht gelöste Wörter: {{ unsolvedWords.length }}
-            </p>
-            <p>
-              Punkte: {{ points }}
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <button class="btn btn-success" (click)="start()" [disabled]="isStarted">START</button>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-12">
-            <p>
-              Aktueller Fehler im Wort: {{errors}}
-            </p>
-            <button class="btn btn-primary btn-letters" *ngFor="let letter of word.missingLetters"
-                    [disabled]="!isStarted || word.solvedLetters.includes(letter)"
-                    (click)="word.solve(letter)">{{letter}}</button>
-            <button class="btn btn-danger btn-letters" [disabled]="!isStarted" (click)="addError()">Falscher Buchstabe
-            </button>
-            <button class="btn btn-warning btn-letters" [disabled]="!isStarted" (click)="addError()">Weiter</button>
-            <button class="btn btn-success btn-letters" [disabled]="!isStarted" (click)="solveWord()">Wort richtig!
-            </button>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-12">
+                <p>
+                  Timer: {{timer}}
+                </p>
+                <p>
+                  Gelöste Wörter: {{ solvedWords.length }}
+                </p>
+                <p>
+                  Nicht gelöste Wörter: {{ unsolvedWords.length }}
+                </p>
+                <p>
+                  Punkte: {{ points }}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
+                <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!isStarted">STOP</button>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-12">
+                <p>
+                  Aktueller Fehler im Wort: {{errors}}
+                </p>
+                <button class="btn btn-primary btn-margin-right" *ngFor="let letter of word.missingLetters"
+                        [disabled]="!isStarted || word.solvedLetters.includes(letter)"
+                        (click)="word.solve(letter)">{{letter}}</button>
+                <button class="btn btn-danger btn-margin-right" [disabled]="!isStarted" (click)="addError()">Falscher
+                  Buchstabe
+                </button>
+                <button class="btn btn-warning btn-margin-right" [disabled]="!isStarted" (click)="addError()">Weiter
+                </button>
+                <button class="btn btn-success btn-margin-right" [disabled]="!isStarted" (click)="solveWord()">Wort
+                  richtig!
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <table class="gallowsgame-word">
+              <tr>
+                <td *ngFor="let letter of word.withGaps.split('')" class="text-uppercase">{{letter}}</td>
+              </tr>
+              <tr>
+                <td *ngFor="let letter of word.full.split('')" class="text-uppercase">{{letter}}</td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
-      <div class="col-6">
-        <table class="gallowsgame-word">
-          <tr>
-            <td *ngFor="let letter of word.withGaps.split('')" class="text-uppercase">{{letter}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let letter of word.full.split('')" class="text-uppercase">{{letter}}</td>
-          </tr>
-        </table>
       </div>
     </div>
   </div>

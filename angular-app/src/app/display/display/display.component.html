@@ -26,7 +26,8 @@
     </ng-container>
 
     <ng-container *ngIf="displayData.data.currentScreenSelected == 2">
-      Das jetzige Spiel ist "Buchstabensalat".
+      <app-crossword-display [gameData]="displayData.data"
+                             [crosswordGameData]="displayData.data.specificData"></app-crossword-display>
     </ng-container>
 
     <ng-container *ngIf="displayData.data.currentScreenSelected == 3">
