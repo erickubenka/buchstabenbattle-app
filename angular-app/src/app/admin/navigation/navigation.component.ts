@@ -13,7 +13,7 @@ export class NavigationComponent {
     new NavItem("Buchstabensalat", "/admin/crossword"),
     new NavItem("Anschluss gesucht", "/admin/connection-wanted"),
     new NavItem("Der entscheidene Hinweis", "/admin/tbd"),
-    new NavItem("Buchstabenrad", "/admin/wheels"),
+    new NavItem("Buchstabenrad", "/admin/wheel"),
   ]
 }
 

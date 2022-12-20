@@ -1,105 +1,120 @@
-<div class="row">
-  <div class="col-4">
+<div class="container">
+  <div class="col-12">
     <div class="card">
+      <app-navigation></app-navigation>
       <div class="card-header text-center">
-        <h3>{{name}}</h3>
+        <h2>Buchstabenrad</h2>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-12">
             <p>
-              Timer: {{timer}}
-            </p>
-            <p>
-              Richtige Antworten: {{answersGivenCorrectly}}
-            </p>
-            <p>
-              Falsche Antworten: {{answersGiven - answersGivenCorrectly}}
+              Es gibt ein Buchstabenrad mit 26 Fragen, also je einer Frage pro Buchstabe des Alphabets. Die Kandidaten
+              haben
+              die jeweils erspielten Sekunden für die Beantwortung der Fragen zur Verfügung. Werden alle 26 richtig
+              beantwortet, gewinnt der schnellere Kandidat den Hauptpreis.
             </p>
           </div>
         </div>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-primary" (click)="startTimer()" [disabled]="isTimerStarted">START</button>
-        <button type="button" class="btn btn-danger" (click)="stopTimer()" [disabled]="!isTimerStarted">STOP</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-8">
-    <ng-container *ngIf="isTimerStarted">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Aktuelle Frage</h3>
+        <hr>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-margin-right btn-success" [disabled]="isStarted" (click)="start()">START</button>
+            <button class="btn btn-margin-right btn-danger" [disabled]="!isStarted" (click)="stop()">STOP</button>
+            <button class="btn btn-margin-right btn-primary" [disabled]="activePlayer==player1"
+                    (click)="activePlayer=player1">Display
+              Player 1
+            </button>
+            <button class="btn btn-primary" [disabled]="activePlayer==player2" (click)="activePlayer=player2">Display
+              Player 2
+            </button>
+          </div>
         </div>
-        <ng-container *ngFor="let question of questionList; let index=index;">
-          <div class="card-body" *ngIf="index == nextQuestionIndex">
-            <div class="row">
-              <div class="col-12">
-                <p>
-                  {{ question.letter }}
-                </p>
-                <p>
-                  {{ question.question }}
-                </p>
-                <p>
-                  {{ question.answer }}
-                </p>
+        <hr>
+        <div class="row">
+          <div class="col-4">
+            <div class="card">
+              <div class="card-header text-center">
+                <h3 *ngIf="activePlayer==player1">Player1</h3>
+                <h3 *ngIf="activePlayer==player2">Player2</h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <p>
+                      Timer: {{activePlayer.timer}}
+                    </p>
+                    <p>
+                      Richtige Antworten: {{activePlayer.answersGivenCorrectly}}
+                    </p>
+                    <p>
+                      Falsche Antworten: {{activePlayer.answersGiven - activePlayer.answersGivenCorrectly}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-margin-right btn-primary" (click)="activePlayer.startTimer()"
+                        [disabled]="activePlayer.isTimerStarted">START
+                </button>
+                <button type="button" class="btn btn-danger" (click)="activePlayer.stopTimer()"
+                        [disabled]="!activePlayer.isTimerStarted">STOP
+                </button>
               </div>
             </div>
           </div>
-          <div class="card-footer" *ngIf="index == nextQuestionIndex">
-            <input type="button" (click)="giveCorrectAnswer(question, index)" value="Richtig!" class="btn btn-success"
-                   [disabled]="!isTimerStarted"/>
-            <input type="button" (click)="skipAnswer(question, index)" value="Weiter!" class="btn btn-warning"
-                   [disabled]="!isTimerStarted"/>
-            <input type="button" (click)="giveWrongAnswer(question, index)" value="Falsch!" class="btn btn-danger"
-                   [disabled]="!isTimerStarted"/>
+          <div class="col-8">
+            <ng-container *ngIf="activePlayer.isTimerStarted">
+              <div class="card text-center">
+                <div class="card-header">
+                  <h3>Aktuelle Frage</h3>
+                </div>
+                <ng-container *ngFor="let question of activePlayer.questionList; let index=index;">
+                  <div class="card-body" *ngIf="index == activePlayer.nextQuestionIndex">
+                    <div class="row">
+                      <div class="col-12">
+                        <p>
+                          {{ question.letter }}
+                        </p>
+                        <p>
+                          {{ question.question }}
+                        </p>
+                        <p>
+                          {{ question.answer }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer" *ngIf="index == activePlayer.nextQuestionIndex">
+                    <button type="button" (click)="activePlayer.giveCorrectAnswer(question, index)"
+                            class="btn btn-margin-right btn-success"
+                            [disabled]="!activePlayer.isTimerStarted">Richtig
+                    </button>
+                    <button type="button" (click)="activePlayer.skipAnswer(question, index)"
+                            class="btn btn-margin-right btn-warning"
+                            [disabled]="!activePlayer.isTimerStarted">Weiter!
+                    </button>
+                    <button type="button" (click)="activePlayer.giveWrongAnswer(question, index)" class="btn btn-danger"
+                            [disabled]="!activePlayer.isTimerStarted">Falsch!
+                    </button>
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
           </div>
-        </ng-container>
-      </div>
-    </ng-container>
-  </div>
-</div>
-
-<hr>
-
-<ng-container>
-  <div class="row">
-    <div class="col-6">
-      <div class="row">
-        <div class="col-12">
-          <p>Punkte</p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="rounded-circle timer-circle text-center font-weight-bold">
-            {{answersGivenCorrectly}}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="row">
-        <div class="col-12">
-          <div class="float-end">
-            <p>Zeit</p>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="float-end">
-            <div class="rounded-circle timer-circle text-center font-weight-bold">
-              {{timer}}
+        <div class="row row-circles">
+          <div class="col-12">
+            <div *ngFor="let question of activePlayer.questionList; let index=index;"
+                 class="rounded rounded-circle circle-letter float-start btn-margin-right"
+                 [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly}">
+              {{question.letter}}
             </div>
           </div>
         </div>
+        <hr>
       </div>
     </div>
   </div>
-  <div class="circle-wrapper">
-    <div *ngFor="let question of questionList; let index=index;" class="circle deg-{{index}}"
-         [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly}">
-      {{question.letter}}
-    </div>
-  </div>
-</ng-container>
+</div>
+

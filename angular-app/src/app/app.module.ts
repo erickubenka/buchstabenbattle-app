@@ -7,15 +7,17 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {AdminComponent} from './admin/admin/admin.component';
 import {NavigationComponent} from './admin/navigation/navigation.component';
-import {WheelsComponent} from './admin/wheels/wheels.component';
-import {WheelComponent} from './admin/wheel/wheel.component';
 import {CrosswordComponent} from './admin/crossword/crossword.component';
 import {GallowsGameComponent} from './admin/gallows-game/gallows-game.component';
 import {ConnectionWantedComponent} from './admin/connection-wanted/connection-wanted.component';
 import {DisplayComponent} from './display/display/display.component';
 import {GallowsGameDisplayComponent} from './display/gallows-game-display/gallows-game-display.component';
 import {CrosswordDisplayComponent} from './display/crossword-display/crossword-display.component';
-import { ConnectionWantedDisplayComponent } from './display/connection-wanted-display/connection-wanted-display.component';
+import {
+  ConnectionWantedDisplayComponent
+} from './display/connection-wanted-display/connection-wanted-display.component';
+import {WheelDisplayComponent} from './display/wheel-display/wheel-display.component';
+import {WheelComponent} from "./admin/wheel/wheel.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,6 @@ import { ConnectionWantedDisplayComponent } from './display/connection-wanted-di
     HomeComponent,
     WheelComponent,
     DisplayComponent,
-    WheelsComponent,
     CrosswordComponent,
     GallowsGameComponent,
     ConnectionWantedComponent,
@@ -31,7 +32,8 @@ import { ConnectionWantedDisplayComponent } from './display/connection-wanted-di
     GallowsGameDisplayComponent,
     CrosswordDisplayComponent,
     NavigationComponent,
-    ConnectionWantedDisplayComponent
+    ConnectionWantedDisplayComponent,
+    WheelDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { ConnectionWantedDisplayComponent } from './display/connection-wanted-di
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'admin', component: AdminComponent},
-      {path: 'admin/wheels', component: WheelsComponent},
+      {path: 'admin/wheel', component: WheelComponent},
       {path: 'admin/crossword', component: CrosswordComponent},
       {path: 'admin/gallows-game', component: GallowsGameComponent},
       {path: 'admin/connection-wanted', component: ConnectionWantedComponent},

@@ -38,7 +38,8 @@
       Das jetzige Spiel ist "Der entscheidende Hinweis".
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 5">
-      Das jetzige Spiel ist "Buchstabenrad".
+      <app-wheel-display [gameData]="displayData.data"
+                         [wheelgameData]="displayData.data.specificData"></app-wheel-display>
     </ng-container>
   </div>
 </div>

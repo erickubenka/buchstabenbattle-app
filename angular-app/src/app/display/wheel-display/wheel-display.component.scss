@@ -1,0 +1,156 @@
+@import "../../../assets/styles/app";
+
+$circle-wrapper-color: #FFFFF;
+$circle-color: rgb(37, 110, 169);
+$circle-color-correctly: rgb(23, 169, 0);
+$circle-color-wrong: rgb(232, 64, 64);
+
+$circle-wrapper-size: 900px;
+$circle-size: ($circle-wrapper-size/10);
+$translate-size: ($circle-wrapper-size/2)+1;
+
+.timer-circle {
+  background-color: $circle-color;
+  height: $circle-size;
+  width: $circle-size;
+  line-height: $circle-size;
+  font-size: x-large;
+}
+
+.circle-wrapper {
+  width: $circle-wrapper-size;
+  height: $circle-wrapper-size;
+  border-radius: 51%;
+  background: $circle-wrapper-color;
+  position: relative;
+  margin: $circle-size auto;
+  border: 1px dashed #000000;
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  top: 51%;
+  left: 51%;
+  width: $circle-size;
+  height: $circle-size;
+  margin: (-1*($circle-size/2)-15);
+  background: $circle-color;
+  border-radius: 51%;
+  text-align: center;
+  line-height: $circle-size;
+
+  &.circle-correctly {
+    background: $circle-color-correctly;
+  }
+
+  &.circle-wrong {
+    background: $circle-color-wrong;
+  }
+}
+
+.deg-0 {
+  transform: rotate(-90deg) translate($translate-size) rotate(+90deg);
+}
+
+.deg-1 {
+  transform: rotate(-90+13.8*1deg) translate($translate-size) rotate(+90-13.8*1deg);
+}
+
+.deg-2 {
+  transform: rotate(-90+13.8*2deg) translate($translate-size) rotate(+90-13.8*2deg);
+}
+
+.deg-3 {
+  transform: rotate(-90+13.8*3deg) translate($translate-size) rotate(+90-13.8*3deg);
+}
+
+.deg-4 {
+  transform: rotate(-90+13.8*4deg) translate($translate-size) rotate(+90-13.8*4deg);
+}
+
+.deg-5 {
+  transform: rotate(-90+13.8*5deg) translate($translate-size) rotate(+90-13.8*5deg);
+}
+
+.deg-6 {
+  transform: rotate(-90+13.8*6deg) translate($translate-size) rotate(+90-13.8*6deg);
+}
+
+.deg-7 {
+  transform: rotate(-90+13.8*7deg) translate($translate-size) rotate(+90-13.8*7deg);
+}
+
+.deg-8 {
+  transform: rotate(-90+13.8*8deg) translate($translate-size) rotate(+90-13.8*8deg);
+}
+
+.deg-9 {
+  transform: rotate(-90+13.8*9deg) translate($translate-size) rotate(+90-13.8*9deg);
+}
+
+.deg-10 {
+  transform: rotate(-90+13.8*10deg) translate($translate-size) rotate(+90-13.8*10deg);
+}
+
+.deg-11 {
+  transform: rotate(-90+13.8*11deg) translate($translate-size) rotate(+90-13.8*11deg);
+}
+
+.deg-12 {
+  transform: rotate(-90+13.8*12deg) translate($translate-size) rotate(+90-13.8*12deg);
+}
+
+.deg-13 {
+  transform: rotate(-90+13.8*13deg) translate($translate-size) rotate(+90-13.8*13deg);
+}
+
+.deg-14 {
+  transform: rotate(-90+13.8*14deg) translate($translate-size) rotate(+90-13.8*14deg);
+}
+
+.deg-15 {
+  transform: rotate(-90+13.8*15deg) translate($translate-size) rotate(+90-13.8*15deg);
+}
+
+.deg-16 {
+  transform: rotate(-90+13.8*16deg) translate($translate-size) rotate(+90-13.8*16deg);
+}
+
+.deg-17 {
+  transform: rotate(-90+13.8*17deg) translate($translate-size) rotate(+90-13.8*17deg);
+}
+
+.deg-18 {
+  transform: rotate(-90+13.8*18deg) translate($translate-size) rotate(+90-13.8*18deg);
+}
+
+.deg-19 {
+  transform: rotate(-90+13.8*19deg) translate($translate-size) rotate(+90-13.8*19deg);
+}
+
+.deg-20 {
+  transform: rotate(-90+13.8*20deg) translate($translate-size) rotate(+90-13.8*20deg);
+}
+
+.deg-21 {
+  transform: rotate(-90+13.8*21deg) translate($translate-size) rotate(+90-13.8*21deg);
+}
+
+.deg-22 {
+  transform: rotate(-90+13.8*22deg) translate($translate-size) rotate(+90-13.8*22deg);
+}
+
+.deg-23 {
+  transform: rotate(-90+13.8*23deg) translate($translate-size) rotate(+90-13.8*23deg);
+}
+
+.deg-24 {
+  transform: rotate(-90+13.8*24deg) translate($translate-size) rotate(+90-13.8*24deg);
+}
+
+.deg-25 {
+  transform: rotate(-90+13.8*25deg) translate($translate-size) rotate(+90-13.8*25deg);
+}
+
+
