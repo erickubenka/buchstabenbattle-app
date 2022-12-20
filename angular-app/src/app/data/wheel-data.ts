@@ -33,26 +33,26 @@ export class WheelData {
 
   answersGivenCorrectly = 0;
   answersGiven = 0;
-  nextQuestionIndex = 0;
+  questionIndex = 0;
   timer = 60;
-  isTimerStarted = false;
+  isStarted = false;
   timerInterval: any;
 
-  startTimer() {
+  start() {
     console.log("Timer started / resumed: " + this.timer);
-    this.isTimerStarted = true;
+    this.isStarted = true;
 
     this.timerInterval = setInterval(() => {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
         console.log("End game because timer limit was reached.");
-        this.stopTimer();
+        this.stop();
       }
     }, 1000);
   }
 
-  stopTimer() {
-    this.isTimerStarted = false;
+  stop() {
+    this.isStarted = false;
     clearInterval(this.timerInterval);
     console.log("Timer stopped at " + this.timer);
   }
@@ -63,11 +63,11 @@ export class WheelData {
     this.answersGiven = this.questionList.filter(q => q.isAnswered).length;
     this.answersGivenCorrectly = this.questionList.filter(q => q.isAnswered && q.isAnsweredCorrectly).length;
 
-    this.nextQuestionIndex = this.getNextQuestionIndex(index);
+    this.questionIndex = this.getNextQuestionIndex(index);
 
     if (this.answersGiven == this.questionList.length) {
       console.log("Game ended: Every Question done.");
-      this.stopTimer();
+      this.stop();
     }
   }
 
@@ -84,10 +84,10 @@ export class WheelData {
 
     // todo:: determine if other player is eliminated
     // if no, stop time, switch component
-    this.stopTimer();
+    this.stop();
 
     // if yes, show next question
-    this.nextQuestionIndex = this.getNextQuestionIndex(index);
+    this.questionIndex = this.getNextQuestionIndex(index);
   }
 
   private getNextQuestionIndex(index: number): number {

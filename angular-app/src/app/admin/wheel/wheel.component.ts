@@ -26,13 +26,17 @@ export class WheelComponent {
   start() {
     this.isStarted = true;
     this.timerInterval = setInterval(() => {
-      this.webSocketService.sendMessage("demo", this.prepareData());
+      this.send();
     }, 250);
   }
 
   stop() {
     this.isStarted = false;
     clearInterval(this.timerInterval);
+    this.send();
+  }
+
+  send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
   }
 

@@ -11,7 +11,6 @@
     </div>
     <div class="row">
       <div class="col-12">
-
         <div class="card card-question">
           <div class="card-body">
             <div class="row">
@@ -23,8 +22,8 @@
               <div class="col-8">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <div class="cwd-question">
-                      {{wheelgameData.activePlayer.questionList[wheelgameData.activePlayer.nextQuestionIndex].question}}
+                    <div class="cwd-question" *ngIf="wheelgameData.activePlayer.isStarted">
+                      {{wheelgameData.activePlayer.questionList[wheelgameData.activePlayer.questionIndex].question}}
                     </div>
                   </div>
                 </div>

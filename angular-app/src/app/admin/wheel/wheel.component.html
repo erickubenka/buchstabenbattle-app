@@ -54,23 +54,23 @@
                 </div>
               </div>
               <div class="card-footer">
-                <button type="button" class="btn btn-margin-right btn-primary" (click)="activePlayer.startTimer()"
-                        [disabled]="activePlayer.isTimerStarted">START
+                <button type="button" class="btn btn-margin-right btn-primary" (click)="activePlayer.start()"
+                        [disabled]="activePlayer.isStarted">START
                 </button>
-                <button type="button" class="btn btn-danger" (click)="activePlayer.stopTimer()"
-                        [disabled]="!activePlayer.isTimerStarted">STOP
+                <button type="button" class="btn btn-danger" (click)="activePlayer.stop()"
+                        [disabled]="!activePlayer.isStarted">STOP
                 </button>
               </div>
             </div>
           </div>
           <div class="col-8">
-            <ng-container *ngIf="activePlayer.isTimerStarted">
+            <ng-container *ngIf="activePlayer.isStarted">
               <div class="card text-center">
                 <div class="card-header">
                   <h3>Aktuelle Frage</h3>
                 </div>
                 <ng-container *ngFor="let question of activePlayer.questionList; let index=index;">
-                  <div class="card-body" *ngIf="index == activePlayer.nextQuestionIndex">
+                  <div class="card-body" *ngIf="index == activePlayer.questionIndex">
                     <div class="row">
                       <div class="col-12">
                         <p>
@@ -85,17 +85,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-footer" *ngIf="index == activePlayer.nextQuestionIndex">
-                    <button type="button" (click)="activePlayer.giveCorrectAnswer(question, index)"
+                  <div class="card-footer" *ngIf="index == activePlayer.questionIndex">
+                    <button type="button" (click)="activePlayer.giveCorrectAnswer(question, index); send();"
                             class="btn btn-margin-right btn-success"
-                            [disabled]="!activePlayer.isTimerStarted">Richtig
+                            [disabled]="!activePlayer.isStarted">Richtig
                     </button>
-                    <button type="button" (click)="activePlayer.skipAnswer(question, index)"
+                    <button type="button" (click)="activePlayer.skipAnswer(question, index); send();"
                             class="btn btn-margin-right btn-warning"
-                            [disabled]="!activePlayer.isTimerStarted">Weiter!
+                            [disabled]="!activePlayer.isStarted">Weiter!
                     </button>
-                    <button type="button" (click)="activePlayer.giveWrongAnswer(question, index)" class="btn btn-danger"
-                            [disabled]="!activePlayer.isTimerStarted">Falsch!
+                    <button type="button" (click)="activePlayer.giveWrongAnswer(question, index); send();" class="btn btn-danger"
+                            [disabled]="!activePlayer.isStarted">Falsch!
                     </button>
                   </div>
                 </ng-container>
