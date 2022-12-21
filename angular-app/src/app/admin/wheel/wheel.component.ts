@@ -4,6 +4,7 @@ import {WebSocketService} from "../../services/web-socket.service";
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {WheelGameData} from "../../data/wheel-game-data";
+import {WheelQuestion} from "../../data/wheel-question";
 
 @Component({
   selector: 'app-wheel',
@@ -20,14 +21,14 @@ export class WheelComponent {
   private timerInterval: any;
 
   constructor(private webSocketService: WebSocketService) {
-    this.webSocketService.sendMessage("demo", this.prepareData());
+    this.send();
   }
 
   start() {
     this.isStarted = true;
     this.timerInterval = setInterval(() => {
       this.send();
-    }, 250);
+    }, 1000);
   }
 
   stop() {
@@ -38,6 +39,41 @@ export class WheelComponent {
 
   send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
+  }
+
+  startPlayer() {
+    this.activePlayer.start();
+    this.send();
+  }
+
+  stopPlayer() {
+    this.activePlayer.stop();
+    this.send();
+  }
+
+  giveCorrectAnswer(question: WheelQuestion, index: number) {
+    this.activePlayer.giveCorrectAnswer(question, index);
+    this.send();
+  }
+
+  giveWrongAnswer(question: WheelQuestion, index: number) {
+    this.activePlayer.giveWrongAnswer(question, index);
+    this.send();
+  }
+
+  skipAnswer(question: WheelQuestion, index: number) {
+    this.activePlayer.skipAnswer(question, index);
+    this.send();
+  }
+
+  switchPlayer() {
+    if (this.player1 == this.activePlayer) {
+      this.activePlayer = this.player2;
+    } else {
+      this.activePlayer = this.player1;
+    }
+
+    this.send();
   }
 
   private prepareData(): GameData {
@@ -53,6 +89,7 @@ export class WheelComponent {
       specificData: wheelGameData
     }
   }
+
 }
 
 

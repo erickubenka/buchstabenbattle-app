@@ -13,7 +13,7 @@ import {GallowsGameData} from "../../data/gallows-game-data";
 export class GallowsGameComponent {
 
   constructor(private webSocketService: WebSocketService) {
-    this.webSocketService.sendMessage("demo", this.prepareData());
+    this.send();
   }
 
   points: number = 0;
@@ -34,13 +34,17 @@ export class GallowsGameComponent {
       if (this.timer <= 0) {
         this.stop();
       }
-      this.webSocketService.sendMessage("demo", this.prepareData());
+      this.send();
     }, 1000);
   }
 
   stop() {
     this.isStarted = false;
     clearInterval(this.timerInterval);
+    this.send();
+  }
+
+  send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
   }
 
@@ -52,6 +56,13 @@ export class GallowsGameComponent {
       this.errors = 0;
       this.word = new GallowsGameWord("Vorderrad")
     }
+
+    this.send();
+  }
+
+  solveLetter(word: GallowsGameWord, letter: string) {
+    word.solve(letter);
+    this.send();
   }
 
   solveWord() {
@@ -63,6 +74,7 @@ export class GallowsGameComponent {
     this.errors = 0;
     this.solvedWords.push(this.word);
     this.word = new GallowsGameWord("Ruecklicht");
+    this.send();
   }
 
   private prepareData(): GameData {
@@ -80,5 +92,6 @@ export class GallowsGameComponent {
       specificData: gallowsGameData
     }
   }
+
 }
 

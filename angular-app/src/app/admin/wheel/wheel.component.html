@@ -22,10 +22,10 @@
             <button class="btn btn-margin-right btn-success" [disabled]="isStarted" (click)="start()">START</button>
             <button class="btn btn-margin-right btn-danger" [disabled]="!isStarted" (click)="stop()">STOP</button>
             <button class="btn btn-margin-right btn-primary" [disabled]="activePlayer==player1"
-                    (click)="activePlayer=player1">Display
+                    (click)="switchPlayer()">Display
               Player 1
             </button>
-            <button class="btn btn-primary" [disabled]="activePlayer==player2" (click)="activePlayer=player2">Display
+            <button class="btn btn-primary" [disabled]="activePlayer==player2" (click)="switchPlayer()">Display
               Player 2
             </button>
           </div>
@@ -54,10 +54,10 @@
                 </div>
               </div>
               <div class="card-footer">
-                <button type="button" class="btn btn-margin-right btn-primary" (click)="activePlayer.start()"
+                <button type="button" class="btn btn-margin-right btn-primary" (click)="startPlayer()"
                         [disabled]="activePlayer.isStarted">START
                 </button>
-                <button type="button" class="btn btn-danger" (click)="activePlayer.stop()"
+                <button type="button" class="btn btn-danger" (click)="stopPlayer()"
                         [disabled]="!activePlayer.isStarted">STOP
                 </button>
               </div>
@@ -86,15 +86,16 @@
                     </div>
                   </div>
                   <div class="card-footer" *ngIf="index == activePlayer.questionIndex">
-                    <button type="button" (click)="activePlayer.giveCorrectAnswer(question, index); send();"
+                    <button type="button" (click)="giveCorrectAnswer(question, index)"
                             class="btn btn-margin-right btn-success"
                             [disabled]="!activePlayer.isStarted">Richtig
                     </button>
-                    <button type="button" (click)="activePlayer.skipAnswer(question, index); send();"
+                    <button type="button" (click)="skipAnswer(question, index)"
                             class="btn btn-margin-right btn-warning"
                             [disabled]="!activePlayer.isStarted">Weiter!
                     </button>
-                    <button type="button" (click)="activePlayer.giveWrongAnswer(question, index); send();" class="btn btn-danger"
+                    <button type="button" (click)="giveWrongAnswer(question, index)"
+                            class="btn btn-danger"
                             [disabled]="!activePlayer.isStarted">Falsch!
                     </button>
                   </div>

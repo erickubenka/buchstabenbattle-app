@@ -20,7 +20,7 @@ export class CrosswordComponent {
   isStarted: boolean = false;
 
   constructor(private webSocketService: WebSocketService) {
-    this.webSocketService.sendMessage("demo", this.prepareData());
+    this.send();
   }
 
   solve(word: string) {
@@ -33,6 +33,7 @@ export class CrosswordComponent {
       this.points = this.points + (5 - this.errors);
       this.errors = 0;
     }
+    this.send();
   }
 
   addError() {
@@ -42,6 +43,7 @@ export class CrosswordComponent {
       this.errors = 0;
       this.crossword = new Crossword();
     }
+    this.send();
   }
 
   start() {
@@ -51,13 +53,17 @@ export class CrosswordComponent {
       if (this.timer <= 0) {
         this.stop();
       }
-      this.webSocketService.sendMessage("demo", this.prepareData());
+      this.send();
     }, 1000);
   }
 
   stop() {
     this.isStarted = false;
     clearInterval(this.timerInterval);
+    this.send();
+  }
+
+  send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
   }
 

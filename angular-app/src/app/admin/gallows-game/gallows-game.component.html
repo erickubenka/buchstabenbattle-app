@@ -55,7 +55,7 @@
                 </p>
                 <button class="btn btn-primary btn-margin-right" *ngFor="let letter of word.missingLetters"
                         [disabled]="!isStarted || word.solvedLetters.includes(letter)"
-                        (click)="word.solve(letter)">{{letter}}</button>
+                        (click)="solveLetter(word, letter)">{{letter}}</button>
                 <button class="btn btn-danger btn-margin-right" [disabled]="!isStarted" (click)="addError()">Falscher
                   Buchstabe
                 </button>

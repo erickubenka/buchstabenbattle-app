@@ -35,7 +35,7 @@ export class ConnectionWantedComponent {
   randomAnswerEnd: Connection[] = shuffle(this.connections);
 
   constructor(private webSocketService: WebSocketService) {
-    this.webSocketService.sendMessage("demo", this.prepareData());
+    this.send();
   }
 
   start() {
@@ -45,13 +45,17 @@ export class ConnectionWantedComponent {
       if (this.timer <= 0) {
         this.stop()
       }
-      this.webSocketService.sendMessage("demo", this.prepareData());
+      this.send();
     }, 1000);
   }
 
   stop() {
     this.isStarted = false;
     clearInterval(this.timerInterval);
+    this.send();
+  }
+
+  send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
   }
 
@@ -74,6 +78,8 @@ export class ConnectionWantedComponent {
     } else {
       this.stop();
     }
+
+    this.send();
   }
 
   private prepareData(): GameData {

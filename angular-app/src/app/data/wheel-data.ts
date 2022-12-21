@@ -39,13 +39,11 @@ export class WheelData {
   timerInterval: any;
 
   start() {
-    console.log("Timer started / resumed: " + this.timer);
     this.isStarted = true;
 
     this.timerInterval = setInterval(() => {
       this.timer = this.timer - 1;
       if (this.timer <= 0) {
-        console.log("End game because timer limit was reached.");
         this.stop();
       }
     }, 1000);
@@ -54,7 +52,6 @@ export class WheelData {
   stop() {
     this.isStarted = false;
     clearInterval(this.timerInterval);
-    console.log("Timer stopped at " + this.timer);
   }
 
   giveCorrectAnswer(question: WheelQuestion, index: number) {
@@ -66,7 +63,6 @@ export class WheelData {
     this.questionIndex = this.getNextQuestionIndex(index);
 
     if (this.answersGiven == this.questionList.length) {
-      console.log("Game ended: Every Question done.");
       this.stop();
     }
   }
