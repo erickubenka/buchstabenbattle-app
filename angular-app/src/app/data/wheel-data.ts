@@ -1,4 +1,5 @@
 import {WheelQuestion} from "./wheel-question";
+import {Timer} from "./timer";
 
 export class WheelData {
 
@@ -34,24 +35,15 @@ export class WheelData {
   answersGivenCorrectly = 0;
   answersGiven = 0;
   questionIndex = 0;
-  timer = 60;
-  isStarted = false;
-  timerInterval: any;
+  timer: Timer = Timer.create(60, () => {
+  });
 
   start() {
-    this.isStarted = true;
-
-    this.timerInterval = setInterval(() => {
-      this.timer = this.timer - 1;
-      if (this.timer <= 0) {
-        this.stop();
-      }
-    }, 1000);
+    this.timer.start();
   }
 
   stop() {
-    this.isStarted = false;
-    clearInterval(this.timerInterval);
+    this.timer.stop();
   }
 
   giveCorrectAnswer(question: WheelQuestion, index: number) {

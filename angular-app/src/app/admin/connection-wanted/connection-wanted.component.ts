@@ -4,6 +4,7 @@ import {Screens} from "../../data/screens";
 import {WebSocketService} from "../../services/web-socket.service";
 import {Connection} from "../../data/connection";
 import {ConnectionGameData} from "../../data/connection-game-data";
+import {Timer} from "../../data/timer";
 
 @Component({
   selector: 'app-connection-wanted',
@@ -13,9 +14,8 @@ import {ConnectionGameData} from "../../data/connection-game-data";
 export class ConnectionWantedComponent {
   points: number = 0;
 
-  timer: number = 90;
-  private timerInterval: any;
-  isStarted: boolean = false;
+  timer: Timer;
+
   questionIndex = 0;
 
   connections: Connection[] = [
@@ -35,24 +35,16 @@ export class ConnectionWantedComponent {
   randomAnswerEnd: Connection[] = shuffle(this.connections);
 
   constructor(private webSocketService: WebSocketService) {
+    this.timer = Timer.create(90, () => this.send());
     this.send();
   }
 
   start() {
-    this.isStarted = true;
-    this.timerInterval = setInterval(() => {
-      this.timer = this.timer - 1;
-      if (this.timer <= 0) {
-        this.stop()
-      }
-      this.send();
-    }, 1000);
+    this.timer.start();
   }
 
   stop() {
-    this.isStarted = false;
-    clearInterval(this.timerInterval);
-    this.send();
+    this.timer.stop();
   }
 
   send() {
@@ -85,7 +77,6 @@ export class ConnectionWantedComponent {
   private prepareData(): GameData {
 
     let connectionWantedGameData: ConnectionGameData = {
-      isStarted: this.isStarted,
       timer: this.timer,
       points: this.points,
       connections: this.connections,

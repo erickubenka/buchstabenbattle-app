@@ -42,7 +42,7 @@
                 <div class="row">
                   <div class="col-12">
                     <p>
-                      Timer: {{activePlayer.timer}}
+                      Timer: {{activePlayer.timer.time}}
                     </p>
                     <p>
                       Richtige Antworten: {{activePlayer.answersGivenCorrectly}}
@@ -55,16 +55,16 @@
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-margin-right btn-primary" (click)="startPlayer()"
-                        [disabled]="activePlayer.isStarted">START
+                        [disabled]="activePlayer.timer.isStarted">START
                 </button>
                 <button type="button" class="btn btn-danger" (click)="stopPlayer()"
-                        [disabled]="!activePlayer.isStarted">STOP
+                        [disabled]="!activePlayer.timer.isStarted">STOP
                 </button>
               </div>
             </div>
           </div>
           <div class="col-8">
-            <ng-container *ngIf="activePlayer.isStarted">
+            <ng-container *ngIf="activePlayer.timer.isStarted">
               <div class="card text-center">
                 <div class="card-header">
                   <h3>Aktuelle Frage</h3>
@@ -88,15 +88,15 @@
                   <div class="card-footer" *ngIf="index == activePlayer.questionIndex">
                     <button type="button" (click)="giveCorrectAnswer(question, index)"
                             class="btn btn-margin-right btn-success"
-                            [disabled]="!activePlayer.isStarted">Richtig
+                            [disabled]="!activePlayer.timer.isStarted">Richtig
                     </button>
                     <button type="button" (click)="skipAnswer(question, index)"
                             class="btn btn-margin-right btn-warning"
-                            [disabled]="!activePlayer.isStarted">Weiter!
+                            [disabled]="!activePlayer.timer.isStarted">Weiter!
                     </button>
                     <button type="button" (click)="giveWrongAnswer(question, index)"
                             class="btn btn-danger"
-                            [disabled]="!activePlayer.isStarted">Falsch!
+                            [disabled]="!activePlayer.timer.isStarted">Falsch!
                     </button>
                   </div>
                 </ng-container>

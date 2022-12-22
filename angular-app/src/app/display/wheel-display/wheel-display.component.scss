@@ -31,6 +31,7 @@ $translate-size: ($circle-wrapper-size/2)+1;
   margin: (-1*($circle-size/2)-15);
   background: $circle-color;
   border-radius: 51%;
+  border: 1px solid #ffffff;
   text-align: center;
   line-height: $circle-size;
 
@@ -41,6 +42,7 @@ $translate-size: ($circle-wrapper-size/2)+1;
   &.circle-wrong {
     background: $circle-color-wrong;
   }
+
 }
 
 .deg-0 {

@@ -4,6 +4,7 @@ import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {GallowsGameWord} from "../../data/gallows-game-word";
 import {GallowsGameData} from "../../data/gallows-game-data";
+import {Timer} from "../../data/timer";
 
 @Component({
   selector: 'app-gallows-game',
@@ -13,6 +14,7 @@ import {GallowsGameData} from "../../data/gallows-game-data";
 export class GallowsGameComponent {
 
   constructor(private webSocketService: WebSocketService) {
+    this.timer = Timer.create(90, () => this.send());
     this.send();
   }
 
@@ -22,26 +24,15 @@ export class GallowsGameComponent {
   word: GallowsGameWord = new GallowsGameWord("Handbremse");
 
   // start timer defaults to 90 seconds
-  timer: number = 90;
-  private timerInterval: any;
-  isStarted = false;
+  timer: Timer;
   errors: number = 0;
 
   start() {
-    this.isStarted = true;
-    this.timerInterval = setInterval(() => {
-      this.timer = this.timer - 1;
-      if (this.timer <= 0) {
-        this.stop();
-      }
-      this.send();
-    }, 1000);
+    this.timer.start();
   }
 
   stop() {
-    this.isStarted = false;
-    clearInterval(this.timerInterval);
-    this.send();
+    this.timer.stop();
   }
 
   send() {
@@ -80,7 +71,6 @@ export class GallowsGameComponent {
   private prepareData(): GameData {
 
     let gallowsGameData: GallowsGameData = {
-      isStarted: this.isStarted,
       timer: this.timer,
       points: this.points,
       word: this.word

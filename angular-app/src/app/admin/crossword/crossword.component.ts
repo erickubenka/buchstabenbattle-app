@@ -4,6 +4,7 @@ import {Screens} from "../../data/screens";
 import {GameData} from "../../data/game-data";
 import {Crossword} from "../../data/crossword";
 import {CrosswordGameData} from "../../data/crossword-game-data";
+import {Timer} from "../../data/timer";
 
 @Component({
   selector: 'app-crossword',
@@ -12,14 +13,13 @@ import {CrosswordGameData} from "../../data/crossword-game-data";
 })
 export class CrosswordComponent {
   crossword = new Crossword();
+  timer: Timer;
+
   points: number = 0;
   errors: number = 0;
-  timer: number = 90;
-  private timerInterval: any;
-
-  isStarted: boolean = false;
 
   constructor(private webSocketService: WebSocketService) {
+    this.timer = Timer.create(90, () => this.send())
     this.send();
   }
 
@@ -47,20 +47,11 @@ export class CrosswordComponent {
   }
 
   start() {
-    this.isStarted = true;
-    this.timerInterval = setInterval(() => {
-      this.timer = this.timer - 1;
-      if (this.timer <= 0) {
-        this.stop();
-      }
-      this.send();
-    }, 1000);
+    this.timer.start();
   }
 
   stop() {
-    this.isStarted = false;
-    clearInterval(this.timerInterval);
-    this.send();
+    this.timer.stop();
   }
 
   send() {
@@ -70,7 +61,6 @@ export class CrosswordComponent {
   private prepareData(): GameData {
 
     let crosswordGameData: CrosswordGameData = {
-      isStarted: this.isStarted,
       timer: this.timer,
       points: this.points,
       errors: this.errors,

@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {ConnectionGameData} from "../../data/connection-game-data";
+import {Timer} from "../../data/timer";
 
 @Component({
   selector: 'app-connection-wanted-display',
@@ -13,9 +14,8 @@ export class ConnectionWantedDisplayComponent {
   @Input() gameData: GameData = {currentScreenSelected: Screens.Crossword, isStarted: false, specificData: {}};
 
   @Input() connectionWantedGameData: ConnectionGameData = {
-    isStarted: false,
     points: 0,
-    timer: 0,
+    timer: new Timer(),
     connections: [],
     answerStart: [],
     answerEnd: [],

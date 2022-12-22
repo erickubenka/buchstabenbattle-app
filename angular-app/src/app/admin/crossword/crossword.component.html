@@ -23,7 +23,7 @@
             <div class="row">
               <div class="col-12">
                 <p>
-                  Timer: {{timer}}
+                  Timer: {{timer.time}}
                 </p>
                 <p>
                   Punkte: {{ points }}
@@ -35,16 +35,16 @@
             </div>
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
-                <button class="btn btn-danger" (click)="stop()" [disabled]="!isStarted">STOP</button>
+                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">START</button>
+                <button class="btn btn-danger" (click)="stop()" [disabled]="!timer.isStarted">STOP</button>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-12">
                 <button class="btn btn-primary btn-margin-right" *ngFor="let word of crossword.words" (click)="solve(word)"
-                        [disabled]="crossword.solvedWords.includes(word) || !isStarted">{{word}}</button>
-                <button class="btn btn-danger" [disabled]="!isStarted" (click)="addError()">Weiter/Falsch
+                        [disabled]="crossword.solvedWords.includes(word) || !timer.isStarted">{{word}}</button>
+                <button class="btn btn-danger" [disabled]="!timer.isStarted" (click)="addError()">Weiter/Falsch
                 </button>
               </div>
             </div>

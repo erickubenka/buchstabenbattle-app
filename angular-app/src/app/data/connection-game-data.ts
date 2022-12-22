@@ -1,9 +1,10 @@
 import {Connection} from "./connection";
+import {Timer} from "./timer";
 
 export class ConnectionGameData {
 
-  public isStarted: boolean = false;
-  public timer: number = 0;
+  public timer: Timer = new Timer();
+
   public points: number = 0;
   public connections: Connection[] = [];
   public answerStart: Connection[] = [];

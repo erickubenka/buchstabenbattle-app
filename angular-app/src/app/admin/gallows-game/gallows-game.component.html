@@ -28,7 +28,7 @@
             <div class="row">
               <div class="col-12">
                 <p>
-                  Timer: {{timer}}
+                  Timer: {{timer.time}}
                 </p>
                 <p>
                   Gelöste Wörter: {{ solvedWords.length }}
@@ -43,8 +43,8 @@
             </div>
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
-                <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!isStarted">STOP</button>
+                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">START</button>
+                <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!timer.isStarted">STOP</button>
               </div>
             </div>
             <hr>
@@ -54,14 +54,14 @@
                   Aktueller Fehler im Wort: {{errors}}
                 </p>
                 <button class="btn btn-primary btn-margin-right" *ngFor="let letter of word.missingLetters"
-                        [disabled]="!isStarted || word.solvedLetters.includes(letter)"
+                        [disabled]="!timer.isStarted || word.solvedLetters.includes(letter)"
                         (click)="solveLetter(word, letter)">{{letter}}</button>
-                <button class="btn btn-danger btn-margin-right" [disabled]="!isStarted" (click)="addError()">Falscher
+                <button class="btn btn-danger btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">Falscher
                   Buchstabe
                 </button>
-                <button class="btn btn-warning btn-margin-right" [disabled]="!isStarted" (click)="addError()">Weiter
+                <button class="btn btn-warning btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">Weiter
                 </button>
-                <button class="btn btn-success btn-margin-right" [disabled]="!isStarted" (click)="solveWord()">Wort
+                <button class="btn btn-success btn-margin-right" [disabled]="!timer.isStarted" (click)="solveWord()">Wort
                   richtig!
                 </button>
               </div>

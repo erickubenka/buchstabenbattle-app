@@ -20,19 +20,20 @@
         <hr>
         <div class="row">
           <div class="col-3">
-            <p>Timer: {{timer}}</p>
+            <p>Timer: {{timer.time}}</p>
             <p>Punkte: {{points}}</p>
 
-            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="isStarted">START</button>
-            <button class="btn btn-danger" (click)="stop()" [disabled]="!isStarted">STOP</button>
+            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">START
+            </button>
+            <button class="btn btn-danger" (click)="stop()" [disabled]="!timer.isStarted">STOP</button>
           </div>
           <div class="col-9">
             <p>
               {{connections[questionIndex].question}}
             </p>
-            <button class="btn btn-success btn-margin-right"
+            <button class="btn btn-success btn-margin-right" [disabled]="!timer.isStarted"
                     (click)="solve(connections[questionIndex]);">{{connections[questionIndex].answerStart}}{{connections[questionIndex].answerEnd}}</button>
-            <button class="btn btn-danger"
+            <button class="btn btn-danger" [disabled]="!timer.isStarted"
                     (click)="solveWithError(connections[questionIndex]);">Falsch!
             </button>
           </div>
