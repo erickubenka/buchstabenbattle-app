@@ -10,12 +10,14 @@
               </div>
             </div>
             <div class="col-6">
-              <table *ngIf="gallowsGameData.timer.isStarted">
-                <tr>
-                  <td rowspan="2" *ngFor="let letter of gallowsGameData.word.withGaps.split('')"
-                      class="font-monospace text-uppercase align-content-center">{{letter}}</td>
-                </tr>
-              </table>
+              <ng-container *ngIf="gallowsGameData.timer.isStarted">
+                <table>
+                  <tr>
+                    <td rowspan="2" *ngFor="let letter of gallowsGameData.word.withGaps.split('')"
+                        class="font-monospace text-uppercase align-content-center">{{letter}}</td>
+                  </tr>
+                </table>
+              </ng-container>
             </div>
             <div class="col-3">
               <div class="rounded-circle timer-circle text-center float-end">

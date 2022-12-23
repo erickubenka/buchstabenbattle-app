@@ -4,7 +4,9 @@
       <div class="card card-question">
         <div class="card-header text-center">
           <h3>
-            {{crosswordGameData.crossword.category}}
+            <ng-container *ngIf="crosswordGameData.timer.isStarted">
+              {{crosswordGameData.crossword.category}}
+            </ng-container>
           </h3>
         </div>
         <div class="card-body">
@@ -17,11 +19,13 @@
             <div class="col-6">
               <div class="row">
                 <div class="col-12">
-                  <table class="crossword" *ngIf="crosswordGameData.timer.isStarted">
-                    <tr *ngFor="let row of crosswordGameData.crossword.rows">
-                      <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
-                    </tr>
-                  </table>
+                  <ng-container *ngIf="crosswordGameData.timer.isStarted">
+                    <table class="crossword">
+                      <tr *ngFor="let row of crosswordGameData.crossword.rows">
+                        <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+                      </tr>
+                    </table>
+                  </ng-container>
                 </div>
               </div>
             </div>
