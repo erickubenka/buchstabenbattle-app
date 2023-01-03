@@ -12,14 +12,15 @@ import {Timer} from "../../data/timer";
   styleUrls: ['./crossword.component.scss']
 })
 export class CrosswordComponent {
-  crossword = new Crossword();
+  crossword: Crossword;
   timer: Timer;
 
   points: number = 0;
   errors: number = 0;
 
   constructor(private webSocketService: WebSocketService) {
-    this.timer = Timer.create(90, () => this.send())
+    this.timer = Timer.create(90, () => this.send());
+    this.crossword = Crossword.next();
     this.send();
   }
 
@@ -29,7 +30,7 @@ export class CrosswordComponent {
     }
 
     if (this.crossword.solvedWords.length == this.crossword.words.length) {
-      this.crossword = new Crossword();
+      this.crossword = Crossword.next();
       this.points = this.points + (5 - this.errors);
       this.errors = 0;
     }
@@ -41,17 +42,19 @@ export class CrosswordComponent {
 
     if (this.errors == 5) {
       this.errors = 0;
-      this.crossword = new Crossword();
+      this.crossword = Crossword.next();
     }
     this.send();
   }
 
   start() {
     this.timer.start();
+    this.send();
   }
 
   stop() {
     this.timer.stop();
+    this.send();
   }
 
   send() {
