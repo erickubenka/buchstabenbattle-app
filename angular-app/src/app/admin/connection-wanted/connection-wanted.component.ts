@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {WebSocketService} from "../../services/web-socket.service";
-import {Connection} from "../../data/connection";
-import {ConnectionGameData} from "../../data/connection-game-data";
+import {Connection} from "../../data/connection-wanted/connection";
+import {ConnectionGameData} from "../../data/connection-wanted/connection-game-data";
 import {Timer} from "../../data/timer";
 
 @Component({

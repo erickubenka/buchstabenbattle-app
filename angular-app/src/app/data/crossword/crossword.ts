@@ -13,4 +13,14 @@ export class Crossword {
 
   public words: string[] = ["Total", "Last", "Ball"];
   public solvedWords: string[] = [];
+
+  public static create(category: string, rows: string[], words: string[]) {
+    let crossword = new Crossword();
+
+    crossword.category = category;
+    crossword.rows = rows;
+    crossword.words = words;
+
+    return crossword;
+  }
 }

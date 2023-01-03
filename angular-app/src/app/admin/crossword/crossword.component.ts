@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {WebSocketService} from "../../services/web-socket.service";
 import {Screens} from "../../data/screens";
 import {GameData} from "../../data/game-data";
-import {Crossword} from "../../data/crossword";
-import {CrosswordGameData} from "../../data/crossword-game-data";
+import {Crossword} from "../../data/crossword/crossword";
+import {CrosswordGameData} from "../../data/crossword/crossword-game-data";
 import {Timer} from "../../data/timer";
 
 @Component({

@@ -1,14 +1,19 @@
 export class GallowsGameWord {
-  static letters: string[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-  public full: string;
+  public full: string = "";
   public withGaps: string = "";
   public missingLetters: string[] = [];
   public solvedLetters: string[] = [];
 
-  constructor(word: string) {
-    this.full = word.toUpperCase();
-    this.withGaps = word.toUpperCase();
-    this.initialize();
+  static create(word: string): GallowsGameWord {
+    let gallowsGameWord = new GallowsGameWord();
+    gallowsGameWord.full = word.toUpperCase();
+    gallowsGameWord.withGaps = word.toUpperCase();
+    gallowsGameWord.initialize();
+
+    return gallowsGameWord;
+  }
+
+  constructor() {
   }
 
   private initialize() {

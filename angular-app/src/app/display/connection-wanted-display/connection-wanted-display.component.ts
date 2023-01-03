@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
-import {ConnectionGameData} from "../../data/connection-game-data";
+import {ConnectionGameData} from "../../data/connection-wanted/connection-game-data";
 import {Timer} from "../../data/timer";
 
 @Component({

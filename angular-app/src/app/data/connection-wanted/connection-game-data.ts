@@ -1,5 +1,5 @@
 import {Connection} from "./connection";
-import {Timer} from "./timer";
+import {Timer} from "../timer";
 
 export class ConnectionGameData {
 

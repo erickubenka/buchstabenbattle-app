@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
-import {ConnectionGameData} from "../../data/connection-game-data";
-import {WheelGameData} from "../../data/wheel-game-data";
-import {WheelData} from "../../data/wheel-data";
+import {ConnectionGameData} from "../../data/connection-wanted/connection-game-data";
+import {WheelGameData} from "../../data/wheel-game/wheel-game-data";
+import {WheelData} from "../../data/wheel-game/wheel-data";
 
 @Component({
   selector: 'app-wheel-display',

@@ -2,9 +2,10 @@ import {Component} from '@angular/core';
 import {WebSocketService} from "../../services/web-socket.service";
 import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
-import {GallowsGameWord} from "../../data/gallows-game-word";
-import {GallowsGameData} from "../../data/gallows-game-data";
+import {GallowsGameWord} from "../../data/gallows-game/gallows-game-word";
+import {GallowsGameData} from "../../data/gallows-game/gallows-game-data";
 import {Timer} from "../../data/timer";
+import {GallowsGameCategory} from "../../data/gallows-game/gallows-game-category";
 
 @Component({
   selector: 'app-gallows-game',
@@ -15,13 +16,16 @@ export class GallowsGameComponent {
 
   constructor(private webSocketService: WebSocketService) {
     this.timer = Timer.create(90, () => this.send());
+    this.category = GallowsGameCategory.random();
+    this.word = this.category.nextWord();
     this.send();
   }
 
   points: number = 0;
   solvedWords: GallowsGameWord[] = []
   unsolvedWords: GallowsGameWord[] = []
-  word: GallowsGameWord = new GallowsGameWord("Handbremse");
+  word: GallowsGameWord;
+  category: GallowsGameCategory;
 
   // start timer defaults to 90 seconds
   timer: Timer;
@@ -45,7 +49,7 @@ export class GallowsGameComponent {
     if (this.errors == 5) {
       this.unsolvedWords.push(this.word);
       this.errors = 0;
-      this.word = new GallowsGameWord("Vorderrad")
+      this.word = this.category.nextWord();
     }
 
     this.send();
@@ -64,7 +68,7 @@ export class GallowsGameComponent {
     // reset game to new word.
     this.errors = 0;
     this.solvedWords.push(this.word);
-    this.word = new GallowsGameWord("Ruecklicht");
+    this.word = this.category.nextWord();
     this.send();
   }
 
@@ -73,7 +77,8 @@ export class GallowsGameComponent {
     let gallowsGameData: GallowsGameData = {
       timer: this.timer,
       points: this.points,
-      word: this.word
+      word: this.word,
+      category: this.category
     }
 
     return {
@@ -84,4 +89,3 @@ export class GallowsGameComponent {
   }
 
 }
-
