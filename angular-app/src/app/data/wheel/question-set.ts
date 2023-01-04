@@ -71,12 +71,66 @@ export class QuestionSet {
       new Question("X", "Die Abmeldung eines Studenten von eienr Hochschule heißt? - X im Wort!", "Exmatrikulation", false, false),
       new Question("Y", "Ein vorlauter und frecher Zeichentrickhase heißt Bugs ... ? - Y am Ende des Wortes!", "Bunny", false, false),
       new Question("Z", "Wie heißt die griechische Joghurtspeise die mit Gurke und viel Knoblauch angerichtet wird?", "Zazaki", false, false),
+    ]),
+    QuestionSet.create("Fragensatz 3", [
+      new Question("A", "Welches Fürstentum liegt in den Pyrenäen?", "Andorra", false, false),
+      new Question("B", "Die Form des Kletterns bei dem ohne Gurt und Seil in Absprunghöhe geklettert wird ist das ...?", "Bouldern", false, false),
+      new Question("C", "Ein anderer Name für Holzpantoffeln lautet?", "Clocks", false, false),
+      new Question("D", "Wie heißt die reichste Ente aus Entenhausen?", "Dagobert Duck", false, false),
+      new Question("E", "Woraus bestehen die Stoßzähne von Elefanten?", "Elfenbein", false, false),
+      new Question("F", "Wer am 10. Dezember in Oslo eine Medaille mit 3 nackten Männern darauf erhält, ist Gewinner des ...?", "Friedensnobelbpreis", false, false),
+      new Question("G", "Ein wichtiger Prozess bei der Herstellung von Bier ist die alkoholische ...?", "Gärung", false, false),
+      new Question("H", "Aus welchem Fisch wird Rollmops hergestellt?", "Hering", false, false),
+      new Question("I", "Die Herkunft und den Herausgeber einer Zeitung findet man im gesetzlich vorgeschriebenem ...?", "Impressum", false, false),
+      new Question("J", "Das lateinische Wort \"anno\" bedeuted soviel wie \"im ...\"?", "Jahre", false, false),
+      new Question("K", "Ein Kleidungsstück, das den Oberkörper mit Schnüren zusammenschnürt?", "Korsett", false, false),
+      new Question("L", "Den Hinweis \"kussecht\" findet man auf welchem Kosmetikartikel?", "Lippenstift", false, false),
+      new Question("M", "Welcher Gerd wurde wegen der vielen Tore als \"Bomber der Nation\" bezeichnet?", "Müller", false, false),
+      new Question("N", "Aus welchem Land kommt der seit 2013 amtierende Schachweltmeister Magnus Carlsen?", "Norwegen", false, false),
+      new Question("O", "Ein anderer Name für die achtarmigen Kraken lautet?", "Oktopus", false, false),
+      new Question("P", "Aus welchem Hitchcock Film stammt die berühmte Szene mit dem Mord in Dusche?", "Psycho", false, false),
+      new Question("Q", "Ein aus Frankreich stammender, herzhaft mit Fleischkäse oder Gemüse belegter Kuchen aus Mürbe- oder Blätterteig heißt auch?", "Quiche", false, false),
+      new Question("R", "Wobei handelt es sich um die in Deutschland wohl am häufigsten vorkommende Schlangenart?", "Ringelnatter", false, false),
+      new Question("S", "Welcher deutsche Rapper heißt mit bürgerlichem Namen Paul Würdig?", "Sido", false, false),
+      new Question("T", "Ein auf einem Erfahrungsbericht von betty Mahmoody basierender Film von 1991 trägt den Titel \"Nicht ohne meine ...\"?", "Tochter", false, false),
+      new Question("U", "Gibt man bei der Bundestagswahl einen leeren Stimmzettel ab, so gelten beide Stimmen laut Gesetz als ...?", "ungültig", false, false),
+      new Question("V", "Verliebte kennen den 14. Februar tradtionell als ...?", "Valentinstag", false, false),
+      new Question("W", "In welche haarige Kreatur verwandelt sich Michael Jackson in dem Musikvideo zu Thriller?", "Werwolf", false, false),
+      new Question("X", "Welcher amerikanische Bürgerechtler wurde in einem Film von Denzel Washington verkörpert? - X am Ende des Wortes.", "Malcom X", false, false),
+      new Question("Y", "Wie hieß die indische Metropole Mumbai bis zum Jahre 1996? Y am Ende des Wortes.", "Bombay", false, false),
+      new Question("Z", "Welcher französische Fußballer hat den Spitznamen Zizou und entschied die WM 1998 fast im Alleingang?", "Zinedine Zidane", false, false),
+    ]),
+    QuestionSet.create("Fragensatz 4", [
+      new Question("A", "Welches an einer Kette befestigte, schwere Gerät aus Eisen hält ein Schiff im Wasser an seinem Platz?", "Anker", false, false),
+      new Question("B", "Die höchste Anerkennung, welche die Bundesrepublik Deutschland für Leistung in Sachen Gemeinwohl verleiht, nennt man auch ...?", "Bundesverdienstkreuz", false, false),
+      new Question("C", "Ein französischer Likör aus schwarzen Johannesbeeren heißt \"Créme de ...\"?", "Cassis", false, false),
+      new Question("D", "Welchen Beruf übt die literarische Figur Sherlock Holmes aus?", "Detektiv", false, false),
+      new Question("E", "Das größte an Land lebende arktische Raubtier ist der ...?", "Eisbär", false, false),
+      new Question("F", "Wie heißt ein traditionelles, japanisches Bett?", "Futon", false, false),
+      new Question("G", "In welcher Sportart folgt auf das sogenannte Umsetzen das Ausstoßen?", "Gewichtheben", false, false),
+      new Question("H", "Welche pelzig behaarten Insekten hat man laut Redensart im Hintern, wenn man nicht still sitzen kann? ", "Hummeln", false, false),
+      new Question("I", "Einem Menschen, dem große Bewunderung entgegengebracht wird, nennt man genauso wie den Musiker Billy ...?", "Idol", false, false),
+      new Question("J", "Wer das Studium der Rechtswissenschaften abgeschlossen hat, ist ein ...?", "Jurist", false, false),
+      new Question("K", "Welches Werkzeug das in der Schweiz \"Zapfenzieher\" heißt, gibt es mit oder ohne Seele?", "Korkenzieher", false, false),
+      new Question("L", "\"Light Amplification by Stimulated Emission of Radiation\" steht für welches gebündelte Licht?", "Laser", false, false),
+      new Question("M", "Welche Leckerei, für die die Stadt Lübeck bekannt ist, wird aus Mandeln und Zucker gemacht?", "Marzipan", false, false),
+      new Question("N", "Ein Balett von Tschaikowski das auf ein Weihnachtsmärchen zurückgeht, heißt \"Der ...\"?", "Nussknacker", false, false),
+      new Question("O", "Der Fußballtrainer Rehhage trug den Spitznamen \"König ...\"? ", "Otto", false, false),
+      new Question("P", "Das 1948 von Wlater Ömchen gegründete Marionettentheater ist die Augsburger ...?", "Puppenkiste", false, false),
+      new Question("Q", "Wofür steht das Q in der Abkürzung FAQ?", "Question", false, false),
+      new Question("R", "Welches Grimm'sche Märchen beginnt mit den Worten \"Es war einmal eine kleine süße Dirne\"? ", "Rotkäppchen", false, false),
+      new Question("S", "Nach welchem Ex-SPD-Bundeskanzler ist der Hamburger Flughafen benannt?", "Schmidt", false, false),
+      new Question("T", "Ein aus dem englischen entlehnter Begriff für eine schriftliche Gebrauchsanleitung lautet?", "Tutorial", false, false),
+      new Question("U", "Die Sowjetunion wie sie bis 1991 bestand, kannte man abgekürzt auch als?", "UdSSR", false, false),
+      new Question("V", "In welcher Sportart wird gebaggert und gepritscht?", "Volleyball", false, false),
+      new Question("W", "Welche Fleischwurst zutzelt man in bayern idealerweise vor 12 Uhr mittags?", "Weißwurst", false, false),
+      new Question("X", "Ein 1986 in Schweden gegründetes Pop-Duo mit Per Gessle und Marie Fredriksson heißt? X im Wort.", "Roxette", false, false),
+      new Question("Y", "Jemand der von Beruf Pferderennen reitet, nennt man ...? Y am Ende des Wortes.", "Jockey", false, false),
+      new Question("Z", "Wie heißt der höchste Gott in der griechischen Mythologie?", "Zeus", false, false),
     ])
   ];
 }
 
-
-//
 //
 // questionList2 = [
 //   new Question("A", "Ein Zyklop hat nur eines dieser Sehorgane?", "Auge", false, false),
@@ -109,18 +163,76 @@ export class QuestionSet {
 
 
 /**
- * A - Wie nennt man den würzigen Geruch der sich zum Beispiel bei Kaffee und Tee verbreitet?  - Aroma
- * C - Was für ein Tier ist der Titelheld im Animationsfilm Findet nemo? - Clownfisch
- * F - In welchem Gerät, welches alle Anforderungen erfüllt, können Piloten ihre Fähigkeiten üben?  - Flugsimulator
+ * A - Wie nennt man den würzigen Geruch der sich zum Beispiel bei Kaffee und Tee verbreitet? - Aroma
+ * C - Was für ein Tier ist der Titelheld im Animationsfilm Findet Nemo? - Clownfisch
+ * F - In welchem Gerät, welches alle Anforderungen erfüllt, können Piloten ihre Fähigkeiten üben? - Flugsimulator
  * K - Ein schnelles Segelboot mit zwei Rümpofen ist ein? - Katamaran
  * L - Welcher polnsiche Nationalstürmer wurde 2020 erstmal FEuropas Fußballer des JahreS? - Lewandowski
  * M - Wie heißt die kleinere und flachere Zitrusfrucht die der Orange ähnelt? - Mandarine
  * N - Eine Schräglage, aber auch die persönliche Vorliebe für Etwas nennt man ...? - Neigung
- * O - Welcher Begriff bezeichnet eine vorübergehende Bewusstlosigkeit oder Hilfslosigkeit?  - Ohnmacht
+ * O - Welcher Begriff bezeichnet eine vorübergehende Bewusstlosigkeit oder Hilfslosigkeit? - Ohnmacht
  * Q - Die Überreste des Körpers eines Heiligen bezeichnet man als ... ? - Reliquie
- * R - Welcher Kräutertee wächst ausschließlich in der Region Der Cederberge bei Kapstadt?  - Rooibos
+ * R - Welcher Kräutertee wächst ausschließlich in der Region der Cederberge bei Kapstadt? - Rooibos
  * S - In welcher österreichischen Stadt wurde Wolfang Amadeus Mozart geboren? - Salzbrug
  * T - Wie nennt man ein Unterwassergsschoss mit eigenem Antrieb welches von unter anderem von Ubooten abgefuert wird? - Torpedo
  * U - Die staatliche Abgabe eines Unternehmens an den Staat nennt man? - Umsatzsteuer
  *
+ */
+
+/**
+ * A -  -
+ * B -  -
+ * C -  -
+ * D -  -
+ * E -  -
+ * F -  -
+ * G -  -
+ * H -  -
+ * I -  -
+ * J -  -
+ * K -  -
+ * L -  -
+ * M -  -
+ * N -  -
+ * O -  -
+ * P -  -
+ * Q -  -
+ * R -  -
+ * S -  -
+ * T -  -
+ * U -  -
+ * V -  -
+ * W -  -
+ * X -  -
+ * Y -  -
+ * Z - -
+ */
+
+/**
+ * A -  -
+ * B -  -
+ * C -  -
+ * D -  -
+ * E -  -
+ * F -  -
+ * G -  -
+ * H -  -
+ * I -  -
+ * J -  -
+ * K -  -
+ * L -  -
+ * M -  -
+ * N -  -
+ * O -  -
+ * P -  -
+ * Q -  -
+ * R -  -
+ * S -  -
+ * T -  -
+ * U -  -
+ * V -  -
+ * W -  -
+ * X -  -
+ * Y -  -
+ * Z -  -
  */

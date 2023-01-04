@@ -32,6 +32,14 @@ export class Crossword {
     Crossword.create("Am Kiosk.", ["LOLLI", "OVFMS", "TDACI", "TBPKE", "OAWVY"], ["Lolli", "Eis", "Lotto"]),
     Crossword.create("Im Großraumwagen.", ["NETZG", "KRIMA", "OLSEN", "FUCLG", "FKHAY"], ["Netz", "Gang", "Tisch"]),
     Crossword.create("Saturday Nightlife.", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
+    Crossword.create("Das tut gut bei einer langen Fahrt.", ["YHECX", "RASTN", "WLUQM", "UTAFJ", "IIPZL"], ["Rast", "Pause", "Halt"]),
+    Crossword.create("Ein Sprung hoch hinaus.", ["LMBCV", "QAABP", "XTTDT", "WTSTB", "QEXVE"], ["Matte", "Stab", "Latte"]),
+    Crossword.create("Alle Mann an Bord!", ["SETKI", "JEKHK", "IOGVI", "FEXEE", "TSAML"], ["Kiel", "Segel", "Mast"]),
+    Crossword.create("Bekannte englische Kosenamen.", ["HONEY", "CQWBU", "SUGAR", "OTSBP", "NXTLD"], ["Honey", "Sugar", "Babe"]),
+    Crossword.create("Im Schwimmbad.", ["DTYLY", "CHLOR", "BCQOV", "XQEPT", "ELLEW"], ["Chlor", "Welle", "Pool"]),
+    Crossword.create("Hilfsmittel für Handwerker.", ["FEILE", "ICUGN", "AHNBU", "NAGEL", "ZTEYS"], ["Feile", "Nagel", "Zange"]),
+    Crossword.create("Komm in den Schatten!", ["PRALC", "LIRBX", "ASUAH", "NQKUN", "EVCMK"], ["Haus", "Plane", "Baum"]),
+    Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
   ];
 
   static next() {
