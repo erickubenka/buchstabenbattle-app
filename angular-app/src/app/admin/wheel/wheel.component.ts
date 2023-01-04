@@ -15,16 +15,24 @@ import {QuestionSet} from "../../data/wheel/question-set";
 
 export class WheelComponent {
 
-  questionSets : QuestionSet[] = QuestionSet.sets;
-  player1: WheelData = new WheelData();
-  player2: WheelData = new WheelData();
-  activePlayer = this.player1;
+  player1: WheelData;
+  player2: WheelData;
+  activePlayer: WheelData;
 
   isStarted: boolean = false;
   private timerInterval: any;
 
   constructor(private webSocketService: WebSocketService) {
+    this.player1 = new WheelData();
+    this.player2 = new WheelData();
+    this.player1.questionSet = QuestionSet.sets[0];
+    this.player2.questionSet = QuestionSet.sets[0];
+    this.activePlayer = this.player1;
     this.send();
+  }
+
+  questionSets() {
+    return QuestionSet.sets;
   }
 
   start() {

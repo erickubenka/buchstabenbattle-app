@@ -1,9 +1,10 @@
 import {Question} from "./question";
 import {Timer} from "../timer";
+import {QuestionSet} from "./question-set";
 
 export class WheelData {
+  questionSet: QuestionSet = new QuestionSet();
 
-  questionList: Question[] = [];
   answersGivenCorrectly = 0;
   answersGiven = 0;
   questionIndex = 0;
@@ -21,12 +22,12 @@ export class WheelData {
   giveCorrectAnswer(question: Question, index: number) {
     question.isAnswered = true;
     question.isAnsweredCorrectly = true;
-    this.answersGiven = this.questionList.filter(q => q.isAnswered).length;
-    this.answersGivenCorrectly = this.questionList.filter(q => q.isAnswered && q.isAnsweredCorrectly).length;
+    this.answersGiven = this.questionSet.questionList.filter(q => q.isAnswered).length;
+    this.answersGivenCorrectly = this.questionSet.questionList.filter(q => q.isAnswered && q.isAnsweredCorrectly).length;
 
     this.questionIndex = this.getNextQuestionIndex(index);
 
-    if (this.answersGiven == this.questionList.length) {
+    if (this.answersGiven == this.questionSet.questionList.length) {
       this.stop();
     }
   }
@@ -35,7 +36,7 @@ export class WheelData {
 
     question.isAnswered = true;
     question.isAnsweredCorrectly = false;
-    this.answersGiven = this.questionList.filter(q => q.isAnswered).length;
+    this.answersGiven = this.questionSet.questionList.filter(q => q.isAnswered).length;
     // handling wrong answer is like skipped answer
     this.skipAnswer(question, index);
   }
@@ -53,26 +54,26 @@ export class WheelData {
   private getNextQuestionIndex(index: number): number {
 
     // early exit because every answer given was already right.
-    if (this.answersGiven == this.questionList.length) {
+    if (this.answersGiven == this.questionSet.questionList.length) {
       return -1;
     }
 
     let nextIndex = index + 1;
 
-    if (nextIndex >= this.questionList.length) {
+    if (nextIndex >= this.questionSet.questionList.length) {
       nextIndex = 0;
     }
 
     do {
-      if (this.questionList[nextIndex].isAnswered) {
+      if (this.questionSet.questionList[nextIndex].isAnswered) {
         nextIndex++;
       }
 
-      if (nextIndex >= this.questionList.length) {
+      if (nextIndex >= this.questionSet.questionList.length) {
         nextIndex = 0;
       }
 
-    } while (this.questionList[nextIndex].isAnswered)
+    } while (this.questionSet.questionList[nextIndex].isAnswered)
 
     return nextIndex;
   }

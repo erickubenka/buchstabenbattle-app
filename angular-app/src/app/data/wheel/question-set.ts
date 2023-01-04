@@ -3,7 +3,7 @@ import {Question} from "./question";
 export class QuestionSet {
 
   questionList: Question[] = [];
-  id: string = "Set 0";
+  id: string = "Leerer Fragensatz";
 
   constructor() {
   }
@@ -16,6 +16,35 @@ export class QuestionSet {
   }
 
   static sets: QuestionSet[] = [
+    QuestionSet.create("Leerer Fragensatz", [
+      new Question("A", "", "", false, false),
+      new Question("B", "", "", false, false),
+      new Question("C", "", "", false, false),
+      new Question("D", "", "", false, false),
+      new Question("E", "", "", false, false),
+      new Question("F", "", "", false, false),
+      new Question("G", "", "", false, false),
+      new Question("H", "", "", false, false),
+      new Question("I", "", "", false, false),
+      new Question("J", "", "", false, false),
+      new Question("K", "", "", false, false),
+      new Question("L", "", "", false, false),
+      new Question("M", "", "", false, false),
+      new Question("N", "", "", false, false),
+      new Question("O", "", "", false, false),
+      new Question("P", "", "", false, false),
+      new Question("Q", "", "", false, false),
+      new Question("R", "", "", false, false),
+      new Question("S", "", "", false, false),
+      new Question("T", "", "", false, false),
+      new Question("U", "", "", false, false),
+      new Question("V", "", "", false, false),
+      new Question("W", "", "", false, false),
+      new Question("X", "", "", false, false),
+      new Question("Y", "", "", false, false),
+      new Question("Z", "", "", false, false),
+    ]),
+
     QuestionSet.create("Fragensatz 1", [
       new Question("A", "Welche Popgruppe gewann 1974 den Grand Prix Eurovisoopn Song mit dem Song Whaterloo?", "ABBA", false, false),
       new Question("B", "Wer hat in Schwimmanstalten die Aufsicht am Beckenrand?", "Bademeister", false, false),
@@ -123,7 +152,7 @@ export class QuestionSet {
       new Question("T", "Ein aus dem englischen entlehnter Begriff für eine schriftliche Gebrauchsanleitung lautet?", "Tutorial", false, false),
       new Question("U", "Die Sowjetunion wie sie bis 1991 bestand, kannte man abgekürzt auch als?", "UdSSR", false, false),
       new Question("V", "In welcher Sportart wird gebaggert und gepritscht?", "Volleyball", false, false),
-      new Question("W", "Welche Fleischwurst zutzelt man in bayern idealerweise vor 12 Uhr mittags?", "Weißwurst", false, false),
+      new Question("W", "Welche Fleischwurst zuzelt man in bayern idealerweise vor 12 Uhr mittags?", "Weißwurst", false, false),
       new Question("X", "Ein 1986 in Schweden gegründetes Pop-Duo mit Per Gessle und Marie Fredriksson heißt? X im Wort.", "Roxette", false, false),
       new Question("Y", "Jemand der von Beruf Pferderennen reitet, nennt man ...? Y am Ende des Wortes.", "Jockey", false, false),
       new Question("Z", "Wie heißt der höchste Gott in der griechischen Mythologie?", "Zeus", false, false),
