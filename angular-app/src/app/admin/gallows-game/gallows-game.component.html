@@ -28,10 +28,16 @@
             <div class="row">
               <div class="col-12">
                 <p>
-                  Timer: {{timer.time}}
+                  Kategorie wählen:
                 </p>
+                <select [(ngModel)]="category" class="form-select"
+                        [disabled]="timer.isStarted" (ngModelChange)="send()">
+                  <option *ngFor="let cat of categories()" [ngValue]="cat"
+                          [selected]="category == cat">{{cat.category}}</option>
+                </select>
+                <hr>
                 <p>
-                  Kategorie: {{category.category}}
+                  Timer: {{timer.time}}
                 </p>
                 <p>
                   Gelöste Wörter: {{ solvedWords.length }}
@@ -52,38 +58,40 @@
                 </button>
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-12">
-                <p>
-                  Aktueller Fehler im Wort: {{errors}}
-                </p>
-                <button class="btn btn-primary btn-margin-right" *ngFor="let letter of word.missingLetters"
-                        [disabled]="!timer.isStarted || word.solvedLetters.includes(letter)"
-                        (click)="solveLetter(word, letter)">{{letter}}</button>
-                <button class="btn btn-danger btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">
-                  Falscher
-                  Buchstabe
-                </button>
-                <button class="btn btn-warning btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">
-                  Weiter
-                </button>
-                <button class="btn btn-success btn-margin-right" [disabled]="!timer.isStarted" (click)="solveWord()">
-                  Wort
-                  richtig!
-                </button>
-              </div>
-            </div>
           </div>
           <div class="col-6">
             <table class="gallowsgame-word">
               <tr>
-                <td *ngFor="let letter of word.withGaps.split('')" class="font-monospace text-uppercase">{{letter}}</td>
+                <td *ngFor="let letter of category.word.withGaps.split('')"
+                    class="font-monospace text-uppercase">{{letter}}</td>
               </tr>
               <tr>
-                <td *ngFor="let letter of word.full.split('')" class="font-monospace text-uppercase">{{letter}}</td>
+                <td *ngFor="let letter of category.word.full.split('')"
+                    class="font-monospace text-uppercase">{{letter}}</td>
               </tr>
             </table>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Aktueller Fehler im Wort: {{errors}}
+            </p>
+            <button class="btn btn-primary btn-margin-right" *ngFor="let letter of category.word.missingLetters"
+                    [disabled]="!timer.isStarted || category.word.solvedLetters.includes(letter)"
+                    (click)="solveLetter(category.word, letter)">{{letter}}</button>
+            <button class="btn btn-danger btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">
+              Falscher
+              Buchstabe
+            </button>
+            <button class="btn btn-warning btn-margin-right" [disabled]="!timer.isStarted" (click)="addError()">
+              Weiter
+            </button>
+            <button class="btn btn-success btn-margin-right" [disabled]="!timer.isStarted" (click)="solveWord()">
+              Wort
+              richtig!
+            </button>
           </div>
         </div>
       </div>

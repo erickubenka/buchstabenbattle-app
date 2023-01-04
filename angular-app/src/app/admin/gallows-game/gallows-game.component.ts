@@ -17,26 +17,31 @@ export class GallowsGameComponent {
   constructor(private webSocketService: WebSocketService) {
     this.timer = Timer.create(90, () => this.send());
     this.category = GallowsGameCategory.random();
-    this.word = this.category.nextWord();
     this.send();
   }
 
   points: number = 0;
   solvedWords: GallowsGameWord[] = []
   unsolvedWords: GallowsGameWord[] = []
-  word: GallowsGameWord;
   category: GallowsGameCategory;
+
+  categories() {
+    return GallowsGameCategory.categories;
+  }
 
   // start timer defaults to 90 seconds
   timer: Timer;
   errors: number = 0;
 
   start() {
+    this.category.nextWord();
     this.timer.start();
+    this.send();
   }
 
   stop() {
     this.timer.stop();
+    this.send();
   }
 
   send() {
@@ -47,9 +52,9 @@ export class GallowsGameComponent {
     this.errors++;
 
     if (this.errors == 5) {
-      this.unsolvedWords.push(this.word);
+      this.unsolvedWords.push(this.category.word);
       this.errors = 0;
-      this.word = this.category.nextWord();
+      this.category.nextWord();
     }
 
     this.send();
@@ -67,8 +72,15 @@ export class GallowsGameComponent {
 
     // reset game to new word.
     this.errors = 0;
-    this.solvedWords.push(this.word);
-    this.word = this.category.nextWord();
+    this.solvedWords.push(this.category.word);
+    this.category.nextWord();
+
+    // exit when every world was solved.
+    if (this.category.words.length == this.solvedWords.length + this.unsolvedWords.length) {
+      this.stop();
+      return;
+    }
+
     this.send();
   }
 
@@ -77,7 +89,6 @@ export class GallowsGameComponent {
     let gallowsGameData: GallowsGameData = {
       timer: this.timer,
       points: this.points,
-      word: this.word,
       category: this.category
     }
 

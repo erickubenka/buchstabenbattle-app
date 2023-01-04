@@ -6,6 +6,8 @@ export class GallowsGameCategory {
   // public words: GallowsGameWord[] = [];
   public words: string[] = [];
 
+  public word: GallowsGameWord = GallowsGameWord.create("");
+
   private index = -1;
 
 
@@ -21,13 +23,15 @@ export class GallowsGameCategory {
   constructor() {
   }
 
-  nextWord(): GallowsGameWord {
-
+  nextWord() {
     this.index++;
-    return GallowsGameWord.create(this.words[this.index]);
+
+    if (this.index < this.words.length) {
+      this.word = GallowsGameWord.create(this.words[this.index]);
+    }
   }
 
-  private static categories: GallowsGameCategory[] = [
+  static categories: GallowsGameCategory[] = [
     GallowsGameCategory.create("Kleine Tiere", ["Maus", "Ameise", "Fliege", "Goldfisch", "Spinne", "Kakerlake", "Libelle", "Biene", "Wespe", "Schnecke", "Skorpion", "Heuschrecke", "Schmetterling", "Hummel"]),
     GallowsGameCategory.create("Wildtiere", ["Elefant", "Giraffe", "Leopard", "Krokodil", "Zebra", "Fledermaus", "Feldhase", "Wildschwein", "Biber", "Fischotter", "Waldkauz", "Ringelnatter"]),
     // todo - add more things
@@ -38,7 +42,5 @@ export class GallowsGameCategory {
   static random() {
     return GallowsGameCategory.categories[Math.floor(Math.random() * GallowsGameCategory.categories.length)];
   }
-
-
 }
 

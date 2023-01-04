@@ -26,8 +26,17 @@ export class GallowsGameWord {
       }
     });
 
-    // get two random letters of that list that should be removed.
-    for (let i = 0; i < 4; i++) {
+    // issue #6 - do not remove all chars/letter when word is too short
+    let lettersToRemove = 0
+    if (lettersInWord.length <= 4) {
+      lettersToRemove = lettersInWord.length - 1;
+    } else if (lettersInWord.length <= 7) {
+      lettersToRemove = lettersInWord.length - 2;
+    } else {
+      lettersToRemove = lettersInWord.length - 4;
+    }
+
+    for (let i = 0; i < lettersToRemove; i++) {
       let indexOfLetterToRemove = Math.floor(Math.random() * lettersInWord.length);
 
       while (this.missingLetters.includes(lettersInWord[indexOfLetterToRemove])) {
