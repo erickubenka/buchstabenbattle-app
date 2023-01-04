@@ -1,4 +1,4 @@
-export class WheelQuestion {
+export class Question {
 
   public letter: string;
   public question: string;

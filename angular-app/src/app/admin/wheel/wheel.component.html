@@ -41,6 +41,12 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-12">
+                    <p>Fragensatz wählen:</p>
+                    <select [(ngModel)]="activePlayer.questionList" class="form-select"
+                            [disabled]="activePlayer.timer.isStarted || activePlayer.questionIndex > 0 || activePlayer.answersGiven > 0">
+                      <option *ngFor="let set of questionSets" [ngValue]="set.questionList">{{set.id}}</option>
+                    </select>
+                    <hr>
                     <p>
                       Timer: {{activePlayer.timer.time}}
                     </p>
@@ -114,6 +120,27 @@
           </div>
         </div>
         <hr>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Buchstabe</th>
+                <th>Frage</th>
+                <th>Antwort</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let question of activePlayer.questionList"
+                  [ngClass]="{'table-success': question.isAnswered && question.isAnsweredCorrectly, 'table-danger': question.isAnswered && !question.isAnsweredCorrectly}">
+                <td>{{question.letter}}</td>
+                <td>{{question.question}}</td>
+                <td>{{question.answer}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
