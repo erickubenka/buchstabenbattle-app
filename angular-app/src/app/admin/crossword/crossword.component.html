@@ -29,20 +29,25 @@
                   Punkte: {{ points }}
                 </p>
                 <p>
+                  Kategorie: {{ crossword.category }}
+                </p>
+                <p>
                   Aktuelles Wort: {{5 - errors}}
                 </p>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">START</button>
+                <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">START
+                </button>
                 <button class="btn btn-danger" (click)="stop()" [disabled]="!timer.isStarted">STOP</button>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-primary btn-margin-right" *ngFor="let word of crossword.words" (click)="solve(word)"
+                <button class="btn btn-primary btn-margin-right" *ngFor="let word of crossword.words"
+                        (click)="solve(word)"
                         [disabled]="crossword.solvedWords.includes(word) || !timer.isStarted">{{word}}</button>
                 <button class="btn btn-danger" [disabled]="!timer.isStarted" (click)="addError()">Weiter/Falsch
                 </button>

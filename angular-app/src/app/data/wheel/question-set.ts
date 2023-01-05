@@ -156,7 +156,63 @@ export class QuestionSet {
       new Question("X", "Ein 1986 in Schweden gegründetes Pop-Duo mit Per Gessle und Marie Fredriksson heißt? X im Wort.", "Roxette", false, false),
       new Question("Y", "Jemand der von Beruf Pferderennen reitet, nennt man ...? Y am Ende des Wortes.", "Jockey", false, false),
       new Question("Z", "Wie heißt der höchste Gott in der griechischen Mythologie?", "Zeus", false, false),
-    ])
+    ]),
+    QuestionSet.create("Fragensatz 5", [
+      new Question("A", "Zu welcher Geduld erfordernden Freizeitbeschäftigung gehört die Technik des Fliegenfischens?", "Angeln", false, false),
+      new Question("B", "Wie nennt man den Mann am Tag der Hochzeit?", "Bräutigam", false, false),
+      new Question("C", "Bekannt aus den Mission Impossible Filmen ist der bekennende Scientologe Tom ...?", "Cruise", false, false),
+      new Question("D", "Nach welcher Stadt in Senegal ist die seit 1978 gefahrene, ursprünglich in Paris gestartete härteste Rally der Welt benannt?", "Dakar", false, false),
+      new Question("E", "Die Warp-Geschwindigkeit kennt man aus der TV Serie Raumschiff ...?", "Enterprise", false, false),
+      new Question("F", "In der Landessprache heißt dieses europäische Land Suomi.", "Finnland", false, false),
+      new Question("G", "Welcher auch natürlich vorkommende geschmacksverstärker wird häufig mti der chinesischen Küche in Verbindung gebracht?", "Glutamat", false, false),
+      new Question("H", "Welche Versicherung greift, wenn jemand versehentlich das Eigentum anderer beschädigt?", "Haftpflicht", false, false),
+      new Question("I", "Der Koran ist die heilige Schrift dieser Weltreligion.", "Islam", false, false),
+      new Question("J", "Welche größte Stadt Südafrikas gilt auch als inoffizielle Hauptstadt?", "Johannesburg", false, false),
+      new Question("K", "Wer zwar materiell alles hat, aber in seiner persönlichen Freiheit sehr eingeschränkt ist, sitzt redensartlich im goldenem ...?", "Käfig", false, false),
+      new Question("L", "Welche gelb blühende Wiesenpflanze wird nach der Blüte zur Pusteblume?", "Löwenzahn", false, false),
+      new Question("M", "Wie nennt man die lange Rede eines Theaterschauspielers oder auch ein Selbstgespräch? ", "Monolog", false, false),
+      new Question("N", "Welcher Schlauch versorgt im Mutterleib das Ungeborene mit Nährstoffen und Sauerstoff?", "Nabelschnur", false, false),
+      new Question("O", "Wie heißt der jährlich vergebene Preis der Jugendzeitschrift Bravo für die Lieblingsstras ihrer Leser?", "Otto", false, false),
+      new Question("P", "Der Bois de Boulogne in Paris und der englische Garten in München gehören zu Europas bekanntesten und größten ...?", "Parks", false, false),
+      new Question("Q", "Bevor Sportler zum Beispiel bei den olympischen Spielen teilnehmen dürfen, müssen sie sich erst für die Wettbewerbe ...?", "qualifizieren", false, false),
+      new Question("R", "Welche schwarzen, krähenden Singvögel verblüffen Wissenschaftler immer wieder mit ihrer erstaunlichen Intelligenz?", "Raabe", false, false),
+      new Question("S", "Wie nennt man den Kochvorgang, wenn zuvor Angebratenes lange in simmernder Flüssigkeit gar zieht?", "Sous Vide", false, false),
+      new Question("T", "Wenn eine Freundschaft beendet wird, ist zwischen zwei Personen im übertragenem Sine dieses Küchentextil zerschnitten?", "Tuch", false, false),
+      new Question("U", "Im Original \"The Untouchables\" trägt dieser Star-besetzte Film von Al Capone hierzulande den Titel \"Die ...\"?", "Unbestechlichen", false, false),
+      new Question("V", "Kurze, in der Regel günstig produzierte Filme, wie sie zu Millionen im Internet abrufbar sind, nennt man auch ...?", "Videos", false, false),
+      new Question("W", "In welches Behältnis wirft man hierzulande bei einer politischen Abstimmung seinen Stimmzettel?", "Wahlurne", false, false),
+      new Question("X", "Wer unwillkürlich sehr schnell auf äußere Reize reagiert, hat gute ...? X im Wort.", "Reflexe", false, false),
+      new Question("Y", "Der Vorname der seit Ende der 80er erfolgreichen australisch-britischen Sängerin Minogue lautet ...? Y im Wort.", "Kylie", false, false),
+      new Question("Z", "Welches Tier lügt gewaltig und folgenschwer im Märchen \"Tischlein deck dich\"? ", "Ziege", false, false),
+    ]),
+    QuestionSet.create("Fragensatz 6", [
+      new Question("A", "Welches Bauteil verbindet zwei nebeneinander liegende Räder eines Fahrzeugs?", "Achse", false, false),
+      new Question("B", "Welcher Pop-Titan aus Tötensen war der musikalische Kopf des Pop-Duos Modern Talking?", "Bohlen", false, false),
+      new Question("C", "In welchem asiatischem Land wurde vom Staatsfernsehen ein eigener Panda-Kanal eingeführt?", "China", false, false),
+      new Question("D", "Welche Stichwaffe kommt sowohl in Romeo und Julia als auch im Gesellschaftsspiel Cluedo zum Einsatz? ", "Dolch", false, false),
+      new Question("E", "Ein wirtschaftlicher und politischer Zusammenschluss von 27 souveränen Mitgliedsstaaten auf unserem Kontinent ist die ...?", "Europäische Union", false, false),
+      new Question("F", "Nach welchem am und im Wasser lebendem grünen bis bräunlichem Tier ist das Gegenteil der Vogelperspektive benannt?", "Frosch", false, false),
+      new Question("G", "In welcher beliebten Fantasy-Serie kämpfen mehrere Königreiche um die Macht auf dem Kontinent Westeros?", "Game of Thrones", false, false),
+      new Question("H", "Wie heißt ein bekannter, orientalischer Dip aus Kichererbsen- und Sesam-Basis?", "Hummus", false, false),
+      new Question("I", "Welche Balearen-Insel ist vor allem als Club- und Party-HotSpot bekannt?", "Ibiza", false, false),
+      new Question("J", "Vorbild für viele Hollywood-Western war real existierende Bandit und Revolverheld Jessie ...?", "James", false, false),
+      new Question("K", "Was wird Erfrischungsgetränken zugesetzt damit si schön sprudeln und prickeln? ", "Kohlensäure", false, false),
+      new Question("L", "In welchem Organ verzweigen sich dei Bronchien?", "Lunge", false, false),
+      new Question("M", "Welche Schneestiefel ähneln dem Schuhwerk der Apollo-Astronauten und haben daher ihren Namen?", "Moonboots", false, false),
+      new Question("N", "Welches elektrische Gerät nutzt ein Schneider um Stoffe mittels Nadel und Faden miteinander zu verbindern?", "Nähmaschine", false, false),
+      new Question("O", "In welchem beliebten bayrischen Wintersportort fanden die nordischen Ski-Weltmeisterschaften 2021 statt?", "Oberstdorf", false, false),
+      new Question("P", "Welches aus Buch und Film bekannte Kindermädchen kann mithilfe ihres Regenschirms fliegen?", "Poppins", false, false),
+      new Question("Q", "Welches englische Adjektiv steht für Menschen die sich der heterosexuellen Geschlechterauffassung nicht anhörig fühlen?", "queer", false, false),
+      new Question("R", "Ein anderes Wort für meist sportliches Schlittenfahren ist ...?", "Rodeln", false, false),
+      new Question("S", "Welcher Begriff steht für ein instrumentales, klassisches Musikstück, wie auch für ein besonderes, luxuriöses Hotelzimmer?", "Suite", false, false),
+      new Question("T", "Zu Beginn jeder Partie stehen diese Figuren auf den Eckfeldern eines Schachbretts?", "Türme", false, false),
+      new Question("U", "Die erfolgreichste, irische Rockband aller Zeiten heißt kurz und knapp ...?", "U2", false, false),
+      new Question("V", "Die Abkürzung für e.V. steht für?", "Eingetragener Verein", false, false),
+      new Question("W", "Bei welcher beliebten Freizeitbeschäftigung bewegt man sich sportlich gehend mehrere Stunden in freier Natur?", "Walken", false, false),
+      new Question("X", "Um was für Verkehrsmittel handelt es bei den in London zu Tausenden umherfahrenden Black Caps", "Taxi", false, false),
+      new Question("Y", "Der wohl kleinste, aber auch bekannteste Jedi-Ritter im Star Wars Universum ist Meister ...?", "Yoda", false, false),
+      new Question("Z", "Wie nennt sich die oberirdische Anlage auf Tankstellen der man den Kraftstoff für sein Fahrzeug entnimmt?", "Zapfsäule", false, false),
+    ]),
   ];
 }
 
@@ -206,62 +262,4 @@ export class QuestionSet {
  * T - Wie nennt man ein Unterwassergsschoss mit eigenem Antrieb welches von unter anderem von Ubooten abgefuert wird? - Torpedo
  * U - Die staatliche Abgabe eines Unternehmens an den Staat nennt man? - Umsatzsteuer
  *
- */
-
-/**
- * A -  -
- * B -  -
- * C -  -
- * D -  -
- * E -  -
- * F -  -
- * G -  -
- * H -  -
- * I -  -
- * J -  -
- * K -  -
- * L -  -
- * M -  -
- * N -  -
- * O -  -
- * P -  -
- * Q -  -
- * R -  -
- * S -  -
- * T -  -
- * U -  -
- * V -  -
- * W -  -
- * X -  -
- * Y -  -
- * Z - -
- */
-
-/**
- * A -  -
- * B -  -
- * C -  -
- * D -  -
- * E -  -
- * F -  -
- * G -  -
- * H -  -
- * I -  -
- * J -  -
- * K -  -
- * L -  -
- * M -  -
- * N -  -
- * O -  -
- * P -  -
- * Q -  -
- * R -  -
- * S -  -
- * T -  -
- * U -  -
- * V -  -
- * W -  -
- * X -  -
- * Y -  -
- * Z -  -
  */

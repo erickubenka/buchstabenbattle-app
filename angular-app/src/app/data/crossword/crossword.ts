@@ -39,6 +39,18 @@ export class Crossword {
     Crossword.create("Im Schwimmbad.", ["DTYLY", "CHLOR", "BCQOV", "XQEPT", "ELLEW"], ["Chlor", "Welle", "Pool"]),
     Crossword.create("Hilfsmittel für Handwerker.", ["FEILE", "ICUGN", "AHNBU", "NAGEL", "ZTEYS"], ["Feile", "Nagel", "Zange"]),
     Crossword.create("Komm in den Schatten!", ["PRALC", "LIRBX", "ASUAH", "NQKUN", "EVCMK"], ["Haus", "Plane", "Baum"]),
+    Crossword.create("Cowboy", ["PEHWC", "LASSO", "OSMXL", "VYIMT", "RINDF"], ["Lasso", "Rind", "Colt"]),
+    Crossword.create("Passt zum Lachs.", ["AGSES", "DILLE", "ANNKN", "NOSAF", "CHGNK"], ["Dill", "Senf", "Honig"]),
+    Crossword.create("Der Kaffee ist fertig.", ["LUNGO", "LATTE", "VFBTZ", "CQPDT", "AKKOM"], ["Latte", "Lungo", "Mokka"]),
+    Crossword.create("In der Zeitschrift.", ["VSGZH", "LTQTY", "COMIC", "XRYWM", "TYKVB"], ["Comic", "Witz", "Story"]),
+    Crossword.create("TV Serien", ["FIENM", "ANGXO", "REQUN", "GXJZK", "PGLEE"], ["Fargo", "Monk", "Glee"]),
+    Crossword.create("Südamerikanische Städte", ["ESQUE", "ZAULW", "SRIOC", "UMTIU", "ATOXS"], ["Rio", "Quito", "Lima"]),
+    Crossword.create("Dornröschen", ["CRYNK", "BOLMU", "LSGXS", "FEECS", "XBVKV"], ["Fee", "Kuss", "Rose"]),
+    Crossword.create("Singvögel", ["DPABZ", "MEISE", "STARW", "EBJDE", "LFINK"], ["Meise", "Star", "Fink"]),
+    Crossword.create("Grün und würzig.", ["BRAED", "OTSEP", "HCUAL", "UNKSG", "MINZE"], ["Minze", "Lauch", "Pesto"]),
+    Crossword.create("Fische", ["AHMSS", "THCEH", "COPHC", "XHLAA", "SLQLL"], ["Aal", "Hecht", "Lachs"]),
+    Crossword.create("Betriebe", ["FIRMA", "AWGVZ", "NEDAL", "CRVEO", "AKSTE"], ["Firma", "Werk", "Laden"]),
+    Crossword.create("Bei den alten Griechen.", ["WNIBP", "ZEUSM", "QHELY", "ATFGL", "SAYDO"], ["Zeus", "Athen", "Olymp"]),
     Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
   ];
 
