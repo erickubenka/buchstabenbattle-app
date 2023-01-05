@@ -20,6 +20,13 @@
         <hr>
         <div class="row">
           <div class="col-3">
+            <p>Fragensatz wählen:</p>
+            <select [(ngModel)]="connectionSet" class="form-select"
+                    [disabled]="timer.isStarted" (ngModelChange)="refresh()">
+              <option *ngFor="let set of connectionSets()" [ngValue]="set"
+                      [selected]="connectionSet == set">{{set.name}}</option>
+            </select>
+            <hr>
             <p>Timer: {{timer.time}}</p>
             <p>Punkte: {{points}}</p>
 
@@ -29,17 +36,17 @@
           </div>
           <div class="col-9">
             <p>
-              {{connections[questionIndex].question}}
+              {{connectionSet.connections[questionIndex].question}}
             </p>
             <button class="btn btn-success btn-margin-right" [disabled]="!timer.isStarted"
-                    (click)="solve(connections[questionIndex]);">{{connections[questionIndex].answerStart}}{{connections[questionIndex].answerEnd}}</button>
+                    (click)="solve(connectionSet.connections[questionIndex]);">{{connectionSet.connections[questionIndex].answerStart}}{{connectionSet.connections[questionIndex].answerEnd}}</button>
             <button class="btn btn-danger" [disabled]="!timer.isStarted"
-                    (click)="solveWithError(connections[questionIndex]);">Falsch!
+                    (click)="solveWithError(connectionSet.connections[questionIndex]);">Falsch!
             </button>
           </div>
         </div>
         <hr>
-        <div class="row" *ngFor="let q of connections; let index  = index">
+        <div class="row" *ngFor="let q of connectionSet.connections; let index  = index">
           <div class="col-3">
             <button class="btn btn-space"
                     [disabled]="randomAnswerStart[index].isAnswered"

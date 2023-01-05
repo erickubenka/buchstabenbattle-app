@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <ng-container *ngIf="connectionWantedGameData.timer.isStarted">
-        <div class="row" *ngFor="let q of connectionWantedGameData.connections; let index  = index">
+        <div class="row" *ngFor="let q of connectionWantedGameData.connectionSet.connections; let index  = index">
           <div class="col-3">
             <div class="cwd-answer text-center" [ngClass]="{
                 'cwd-answer-correct': connectionWantedGameData.answerStart[index].isAnswered && connectionWantedGameData.answerStart[index].isAnsweredCorrectly,
@@ -20,6 +20,9 @@
         </div>
       </ng-container>
       <div class="card card-question">
+        <div class="card-header text-center">
+          <h3>{{connectionWantedGameData.connectionSet.name}}</h3>
+        </div>
         <div class="card-body">
           <div class="row">
             <div class="col-2">
@@ -32,7 +35,7 @@
                 <div class="col-12 text-center">
                   <ng-container *ngIf="connectionWantedGameData.timer.isStarted">
                     <div class="cwd-question">
-                      {{connectionWantedGameData.connections[connectionWantedGameData.questionIndex].question}}
+                      {{connectionWantedGameData.connectionSet.connections[connectionWantedGameData.questionIndex].question}}
                     </div>
                   </ng-container>
                 </div>

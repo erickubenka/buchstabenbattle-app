@@ -3,6 +3,7 @@ import {GameData} from "../../data/game-data";
 import {Screens} from "../../data/screens";
 import {ConnectionGameData} from "../../data/connection-wanted/connection-game-data";
 import {Timer} from "../../data/timer";
+import {ConnectionSet} from "../../data/connection-wanted/connection-set";
 
 @Component({
   selector: 'app-connection-wanted-display',
@@ -16,7 +17,7 @@ export class ConnectionWantedDisplayComponent {
   @Input() connectionWantedGameData: ConnectionGameData = {
     points: 0,
     timer: new Timer(),
-    connections: [],
+    connectionSet: new ConnectionSet(),
     answerStart: [],
     answerEnd: [],
     questionIndex: 0,
