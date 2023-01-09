@@ -48,6 +48,30 @@ export class ConnectionSet {
       new Connection("Wer quer durch Russland reist, muss die Uhr elf Mal umstellen. Kaum ein anderes Land der Welt hat so viele ...?", "ZEI", "TZONEN"),
       new Connection("So lautet der russische Begriff für die Politik der Transparenz, die Michail Gorbatschow ab 1985 führte.", "GLA", "SNOST"),
       new Connection("Der heutige russische Präsident Putin hat in den 1980ern fünf Jahre lang in Deutschland gearbeitet, und zwar als ...?", "SPI", "ON"),
+    ]),
+    ConnectionSet.create("Schwarz", [
+      new Connection("Schornsteinfeger sind tradtionell schwarz gekleidet und tragen diese Kopfbedeckung.", "ZYL", "INDER"),
+      new Connection("In der Buch- und Filmreihe \"Black Beauty\" drehte sich alles um einen schwarzen ...?", "RAP", "PEN"),
+      new Connection("Das \"Kleine Schwarze\" verdanken wir der Modeschöpferin Coco ...?", "CH", "ANEL"),
+      new Connection("An diesem \"schwarzen Tag\" im November kaufen viele ihre Weihnachtsgeschenke.", "FRID", "AY"),
+      new Connection("Das Schwarzlicht in der Disco bringt dieses kohlensäurehaltige Getränk zum Leuchten.", "TO", "NIC"),
+      new Connection("Der name welcher Schwarzbrotsorte leitet sich wohl von einem furzenden Nikolaus ab?", "PUMPE", "RNICKEL"),
+      new Connection("Welche Märchenfigur der Brüder Grimm ist \"schwarzhaarig wie Ebenholz\"?", "SCHN", "EEWITTCHEN"),
+      new Connection("Der Chefarzt der legendären ZDF-\"Schwarzwaldklinik\" hieß Professor ...?", "BRI", "NKMANN"),
+      new Connection("Dieses Tier nennt der Jäger scherzhaft Schwarzkittel.", "WILDS", "CHWEIN"),
+      new Connection("Als \"Schwarzes Gold Russlands\" wird dieses \Dosenfutter\" auch bezeichnet.", "KAV", "IAR"),
+    ]),
+    ConnectionSet.create("Weiß", [
+      new Connection("\"Ganz in Weiß\" war einer der größten Hits eines Mannes dessen Künstlername genau das Gegenteil war, nämlich ...?", "BL", "ACK"),
+      new Connection("Laut einem erfolgreichen Roman und Film hat dieses Fräulein ein Gespür für Schnee.", "SMI", "LLA"),
+      new Connection("Das erfrischende Biergetränk \"Berliner Weiße mit Schuss\" wird stets mit diesem Trinkutensil serviert.", "STROHH", "ALM"),
+      new Connection("Zur Feier der Legalisierung der Homo-Ehe in den USA, erstrahlte das Weiße Haus 2015 ausnahmsweise in ...?", "REGENBO", "GENFARBEN"),
+      new Connection("Diese Schimmel traben vor allem in der Spanischen Hofreitschule in Wien.", "LI", "PIZZANER"),
+      new Connection("Hier werden die Leukozyten, die weißen Blutkörperchen, im menschlichen Körper gebildet.", "KNOC", "HENMARK"),
+      new Connection("Der Weißkopfseeadler hat seit 1782 in den USA dieses offizielle Amt.", "WAPP", "ENTIER"),
+      new Connection("\"Wir werden ein größeres Boot brauchen\" sagt Polizeichef Brody in \"Der Weiße Hai\", gespielt von Roy ...?", "SC", "HEIDER"),
+      new Connection("Die Detroiter Rockband \"The White Stripes\" sind bekannt durch ihre in Stadien gesungene Hymne \"Seven Nation ...\"?", "AR", "MY"),
+      new Connection("Der Weiße Sonntag ist der erste Sonntag nach Ostern und bei den Katholiken bevorzugt der Tag für die ...?", "ERSTK", "OMMUNION"),
     ])
   ];
 

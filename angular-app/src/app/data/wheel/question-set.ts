@@ -44,7 +44,6 @@ export class QuestionSet {
       new Question("Y", "", "", false, false),
       new Question("Z", "", "", false, false),
     ]),
-
     QuestionSet.create("Fragensatz 1", [
       new Question("A", "Welche Popgruppe gewann 1974 den Grand Prix Eurovisoopn Song mit dem Song Whaterloo?", "ABBA", false, false),
       new Question("B", "Wer hat in Schwimmanstalten die Aufsicht am Beckenrand?", "Bademeister", false, false),
@@ -213,6 +212,62 @@ export class QuestionSet {
       new Question("Y", "Der wohl kleinste, aber auch bekannteste Jedi-Ritter im Star Wars Universum ist Meister ...?", "Yoda", false, false),
       new Question("Z", "Wie nennt sich die oberirdische Anlage auf Tankstellen der man den Kraftstoff für sein Fahrzeug entnimmt?", "Zapfsäule", false, false),
     ]),
+    QuestionSet.create("Fragensatz 7", [
+      new Question("A", "Mit einem englischen Wort gesagt, ist jemand der für alles rundum einsetzbar ist ein ...?", "Allrounder", false, false),
+      new Question("B", "Wie nennt man ein Unternehmen in dem Bier hergestellt wird?", "Brauerei", false, false),
+      new Question("C", "Welcher Superheld, dessen Kostum stark an die US-Flagge erinnert war im Kino als First Avenger zu sehen?", "Captain America", false, false),
+      new Question("D", "Wie heißt der Wohlfahrtsverband der evangelischen Kirche, der sich für Hilfsbedürftige einsetzt?", "Diakonie", false, false),
+      new Question("E", "Welches Instrument wird zur Untersuchung und Dokumentation von Herzschlägen verwendet?", "EKG / Elektrokardiogramm", false, false),
+      new Question("F", "Die amtliche Bezeichnung der Bundesländer Bayern, Sachsen und Thüringen lautet?", "Freistaat", false, false),
+      new Question("G", "Wie heißt der, von Jim Carrey gespielte, grüne Weihnachtshasser?", "Grinch", false, false),
+      new Question("H", "Welches Zauberwort begegnet einem oft in Begleitung von \"fidibus dreimal schwarzer Kater\"", "Hokus Pokus.", false, false),
+      new Question("I", "Die Po-Ebene ist ein fruchtbares Tiefland im Norden dieses Landes.", "Italien", false, false),
+      new Question("J", "Der eigentliche Vorname von Moderator Joko Winterscheidt lautet?", "Joachim", false, false),
+      new Question("K", "Traditioneller Bestandteil vieler Weihnachtskrippen sind die heiligen drei ...?", "Könige", false, false),
+      new Question("L", "Wie nennt man den Bereich des Rückgrats zwischen Brustwirbelsäule und dem Kreuzbein?", "Lendenwirbelsäule", false, false),
+      new Question("M", "Den Boden welches Himmelskörpers betrat der Astronaut Neil Armstrong im Juli 1969?", "Mond", false, false),
+      new Question("N", "Die dritte chronologische Epoche nach Altertum und Mittelalter ist die ...?", "Neuzeit", false, false),
+      new Question("O", "Schaut man sich einen unsynchronisierten Film in fremder Sprache an, sieht man die ...?", "Originalfassung", false, false),
+      new Question("P", "\"Île de la Cité\" heißt der älteste Teil dieser europäischen Metropole?", "Paris", false, false),
+      new Question("Q", "Dem Namen nach hätte Freddy Mercury aus welchem Metall bestehen müssen?", "Quecksilber", false, false),
+      new Question("R", "Welches etwas Walnuss-große Gemüse nennt man auch Kohlsprossen?", "Rosenkohl", false, false),
+      new Question("S", "Was muss man nach volkstümlichen Aberglauben nachts am Himmel beobachten, um einen Wunsch erfüllt zu bekommen?", "Sternschnuppe", false, false),
+      new Question("T", "Welche olympische Sportart hat die niedrigste Netzhöhe?", "Tischtennis", false, false),
+      new Question("U", "Die staatliche Abgabe eines Unternehmens an den Staat nennt man?", "Umsatzssteuer", false, false),
+      new Question("V", "Zwischen Rosenmontag und Aschermittwoch liegt im Rheinland welcher blumige Tag?", "Veilchendienstag", false, false),
+      new Question("W", "Ein Briefroman von Goethe heißt \"Die Leiden des jungen ...\"?" , "Werther", false, false),
+      new Question("X", "Die Fahrzeuge sind in Deutschland immer in der Farbe Hell-Elfenbein unterwegs? X im Wort.", "Taxi", false, false),
+      new Question("Y", "Die fünf Stadtbezirke von New York City heißen Queens, Manhattan, Staten Island, Bronx und ...? Y im Wort", "Brooklyn", false, false),
+      new Question("Z", "Wie lautet der volkstümliche Name des Diabetes Mellitus?", "Zuckerkrankheit", false, false),
+    ]),
+    QuestionSet.create("Fragensatz 8", [
+      new Question("A", "Welchen Menschen formte, nach der biblischen Erzählung, Gott als Erstes aus Erde und hauchte ihn den Lebensatem ein?", "Adam", false, false),
+      new Question("B", "Welches ursprünglich aus dem französisch stammende Wort für \"hell\" benutzt man als Bezeichnung für eine Haarfarbe?", "Blond", false, false),
+      new Question("C", "Dem Leben von Queen Elizabeth II. und dne anderen Royals widmet sich die britische Erfolgsserie \"The ...\"?",  "Crown", false, false),
+      new Question("D", "Welches Nachbarland erreicht man, wenn man von Flensburg nach Norden fährt?", "Dänemark", false, false),
+      new Question("E", "Welchen Namen trägt die Eiskönigin im Animationsfilm \"Frozen\"?", "Elsa", false, false),
+      new Question("F", "Was findet sich in einer mechanischen Uhr und ermöglicht es den Vögeln zu fliegen?", "Feder", false, false),
+      new Question("G", "Wie heißt das Organ des weiblichen Körpers in dem sich das befruchtete Ei fortentwickelt?", "Gebärmutter", false, false),
+      new Question("H", "Laut Islam erlaubte Speisen bezeichnet man als ...?", "Halāl", false, false),
+      new Question("I", "Wie nennt sich das gesüßte Kaffeegetränk, das mit Whiskey und leicht geschlagener Sahne verfeinert wird?", "Irish Coffee", false, false),
+      new Question("J", "In welchem Paragraphenwerk werden unter anderem Sperrstunden für Minderjährige in Gaststätten geregelt?", "Jugendschutzgesetz", false, false),
+      new Question("K", "In welche Pflanze werden zu Halloween traditionell Gesichter geschnitten?", "Kürbis", false, false),
+      new Question("L", "Der Mann mit der Todeskralle gilt als der größte Kampfkünstler des 20. Jahrhunderts und hieß Bruce ...?", "Lee", false, false),
+      new Question("M", "Welche Stadt ist weltbekannt für ihre \"Wiesn\"?", "München", false, false),
+      new Question("N", "Wie nennt man das flüssige Kosmetikprodukt mit dem sich dei oberen Enden der Finger in allen möglichen Farben anmalen lassen?", "Nagellack", false, false),
+      new Question("O", "Wie nennt man in der Oper die Vertiefung zwischen Bühne und Zuschauerraum, in der die Musiker sitzen?", "Orchestergraben", false, false),
+      new Question("P", "Das Hocherhitzungsverfahren, das Keime in Milch abtötet und somit ihre Haltbarkeit verlängert, heißt ...? ", "Pasteurisieren", false, false),
+      new Question("Q", "Aus dem Matheunterricht kennen wir \"4 hoch 2\" oder auch \"4 zum ...\"?", "Quadrat", false, false),
+      new Question("R", "Welcher Kräutertee wächst ausschließlich in der Region der Cederberge bei Kapstadt?", "Rooibos", false, false),
+      new Question("S", "Welches leiterähnliche Gestell benutzt ein Künstler, um beim Malen ideal zum Bild positioniert zu sein?", "Staffelei", false, false),
+      new Question("T", "Seinem Namen nach hat welches Krabbeltierchen 998 Füße mehr als wir?", "Tausendfüßler", false, false),
+      new Question("U", "Den Anbau und Handel von Marijuana legalisierte als weltweit erstes Land dieser kleine südamerikanische Staat?", "Uruguay", false, false),
+      new Question("V", "Der Konsument der das erworbene Produkt nutzt, ist der ...?", "Verbraucher", false, false),
+      new Question("W", "Schafe sind ein wichtiger Lieferant welcher Naturfaser?", "Wolle", false, false),
+      new Question("X", "Der Schliff einer Linse ist entweder konkav oder ...? X am Ende des Wortes.", "konvex", false, false),
+      new Question("Y", "Welches Wort für Steuerknüppel bedeutet wortwörtlich aus dem englischen übersetzt \"Freudenstab\"? Y im Wort.", "Joystick", false, false),
+      new Question("Z", "Was man nur gebraucht, um ein bestimmtes eigennütziges Ziel zu erreichen, bezeichnet man als \"Mittel zum ...\"?", "Zweck", false, false),
+    ]),
   ];
 }
 
@@ -257,9 +312,7 @@ export class QuestionSet {
  * N - Eine Schräglage, aber auch die persönliche Vorliebe für Etwas nennt man ...? - Neigung
  * O - Welcher Begriff bezeichnet eine vorübergehende Bewusstlosigkeit oder Hilfslosigkeit? - Ohnmacht
  * Q - Die Überreste des Körpers eines Heiligen bezeichnet man als ... ? - Reliquie
- * R - Welcher Kräutertee wächst ausschließlich in der Region der Cederberge bei Kapstadt? - Rooibos
  * S - In welcher österreichischen Stadt wurde Wolfang Amadeus Mozart geboren? - Salzbrug
  * T - Wie nennt man ein Unterwassergsschoss mit eigenem Antrieb welches von unter anderem von Ubooten abgefuert wird? - Torpedo
- * U - Die staatliche Abgabe eines Unternehmens an den Staat nennt man? - Umsatzsteuer
  *
  */

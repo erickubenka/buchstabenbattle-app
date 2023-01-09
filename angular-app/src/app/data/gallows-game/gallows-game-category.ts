@@ -38,6 +38,8 @@ export class GallowsGameCategory {
     GallowsGameCategory.create("Innen im Körper", ["Herz", "Darm", "Leber", "Niere", "Milz", "Lunge", "Gehirn", "Magen", "Blase", "Nerven", "Blut", "Knochen", "Gelenke", "Zunge"]),
     GallowsGameCategory.create("Küchenutensilien ohne Strom", ["Messer", "Topf", "Schere", "Suppenkelle", "Korkenzieher", "Geschirr", "Gabel", "Pfanne", "Wok"]),
     GallowsGameCategory.create("Haushaltsgeräte mit Strom", ["Waschmaschine", "Herd", "Toaster", "Fernseher", "Mikrowelle", "Staubsauger", "Haartrockner", "Stabmixer", "Kaffeemaschine", "Radio", "Wasserkocher", "Eierkocher"]),
+    GallowsGameCategory.create("Aus Glas", ["Flasche", "Aquarium", "Fenster", "Spiegel", "Karaffe", "Vase", "TBD"]),
+    GallowsGameCategory.create("Aus Metall", ["Hammer", "Felge", "Tresor", "Alufolie", "Schraube", "Zange", "Gabel", "TBD"]),
   ]
 
   static random() {
