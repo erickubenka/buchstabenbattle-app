@@ -40,6 +40,8 @@ export class GallowsGameCategory {
     GallowsGameCategory.create("Haushaltsgeräte mit Strom", ["Waschmaschine", "Herd", "Toaster", "Fernseher", "Mikrowelle", "Staubsauger", "Haartrockner", "Stabmixer", "Kaffeemaschine", "Radio", "Wasserkocher", "Eierkocher"]),
     GallowsGameCategory.create("Aus Glas", ["Flasche", "Aquarium", "Fenster", "Spiegel", "Karaffe", "Vase", "TBD"]),
     GallowsGameCategory.create("Aus Metall", ["Hammer", "Felge", "Tresor", "Alufolie", "Schraube", "Zange", "Gabel", "TBD"]),
+    GallowsGameCategory.create("Fast Food", ["Hamburger", "Gyros", "Pommes", "HotDog", "Currywurst", "Sandwich", "Kebap", "Burrito", "Pizza", "Taco", "TBD"]),
+    GallowsGameCategory.create("Star Küche", ["Rosin", "Schubeck", "Herrmann", "Raue", "Rach", "Lafer", "Kumptner", "Poletto"]),
   ]
 
   static random() {

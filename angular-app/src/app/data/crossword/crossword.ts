@@ -61,10 +61,18 @@ export class Crossword {
     Crossword.create("Quer durch Italien", ["FRMSG", "DLOZE", "TURIN", "ORMIU", "XFAIA"], ["Genua", "Turin", "Rom"]),
     Crossword.create("Fabelwesen", ["VGNOM", "PIFRG", "AEXEH", "GREIF", "QUNAM"], ["Gnom", "Greif", "Hexe"]),
     Crossword.create("Blasinstrumente", ["NUCAS", "RMKET", "OROUG", "HBBEK", "OASOQ"], ["Oboe", "Horn", "Tuba"]),
-    Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
-    Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
-    Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
-    Crossword.create("Category", ["BUDTY", "UNRIT", "LOIAR", "CMNPA", "KUKAP"], ["Club", "Drink", "Party"]),
+    Crossword.create("Auf der Alm", ["ZAUNW", "RCDWE", "IMGFI", "NVHPD", "DCHNE"], ["Zaun", "Weide", "Rind"]),
+    Crossword.create("Deutschsprachige Sänger", ["ELGRF", "SASHA", "KQNJL", "CNBPC", "HEINO"], ["Sasha", "Heino", "Falco"]),
+    Crossword.create("Schlangen", ["MLCGR", "ADLGE", "MOWKP", "BOACI", "AQHRV"], ["Viper", "Boa", "Mamba"]),
+    Crossword.create("...-stein", ["BOUHD", "EKHJN", "RUACA", "NVFLS", "TZFEK"], ["Bern", "Sand", "Kalk"]),
+    Crossword.create("Wo?", ["NZILD", "WEXWY", "AXBEI", "UQDEG", "FPTGN"], ["Bei", "Auf", "Neben"]),
+    Crossword.create("Sportliche Leistungen", ["EVPEJ", "WTTLC", "FUOAP", "QFRUQ", "GRYFL"], ["Lauf", "Wurf", "Tor"]),
+    Crossword.create("Fest mit Musik", ["FFVXB", "GEANA", "TTCML", "DEXJL", "PARTY"], ["Ball", "Party", "Fete"]),
+    Crossword.create("Lebenswichtige Organe", ["QHERZ", "XAHEJ", "HUXBW", "YTWEZ", "NLDLY"], ["Herz", "Haut", "Leber"]),
+    Crossword.create("...-geld", ["ZBJJU", "LAATF", "PREIS", "IMKGC", "PFPOK"], ["Bar", "Preis", "Kopf"]),
+    Crossword.create("Ist gerne mal blau.", ["AEHTA", "UWLIX", "GJGNI", "EQZTE", "SNAEJ"], ["Tinte", "Jeans", "Auge"]),
+    Crossword.create("Wintereinbruch", ["GJWTC", "SZKTK", "SMPAU", "AQLLB", "NTXGJ"], ["Nass", "Kalt", "Glatt"]),
+    Crossword.create("...-film", ["SZNAT", "TPEEH", "UDIZR", "MJTEY", "MRBAL"], ["Tanz", "Stumm", "Spiel"]),
   ];
 
   static next() {
