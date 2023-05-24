@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="col-12">
+    <div class="card">
+      <app-navigation></app-navigation>
+      <div class="card-header text-center">
+        <h2>Der entscheidende Hinweis</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Den Kandidaten*innen wird ein Bild einer Sehenswürdigkeit, einer berühmten Person oder einer Stadt
+              gezeigt. Sie
+              sollen nun erraten, um was oder wen es sich handelt. Dabei treten die Kandidaten*innen gegeneinander an.
+              Kann keiner der Kandidaten*innen das Rätsel auf Anhieb lösen, wird ein Hinweis eingeblendet. Falls auch
+              dieser nicht weiterhilft, wird der nächste Hinweis angezeigt, bis die Hinweise so offensichtlich sind,
+              dass eine falsche Lösung nicht mehr möglich sein sollte.
+            </p>
+            <p>
+              Für das Lösen eines Rätsels ohne Hinweise gibt es 5 Punkte. Für jeden gegebenen Hinweis wird 1 Punkt
+              abgezogen. Es gibt also maximal 4 Hinweise pro Rätsel.
+            </p>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-5">
+            <p>
+              Spiele gespielt: {{ gamesPlayed }}
+            </p>
+            <p>
+              Punkte Spieler 1: {{ pointsPlayer1 }}
+            </p>
+            <p>
+              Punkte Spieler 2: {{ pointsPlayer2 }}
+            <p>
+              Kategorie: {{ crucialHint.name }}
+            </p>
+            <p>
+              Aktuelles Bild (mögliche Punkte): {{5 - hintsGiven.length}}
+            </p>
+            <hr/>
+            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="">Neustart!
+            </button>
+            <button class="btn btn-danger" (click)="next()" [disabled]="">Neues Bild!</button>
+          </div>
+          <div class="col-7">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ crucialHint.name }}</h5>
+                  </div>
+                  <div class="card-body">
+                    <button class="btn btn-warning btn-margin-right" (click)="giveHint()" [disabled]="">Hinweis geben
+                    </button>
+                    <button class="btn btn-success btn-margin-right" (click)="solve(1)" [disabled]="">Richtig Spieler 1!
+                    </button>
+                    <button class="btn btn-success" (click)="solve(2)" [disabled]="">Richtig Spieler 2!</button>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li *ngFor="let hint of hintsGiven" class="list-group-item">{{ hint }}</li>
+                  </ul>
+                  <img class="card-img-bottom" [src]="crucialHint.imagePath" alt="Card image cap">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -12,7 +12,7 @@ export class NavigationComponent {
     new NavItem("Mut zur Lücke", "/admin/gallows-game"),
     new NavItem("Buchstabensalat", "/admin/crossword"),
     new NavItem("Anschluss gesucht", "/admin/connection-wanted"),
-    new NavItem("Der entscheidene Hinweis", "/admin/tbd"),
+    new NavItem("Der entscheidene Hinweis", "/admin/crucial-hint"),
     new NavItem("Buchstabenrad", "/admin/wheel"),
   ]
 }

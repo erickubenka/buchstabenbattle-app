@@ -18,6 +18,8 @@ import {
 } from './display/connection-wanted-display/connection-wanted-display.component';
 import {WheelDisplayComponent} from './display/wheel-display/wheel-display.component';
 import {WheelComponent} from "./admin/wheel/wheel.component";
+import {CrucialHintComponent} from './admin/crucial-hint/crucial-hint.component';
+import { CrucialHintDisplayComponent } from './display/crucial-hint-display/crucial-hint-display.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {WheelComponent} from "./admin/wheel/wheel.component";
     CrosswordDisplayComponent,
     NavigationComponent,
     ConnectionWantedDisplayComponent,
-    WheelDisplayComponent
+    WheelDisplayComponent,
+    CrucialHintComponent,
+    CrucialHintDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import {WheelComponent} from "./admin/wheel/wheel.component";
       {path: 'admin/crossword', component: CrosswordComponent},
       {path: 'admin/gallows-game', component: GallowsGameComponent},
       {path: 'admin/connection-wanted', component: ConnectionWantedComponent},
+      {path: 'admin/crucial-hint', component: CrucialHintComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule
