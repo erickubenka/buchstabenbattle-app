@@ -29,34 +29,31 @@
               Spiele gespielt: {{ gamesPlayed }}
             </p>
             <p>
-              Punkte Spieler 1: {{ pointsPlayer1 }}
+              Punkte: {{ points }}
             </p>
             <p>
-              Punkte Spieler 2: {{ pointsPlayer2 }}
-            <p>
-              Kategorie: {{ crucialHint.name }}
-            </p>
+              Zeit: {{ timer.time }}
             <p>
               Aktuelles Bild (mögliche Punkte): {{5 - hintsGiven.length}}
             </p>
             <hr/>
-            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="">Neustart!
+            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">Start!
             </button>
-            <button class="btn btn-danger" (click)="next()" [disabled]="">Neues Bild!</button>
+            <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!timer.isStarted">Stop!
+            </button>
+            <button class="btn btn-warning btn-margin-right" (click)="giveHint()" [disabled]="!timer.isStarted">Hinweis
+              geben
+            </button>
+            <button class="btn btn-success btn-margin-right" (click)="solve()" [disabled]="!timer.isStarted">Richtig!
+            </button>
+            <button class="btn btn-danger" (click)="next()" [disabled]="!timer.isStarted">Neues Bild!</button>
           </div>
           <div class="col-7">
             <div class="row">
               <div class="col-12">
                 <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ crucialHint.name }}</h5>
-                  </div>
-                  <div class="card-body">
-                    <button class="btn btn-warning btn-margin-right" (click)="giveHint()" [disabled]="">Hinweis geben
-                    </button>
-                    <button class="btn btn-success btn-margin-right" (click)="solve(1)" [disabled]="">Richtig Spieler 1!
-                    </button>
-                    <button class="btn btn-success" (click)="solve(2)" [disabled]="">Richtig Spieler 2!</button>
+                  <div class="card-header text-center">
+                    <h2>{{ crucialHint.name }}</h2>
                   </div>
                   <ul class="list-group list-group-flush">
                     <li *ngFor="let hint of hintsGiven" class="list-group-item">{{ hint }}</li>

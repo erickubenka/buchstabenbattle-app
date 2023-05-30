@@ -35,7 +35,8 @@
                                      [connectionWantedGameData]="displayData.data.specificData"></app-connection-wanted-display>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 4">
-      Das jetzige Spiel ist "Der entscheidende Hinweis".
+      <app-crucial-hint-display [gameData]="displayData.data"
+                                     [crucialHintGameData]="displayData.data.specificData"></app-crucial-hint-display>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 5">
       <app-wheel-display [gameData]="displayData.data"

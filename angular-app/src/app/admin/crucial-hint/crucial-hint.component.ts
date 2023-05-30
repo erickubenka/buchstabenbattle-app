@@ -17,25 +17,29 @@ export class CrucialHintComponent {
 
   crucialHint: CrucialHint = new CrucialHint();
 
-  pointsPlayer1: number = 0;
+  points: number = 0;
   pointsPlayer2: number = 0;
   gamesPlayed: number = 0;
   hintsGiven: string[] = [];
+  timer: Timer;
 
   constructor(private webSocketService: WebSocketService) {
+    this.timer = Timer.create(90, () => this.send());
+    this.crucialHint = CrucialHint.next();
     this.send();
   }
 
   start() {
-    this.crucialHint = CrucialHint.next();
     this.hintsGiven = [];
     this.gamesPlayed = 0;
-    this.pointsPlayer1 = 0;
+    this.points = 0;
     this.pointsPlayer2 = 0;
+    this.timer.start()
     this.send();
   }
 
   stop() {
+    this.timer.stop();
     this.send();
   }
 
@@ -54,13 +58,8 @@ export class CrucialHintComponent {
     this.send();
   }
 
-  solve(playerNumber: number) {
-    if (playerNumber == 1) {
-      this.pointsPlayer1 = this.pointsPlayer1 + (5 - this.hintsGiven.length);
-    }
-    if (playerNumber == 2) {
-      this.pointsPlayer2 = this.pointsPlayer2 + (5 - this.hintsGiven.length);
-    }
+  solve() {
+    this.points = this.points + (5 - this.hintsGiven.length);
     this.next();
   }
 
@@ -71,8 +70,8 @@ export class CrucialHintComponent {
   private prepareData(): GameData {
 
     let crucialHintGameData: CrucialHintGameData = {
-      pointsPlayer1: this.pointsPlayer1,
-      pointsPlayer2: this.pointsPlayer2,
+      timer: this.timer,
+      points: this.points,
       hintsGiven: this.hintsGiven,
       gamesPlayed: this.gamesPlayed,
       crucialHint: this.crucialHint

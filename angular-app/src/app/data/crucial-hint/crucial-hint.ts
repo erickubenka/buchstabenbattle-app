@@ -18,7 +18,6 @@ export class CrucialHint {
   }
 
   private static crucialHints: CrucialHint[] = [
-    CrucialHint.create("Demo", "demo.jpg", ["Dies", "Ist", "Eine", "Demo"]),
     CrucialHint.create("Brandenburger Tor", "/assets/images/crucial-hint/brandenburger-tor.jpg", ["Berlin", "Tor", "Brandenburger", "Brandenburg"]),
   ];
 

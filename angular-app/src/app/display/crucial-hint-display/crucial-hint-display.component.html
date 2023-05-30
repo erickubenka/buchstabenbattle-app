@@ -1,1 +1,35 @@
-<p>crucial-hint-display works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-question">
+        <div class="card-header text-center">
+          <h3>
+            Was suchen wir?
+          </h3>
+        </div>
+        <img *ngIf="crucialHintGameData.timer.isStarted" class="card-img" [src]="crucialHintGameData.crucialHint.imagePath" alt="Card image cap">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center">
+                {{crucialHintGameData.timer.time}}
+              </div>
+            </div>
+            <div class="col-6">
+              <ng-container *ngIf="crucialHintGameData.timer.isStarted">
+                <ul class="list-group list-group-flush">
+                  <li *ngFor="let hint of crucialHintGameData.hintsGiven" class="list-group-item">{{ hint }}</li>
+                </ul>
+              </ng-container>
+            </div>
+            <div class="col-3">
+              <div class="rounded-circle timer-circle text-center float-end">
+                {{crucialHintGameData.points}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
