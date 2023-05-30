@@ -24,12 +24,24 @@
         </div>
         <hr/>
         <div class="row">
+          <div class="col-12">
+            <p>
+              Ausgewählter Modus: {{ singlePlayer ? 'Single Player' : 'Multi Player' }}
+            </p>
+            <button class="btn btn-primary" (click)="toggleSinglePlayer()">Toggle Player Mode</button>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
           <div class="col-5">
             <p>
               Spiele gespielt: {{ gamesPlayed }}
             </p>
             <p>
               Punkte: {{ points }}
+            </p>
+            <p *ngIf="!singlePlayer">
+              Punkte Spieler 2: {{ pointsPlayer2 }}
             </p>
             <p>
               Zeit: {{ timer.time }}
@@ -41,12 +53,20 @@
             </button>
             <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!timer.isStarted">Stop!
             </button>
-            <button class="btn btn-warning btn-margin-right" (click)="giveHint()" [disabled]="!timer.isStarted">Hinweis
-              geben
+            <button class="btn btn-warning btn-margin-right" (click)="giveHint()"
+                    [disabled]="!timer.isStarted && singlePlayer">Hinweis
+              geben!
             </button>
-            <button class="btn btn-success btn-margin-right" (click)="solve()" [disabled]="!timer.isStarted">Richtig!
+            <button class="btn btn-success btn-margin-right" (click)="solve(1)"
+                    [disabled]="!timer.isStarted && singlePlayer">Richtig!
             </button>
-            <button class="btn btn-danger" (click)="next()" [disabled]="!timer.isStarted">Neues Bild!</button>
+            <ng-container *ngIf="!singlePlayer">
+              <button class="btn btn-success btn-margin-right" (click)="solve(2)"
+                      [disabled]="singlePlayer">Richtig Spieler 2!
+              </button>
+            </ng-container>
+            <button class="btn btn-danger" (click)="next()" [disabled]="!timer.isStarted && singlePlayer">Neues Bild!
+            </button>
           </div>
           <div class="col-7">
             <div class="row">
@@ -58,7 +78,7 @@
                   <ul class="list-group list-group-flush">
                     <li *ngFor="let hint of hintsGiven" class="list-group-item">{{ hint }}</li>
                   </ul>
-                  <img class="card-img-bottom" [src]="crucialHint.imagePath" alt="Card image cap">
+                  <img class="card-img-bottom" [src]="crucialHint.imagePath" [alt]="crucialHint.name">
                 </div>
               </div>
             </div>
@@ -67,4 +87,4 @@
       </div>
     </div>
   </div>
-
+</div>

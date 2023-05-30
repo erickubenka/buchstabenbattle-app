@@ -17,6 +17,7 @@ export class CrucialHintComponent {
 
   crucialHint: CrucialHint = new CrucialHint();
 
+  singlePlayer: boolean = true;
   points: number = 0;
   pointsPlayer2: number = 0;
   gamesPlayed: number = 0;
@@ -24,8 +25,13 @@ export class CrucialHintComponent {
   timer: Timer;
 
   constructor(private webSocketService: WebSocketService) {
-    this.timer = Timer.create(90, () => this.send());
+    this.timer = Timer.create(120, () => this.send());
     this.crucialHint = CrucialHint.next();
+    this.send();
+  }
+
+  toggleSinglePlayer() {
+    this.singlePlayer = !this.singlePlayer;
     this.send();
   }
 
@@ -34,13 +40,16 @@ export class CrucialHintComponent {
     this.gamesPlayed = 0;
     this.points = 0;
     this.pointsPlayer2 = 0;
-    this.timer.start()
+
+    // Start timer only in single player mode.
+    if (this.singlePlayer) {
+      this.timer.start()
+    }
     this.send();
   }
 
   stop() {
     this.timer.stop();
-    this.send();
   }
 
   giveHint() {
@@ -58,8 +67,15 @@ export class CrucialHintComponent {
     this.send();
   }
 
-  solve() {
-    this.points = this.points + (5 - this.hintsGiven.length);
+  solve(playerNumber: number) {
+    if (playerNumber == 1) {
+      this.points = this.points + (5 - this.hintsGiven.length);
+    }
+
+    // Only add points for player 2 when multiplayer selected.
+    if (!this.singlePlayer && playerNumber == 2) {
+      this.pointsPlayer2 = this.pointsPlayer2 + (5 - this.hintsGiven.length);
+    }
     this.next();
   }
 
@@ -71,7 +87,9 @@ export class CrucialHintComponent {
 
     let crucialHintGameData: CrucialHintGameData = {
       timer: this.timer,
+      singlePlayer: this.singlePlayer,
       points: this.points,
+      pointsPlayer2: this.pointsPlayer2,
       hintsGiven: this.hintsGiven,
       gamesPlayed: this.gamesPlayed,
       crucialHint: this.crucialHint

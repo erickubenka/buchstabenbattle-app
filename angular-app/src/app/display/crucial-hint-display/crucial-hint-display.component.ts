@@ -15,7 +15,9 @@ export class CrucialHintDisplayComponent {
   @Input() gameData: GameData = {currentScreenSelected: Screens.CrucialHint, isStarted: false, specificData: {}}
   @Input() crucialHintGameData: CrucialHintGameData = {
     timer: new Timer(),
+    singlePlayer: true,
     points: 0,
+    pointsPlayer2: 0,
     crucialHint: new CrucialHint(),
     gamesPlayed: 0,
     hintsGiven: []

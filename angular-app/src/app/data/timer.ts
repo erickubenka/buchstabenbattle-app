@@ -9,7 +9,7 @@ export class Timer {
   static create(time: number, callback: any): Timer {
     let timer = new Timer();
 
-    timer.time = 90;
+    timer.time = time;
     timer.callback = callback;
     return timer;
   }
