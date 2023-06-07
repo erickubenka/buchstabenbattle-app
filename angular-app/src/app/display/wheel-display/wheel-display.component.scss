@@ -4,6 +4,7 @@
 $circle-wrapper-color: #FFFFF;
 $circle-color: rgb(37, 110, 169);
 $circle-color-correctly: rgb(23, 169, 0);
+$circle-color-current: rgb(255, 234, 6);
 $circle-color-wrong: rgb(232, 64, 64);
 
 //$circle-wrapper-size: 900px;
@@ -41,6 +42,10 @@ $translate-size: ($circle-wrapper-size/2)+1;
 
   &.circle-wrong {
     background: $circle-color-wrong;
+  }
+
+  &.circle-current {
+    background: $circle-color-current;
   }
 
 }

@@ -4,7 +4,7 @@
       <div class="circle-wrapper">
         <div *ngFor="let question of wheelgameData.activePlayer.questionSet.questionList; let index=index;"
              class="circle deg-{{index}}"
-             [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly}">
+             [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly, 'circle-current': wheelgameData.activePlayer.questionIndex != -1 && question.letter == wheelgameData.activePlayer.questionSet.questionList[wheelgameData.activePlayer.questionIndex].letter}">
           {{question.letter}}
         </div>
       </div>
@@ -22,7 +22,7 @@
               <div class="col-8">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <div class="cwd-question" *ngIf="wheelgameData.activePlayer.timer.isStarted">
+                    <div class="" *ngIf="wheelgameData.activePlayer.timer.isStarted">
                       {{wheelgameData.activePlayer.questionSet.questionList[wheelgameData.activePlayer.questionIndex].question}}
                     </div>
                   </div>
