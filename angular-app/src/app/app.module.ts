@@ -19,7 +19,9 @@ import {
 import {WheelDisplayComponent} from './display/wheel-display/wheel-display.component';
 import {WheelComponent} from "./admin/wheel/wheel.component";
 import {CrucialHintComponent} from './admin/crucial-hint/crucial-hint.component';
-import { CrucialHintDisplayComponent } from './display/crucial-hint-display/crucial-hint-display.component';
+import {CrucialHintDisplayComponent} from './display/crucial-hint-display/crucial-hint-display.component';
+import {ScoreComponent} from './admin/score/score.component';
+import { ScoreDisplayComponent } from './display/score-display/score-display.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CrucialHintDisplayComponent } from './display/crucial-hint-display/cruc
     ConnectionWantedDisplayComponent,
     WheelDisplayComponent,
     CrucialHintComponent,
-    CrucialHintDisplayComponent
+    CrucialHintDisplayComponent,
+    ScoreComponent,
+    ScoreDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { CrucialHintDisplayComponent } from './display/crucial-hint-display/cruc
       {path: 'admin/gallows-game', component: GallowsGameComponent},
       {path: 'admin/connection-wanted', component: ConnectionWantedComponent},
       {path: 'admin/crucial-hint', component: CrucialHintComponent},
+      {path: 'admin/score', component: ScoreComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule

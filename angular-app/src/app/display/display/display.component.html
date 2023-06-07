@@ -16,9 +16,7 @@
       </p>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 98 && displayData.data.isStarted">
-      <p>
-        Spielstand!
-      </p>
+      <app-score-display [gameData]="displayData.data" [scoreData]="displayData.data.specificData"></app-score-display>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 1">
       <app-gallows-game-display [gameData]="displayData.data"
@@ -36,7 +34,7 @@
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 4">
       <app-crucial-hint-display [gameData]="displayData.data"
-                                     [crucialHintGameData]="displayData.data.specificData"></app-crucial-hint-display>
+                                [crucialHintGameData]="displayData.data.specificData"></app-crucial-hint-display>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 5">
       <app-wheel-display [gameData]="displayData.data"

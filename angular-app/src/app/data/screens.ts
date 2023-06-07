@@ -5,6 +5,6 @@ export enum Screens {
   ConnectionWanted = 3,
   CrucialHint = 4,
   Wheel = 5,
-  Standings = 98,
+  Score = 98,
   Intro = 99,
 }

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-12">
+    <div class="card">
+      <app-navigation></app-navigation>
+      <div class="card-header text-center">
+        <h2>Spielstand</h2>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Spiel</th>
+            <th>Spieler 1</th>
+            <th>Spieler 2</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Mut zur Lücke</td>
+            <td>
+              <input type="number" class="form-control" id="gallows-game-player1"
+                     [(ngModel)]="player1.gallowsGameScore"/>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="gallows-game-player2"
+                     [(ngModel)]="player2.gallowsGameScore"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Buchstabensalat</td>
+            <td>
+              <input type="number" class="form-control" id="crossword-player1" [(ngModel)]="player1.crosswordScore"/>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="crossword-player2" [(ngModel)]="player2.crosswordScore"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Anschluss gesucht</td>
+            <td>
+              <input type="number" class="form-control" id="connection-wanted-player1"
+                     [(ngModel)]="player1.connectionWantedScore"/>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="connection-wanted-player2"
+                     [(ngModel)]="player2.connectionWantedScore"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Der entscheidende Hinweis</td>
+            <td>
+              <input type="number" class="form-control" id="crucial-hint-player1"
+                     [(ngModel)]="player1.crucialHintScore"/>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="crucial-hint-player2"
+                     [(ngModel)]="player2.crucialHintScore"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Summe</td>
+            <td>{{player1.sum()}}</td>
+            <td>{{player2.sum()}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary btn-margin-right" (click)="save()">Speichern</button>
+        <button class="btn btn-danger" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>

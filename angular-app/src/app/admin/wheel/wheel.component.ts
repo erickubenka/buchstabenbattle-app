@@ -6,6 +6,10 @@ import {Screens} from "../../data/screens";
 import {WheelGameData} from "../../data/wheel/wheel-game-data";
 import {Question} from "../../data/wheel/question";
 import {QuestionSet} from "../../data/wheel/question-set";
+import {LocalStorageService} from "../../services/local-storage.service";
+import {ScoreComponent} from "../score/score.component";
+import {PlayerScore} from "../../data/score/player-score";
+import {ScoreData} from "../../data/score/score-data";
 
 @Component({
   selector: 'app-wheel',
@@ -22,9 +26,15 @@ export class WheelComponent {
   isStarted: boolean = false;
   private timerInterval: any;
 
-  constructor(private webSocketService: WebSocketService) {
-    this.player1 = new WheelData();
-    this.player2 = new WheelData();
+  constructor(private webSocketService: WebSocketService, private localStorageService: LocalStorageService) {
+
+    // get score from local storage and apply it to the players
+    let score: ScoreData = JSON.parse(this.localStorageService.get("score"));
+    let player1Score: number = score ? 100 + PlayerScore.readFromObject(score.player1).sum() : 100;
+    let player2Score: number = score ? 100 + PlayerScore.readFromObject(score.player2).sum() : 100;
+
+    this.player1 = new WheelData(player1Score);
+    this.player2 = new WheelData(player2Score);
     this.player1.questionSet = QuestionSet.sets[0];
     this.player2.questionSet = QuestionSet.sets[0];
     this.activePlayer = this.player1;

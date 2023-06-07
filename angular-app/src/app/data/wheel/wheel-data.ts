@@ -8,8 +8,12 @@ export class WheelData {
   answersGivenCorrectly = 0;
   answersGiven = 0;
   questionIndex = 0;
-  timer: Timer = Timer.create(100, () => {
-  });
+  timer: Timer;
+
+  constructor(timeInSeconds: number) {
+    this.timer = Timer.create(timeInSeconds, () => {
+    });
+  }
 
   start() {
     this.timer.start();

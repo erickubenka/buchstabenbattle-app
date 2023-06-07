@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Spielstand</h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Spiel</th>
+              <th>Spieler 1</th>
+              <th>Spieler 2</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Mut zur Lücke</td>
+              <td>
+                {{scoreData.player1.gallowsGameScore}}
+              </td>
+              <td>
+                {{scoreData.player2.gallowsGameScore}}
+              </td>
+            </tr>
+            <tr>
+              <td>Buchstabensalat</td>
+              <td>
+                {{scoreData.player1.crosswordScore}}
+              </td>
+              <td>
+                {{scoreData.player2.crosswordScore}}
+              </td>
+            </tr>
+            <tr>
+              <td>Anschluss gesucht</td>
+              <td>
+                {{scoreData.player1.connectionWantedScore}}
+              </td>
+              <td>
+                {{scoreData.player2.connectionWantedScore}}
+              </td>
+            </tr>
+            <tr>
+              <td>Der entscheidende Hinweis</td>
+              <td>
+                {{scoreData.player1.crucialHintScore}}
+              </td>
+              <td>
+                {{scoreData.player2.crucialHintScore}}
+              </td>
+            </tr>
+            <tr>
+              <td>Summe</td>
+              <td>{{sum(scoreData.player1)}}</td>
+              <td>{{sum(scoreData.player2)}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

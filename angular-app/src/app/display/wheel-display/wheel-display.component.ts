@@ -16,6 +16,6 @@ export class WheelDisplayComponent {
 
   @Input() wheelgameData: WheelGameData = {
     isStarted: false,
-    activePlayer: new WheelData()
+    activePlayer: new WheelData(0)
   };
 }
