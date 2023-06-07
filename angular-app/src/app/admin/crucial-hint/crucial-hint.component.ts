@@ -23,6 +23,7 @@ export class CrucialHintComponent {
   gamesPlayed: number = 0;
   hintsGiven: string[] = [];
   timer: Timer;
+  isStarted: boolean = false;
 
   constructor(private webSocketService: WebSocketService) {
     this.timer = Timer.create(120, () => this.send());
@@ -45,10 +46,12 @@ export class CrucialHintComponent {
     if (this.singlePlayer) {
       this.timer.start()
     }
+    this.isStarted = true;
     this.send();
   }
 
   stop() {
+    this.isStarted = false;
     this.timer.stop();
   }
 
@@ -97,7 +100,7 @@ export class CrucialHintComponent {
 
     return {
       currentScreenSelected: Screens.CrucialHint,
-      isStarted: true,
+      isStarted: this.isStarted,
       specificData: crucialHintGameData
     }
   }

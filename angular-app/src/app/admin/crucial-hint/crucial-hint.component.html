@@ -49,23 +49,25 @@
               Aktuelles Bild (mögliche Punkte): {{5 - hintsGiven.length}}
             </p>
             <hr/>
-            <button class="btn btn-success btn-margin-right" (click)="start()" [disabled]="timer.isStarted">Start!
+            <button class="btn btn-success btn-margin-right" (click)="start()"
+                    [disabled]="timer.isStarted || isStarted">Start!
             </button>
-            <button class="btn btn-danger btn-margin-right" (click)="stop()" [disabled]="!timer.isStarted">Stop!
+            <button class="btn btn-danger btn-margin-right" (click)="stop()"
+                    [disabled]="!timer.isStarted && !isStarted">Stop!
             </button>
             <button class="btn btn-warning btn-margin-right" (click)="giveHint()"
-                    [disabled]="!timer.isStarted && singlePlayer">Hinweis
+                    [disabled]="!timer.isStarted && !isStarted">Hinweis
               geben!
             </button>
             <button class="btn btn-success btn-margin-right" (click)="solve(1)"
-                    [disabled]="!timer.isStarted && singlePlayer">Richtig!
+                    [disabled]="!timer.isStarted && !isStarted">Richtig!
             </button>
             <ng-container *ngIf="!singlePlayer">
               <button class="btn btn-success btn-margin-right" (click)="solve(2)"
-                      [disabled]="singlePlayer">Richtig Spieler 2!
+                      [disabled]="!isStarted">Richtig Spieler 2!
               </button>
             </ng-container>
-            <button class="btn btn-danger" (click)="next()" [disabled]="!timer.isStarted && singlePlayer">Neues Bild!
+            <button class="btn btn-danger" (click)="next()" [disabled]="!timer.isStarted && !isStarted">Neues Bild!
             </button>
           </div>
           <div class="col-7">
