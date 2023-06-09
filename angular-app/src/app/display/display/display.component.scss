@@ -23,7 +23,16 @@ body {
   width: $circle-size;
   line-height: $circle-size;
   font-size: $circle-size/2.5;
+
+  &.mini-circle {
+
+    height: $circle-size/2;
+    width: $circle-size/2;
+    line-height: $circle-size/2;
+    font-size: $circle-size/5;
+  }
 }
+
 
 .card-question {
   border-radius: 30px;

@@ -18,6 +18,8 @@ export class GallowsGameDisplayComponent {
   @Input() gallowsGameData: GallowsGameData = {
     points: 0,
     timer: new Timer(),
+    errors: 0,
+    pointsPerWord: 5,
     category: new GallowsGameCategory()
   }
 }
