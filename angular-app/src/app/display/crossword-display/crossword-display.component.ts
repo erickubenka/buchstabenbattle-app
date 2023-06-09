@@ -12,6 +12,8 @@ import {Timer} from "../../data/timer";
 })
 export class CrosswordDisplayComponent {
 
+  protected readonly CrosswordGameData = CrosswordGameData;
+
   @Input() gameData: GameData = {currentScreenSelected: Screens.Crossword, isStarted: false, specificData: {}}
 
   @Input() crosswordGameData: CrosswordGameData = {

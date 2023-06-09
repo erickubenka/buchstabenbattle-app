@@ -3,6 +3,8 @@ import {CrucialHint} from "./crucial-hint";
 
 export class CrucialHintGameData {
 
+  public static readonly pointsPerRound: number = 5;
+
   public timer: Timer = new Timer();
   public singlePlayer: boolean = true;
   public points: number = 0;

@@ -14,12 +14,13 @@ import {GallowsGameCategory} from "../../data/gallows-game/gallows-game-category
 })
 export class GallowsGameDisplayComponent {
 
+  protected readonly GallowsGameData = GallowsGameData;
+
   @Input() gameData: GameData = {currentScreenSelected: Screens.GallowsGame, isStarted: false, specificData: {}}
   @Input() gallowsGameData: GallowsGameData = {
     points: 0,
     timer: new Timer(),
     errors: 0,
-    pointsPerWord: 5,
     category: new GallowsGameCategory()
   }
 }

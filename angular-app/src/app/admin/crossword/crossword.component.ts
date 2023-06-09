@@ -19,7 +19,7 @@ export class CrosswordComponent {
   errors: number = 0;
 
   constructor(private webSocketService: WebSocketService) {
-    this.timer = Timer.create(90, () => this.send());
+    this.timer = Timer.create(CrosswordGameData.timeInSeconds, () => this.send());
     this.crossword = Crossword.next();
     this.send();
   }

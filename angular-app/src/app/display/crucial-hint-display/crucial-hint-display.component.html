@@ -28,17 +28,24 @@
                 <div class="rounded-circle timer-circle text-center float-end">
                   {{crucialHintGameData.points}}
                 </div>
+                <div class="rounded-circle timer-circle mini-circle text-center float-end">
+                  {{CrucialHintGameData.pointsPerRound - crucialHintGameData.hintsGiven.length}}
+                </div>
               </div>
             </div>
           </div>
         </ng-container>
         <ng-container *ngIf="!crucialHintGameData.singlePlayer">
-          <img *ngIf="gameData.isStarted" class="card-img" [src]="crucialHintGameData.crucialHint.imagePath" alt="Card image cap">
+          <img *ngIf="gameData.isStarted" class="card-img" [src]="crucialHintGameData.crucialHint.imagePath"
+               alt="Card image cap">
           <div class="card-body">
             <div class="row">
               <div class="col-3">
-                <div class="rounded-circle timer-circle text-center">
+                <div class="rounded-circle timer-circle text-center float-start">
                   {{crucialHintGameData.points}}
+                </div>
+                <div class="rounded-circle timer-circle mini-circle text-center float-start">
+                  {{CrucialHintGameData.pointsPerRound - crucialHintGameData.hintsGiven.length}}
                 </div>
               </div>
               <div class="col-6">
@@ -49,6 +56,9 @@
               <div class="col-3">
                 <div class="rounded-circle timer-circle text-center float-end">
                   {{crucialHintGameData.pointsPlayer2}}
+                </div>
+                <div class="rounded-circle timer-circle mini-circle text-center float-end">
+                  {{CrucialHintGameData.pointsPerRound - crucialHintGameData.hintsGiven.length}}
                 </div>
               </div>
             </div>

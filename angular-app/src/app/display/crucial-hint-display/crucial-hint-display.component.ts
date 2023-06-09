@@ -4,6 +4,7 @@ import {Screens} from "../../data/screens";
 import {CrucialHintGameData} from "../../data/crucial-hint/crucial-hint-game-data";
 import {CrucialHint} from "../../data/crucial-hint/crucial-hint";
 import {Timer} from "../../data/timer";
+import {GallowsGameData} from "../../data/gallows-game/gallows-game-data";
 
 @Component({
   selector: 'app-crucial-hint-display',
@@ -11,6 +12,8 @@ import {Timer} from "../../data/timer";
   styleUrls: ['./crucial-hint-display.component.scss']
 })
 export class CrucialHintDisplayComponent {
+
+  protected readonly CrucialHintGameData = CrucialHintGameData;
 
   @Input() gameData: GameData = {currentScreenSelected: Screens.CrucialHint, isStarted: false, specificData: {}}
   @Input() crucialHintGameData: CrucialHintGameData = {

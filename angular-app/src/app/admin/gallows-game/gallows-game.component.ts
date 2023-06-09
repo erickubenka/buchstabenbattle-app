@@ -13,10 +13,9 @@ import {GallowsGameCategory} from "../../data/gallows-game/gallows-game-category
   styleUrls: ['./gallows-game.component.scss']
 })
 export class GallowsGameComponent {
-  private static pointsPerWord: number = 5;
 
   constructor(private webSocketService: WebSocketService) {
-    this.timer = Timer.create(90, () => this.send());
+    this.timer = Timer.create(GallowsGameData.timeInSeconds, () => this.send());
     this.category = GallowsGameCategory.random();
     this.send();
   }
@@ -52,7 +51,7 @@ export class GallowsGameComponent {
   addError() {
     this.errors++;
 
-    if (this.errors == GallowsGameComponent.pointsPerWord) {
+    if (this.errors == GallowsGameData.pointsPerWord) {
       this.unsolvedWords.push(this.category.word);
       this.errors = 0;
       this.category.nextWord();
@@ -69,7 +68,7 @@ export class GallowsGameComponent {
   solveWord() {
 
     // calculate points: (5 per word, but for every mistake reduce by one)
-    this.points = this.points + (GallowsGameComponent.pointsPerWord - this.errors);
+    this.points = this.points + (GallowsGameData.pointsPerWord - this.errors);
 
     // reset game to new word.
     this.errors = 0;
@@ -91,7 +90,6 @@ export class GallowsGameComponent {
       timer: this.timer,
       points: this.points,
       errors: this.errors,
-      pointsPerWord: GallowsGameComponent.pointsPerWord,
       category: this.category
     }
 
