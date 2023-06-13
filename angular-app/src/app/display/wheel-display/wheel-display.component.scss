@@ -2,9 +2,8 @@
 @import "../display/display.component.scss";
 
 $circle-wrapper-color: #FFFFF;
-$circle-color: rgb(37, 110, 169);
 $circle-color-correctly: rgb(23, 169, 0);
-$circle-color-current: rgb(255, 234, 6);
+$circle-color-current: rgb(255, 129, 35);
 $circle-color-wrong: rgb(232, 64, 64);
 
 //$circle-wrapper-size: 900px;
@@ -32,9 +31,14 @@ $translate-size: ($circle-wrapper-size/2)+1;
   margin: (-1*($circle-size/2)-15);
   background: $circle-color;
   border-radius: 51%;
-  border: 1px solid #ffffff;
   text-align: center;
   line-height: $circle-size;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px #000000;
+
+  border: silver 1px solid;
+  box-shadow: inset #ffffff 1px 1px 5px 1px;
+  font-weight: bold;
 
   &.circle-correctly {
     background: $circle-color-correctly;

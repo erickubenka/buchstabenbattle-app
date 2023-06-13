@@ -1,14 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
+      <ng-container *ngIf="crosswordGameData.timer.isStarted">
+        <table class="crossword float-end">
+          <tr *ngFor="let row of crosswordGameData.crossword.rows">
+            <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+          </tr>
+        </table>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <div class="card card-question">
-        <div class="card-header text-center">
-          <h3>
-            <ng-container *ngIf="crosswordGameData.timer.isStarted">
-              {{crosswordGameData.crossword.category}}
-            </ng-container>
-          </h3>
-        </div>
         <div class="card-body">
           <div class="row">
             <div class="col-3">
@@ -16,18 +20,12 @@
                 {{crosswordGameData.timer.time}}
               </div>
             </div>
-            <div class="col-6">
-              <div class="row">
-                <div class="col-12">
-                  <ng-container *ngIf="crosswordGameData.timer.isStarted">
-                    <table class="crossword">
-                      <tr *ngFor="let row of crosswordGameData.crossword.rows">
-                        <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
-                      </tr>
-                    </table>
-                  </ng-container>
-                </div>
-              </div>
+            <div class="col-6 text-center align-content-center">
+              <h3 class="category">
+                <ng-container *ngIf="crosswordGameData.timer.isStarted">
+                  {{crosswordGameData.crossword.category}}
+                </ng-container>
+              </h3>
             </div>
             <div class="col-3">
               <div class="rounded-circle timer-circle text-center timer-crossword float-end">

@@ -1,7 +1,9 @@
 <div class="container-fluid">
-  <div class="row align-content-center box"
+  <div class="row align-content-end box"
        [ngClass]="{
-       'bg-black': displayData.data.currentScreenSelected == 0 && !displayData.data.isStarted}">
+       'bg-black': displayData.data.currentScreenSelected == 0 && !displayData.data.isStarted,
+       'align-content-end': displayData.data.currentScreenSelected != 98,
+       'align-content-center': displayData.data.currentScreenSelected == 98}">
     <ng-container *ngIf="displayData.data.currentScreenSelected == 0 && !displayData.data.isStarted">
       <!-- Black Screen -->
     </ng-container>

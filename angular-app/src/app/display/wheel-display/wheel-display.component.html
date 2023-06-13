@@ -21,10 +21,10 @@
               </div>
               <div class="col-8">
                 <div class="row">
-                  <div class="col-12 text-center">
-                    <div class="" *ngIf="wheelgameData.activePlayer.timer.isStarted">
-                      {{wheelgameData.activePlayer.questionSet.questionList[wheelgameData.activePlayer.questionIndex].question}}
-                    </div>
+                  <div class="col-12 text-center font-x-large">
+                      <ng-container *ngIf="wheelgameData.activePlayer.timer.isStarted">
+                        {{wheelgameData.activePlayer.questionSet.questionList[wheelgameData.activePlayer.questionIndex].question}}
+                      </ng-container>
                   </div>
                 </div>
               </div>
