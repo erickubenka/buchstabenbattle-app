@@ -3,8 +3,8 @@
     <div class="col-12">
       <ng-container *ngIf="crosswordGameData.timer.isStarted">
         <table class="crossword float-end">
-          <tr *ngFor="let row of crosswordGameData.crossword.rows">
-            <td *ngFor="let letter of row.split('')" class="text-uppercase">{{letter}}</td>
+          <tr *ngFor="let row of crosswordGameData.crossword.rows; let rowIndex=index;">
+            <td *ngFor="let letter of row.split(''); let colIndex=index;" class="text-uppercase" [ngClass]="{'bg-success': highlightLetter(rowIndex, colIndex)}">{{letter}}</td>
           </tr>
         </table>
       </ng-container>

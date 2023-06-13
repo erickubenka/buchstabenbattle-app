@@ -43,7 +43,7 @@ export class Crossword {
     Crossword.create("Passt zum Lachs.", ["AGSES", "DILLE", "ANNKN", "NOSAF", "CHGNK"], ["Dill", "Senf", "Honig"]),
     Crossword.create("Der Kaffee ist fertig.", ["LUNGO", "LATTE", "VFBTZ", "CQPDT", "AKKOM"], ["Latte", "Lungo", "Mokka"]),
     Crossword.create("In der Zeitschrift.", ["VSGZH", "LTQTY", "COMIC", "XRYWM", "TYKVB"], ["Comic", "Witz", "Story"]),
-    Crossword.create("TV Serien", ["FIENM", "ANGXO", "REQUN", "GXJZK", "PGLEE"], ["Fargo", "Monk", "Glee"]),
+    Crossword.create("TV Serien", ["FIENM", "ANGXO", "REQUN", "GXJZK", "OGLEE"], ["Fargo", "Monk", "Glee"]),
     Crossword.create("Südamerikanische Städte", ["ESQUE", "ZAULW", "SRIOC", "UMTIU", "ATOXS"], ["Rio", "Quito", "Lima"]),
     Crossword.create("Dornröschen", ["CRYNK", "BOLMU", "LSGXS", "FEECS", "XBVKV"], ["Fee", "Kuss", "Rose"]),
     Crossword.create("Singvögel", ["DPABZ", "MEISE", "STARW", "EBJDE", "LFINK"], ["Meise", "Star", "Fink"]),

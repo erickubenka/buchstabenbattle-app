@@ -20,6 +20,11 @@ export class CrosswordDisplayComponent {
     points: 0,
     timer: new Timer(),
     errors: 0,
-    crossword: new Crossword()
+    crossword: new Crossword(),
+    lettersToHighlight: []
+  }
+
+  highlightLetter(row: number, column: number) {
+    return this.crosswordGameData.lettersToHighlight.some(l => l[0] == row && l[1] == column);
   }
 }

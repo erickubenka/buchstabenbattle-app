@@ -11,5 +11,6 @@ export class CrosswordGameData {
   public points: number = 0;
   public errors: number = 0;
   public crossword: Crossword = new Crossword();
+  public lettersToHighlight: number[][] = [];
 
 }
