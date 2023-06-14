@@ -94,6 +94,17 @@
             </button>
           </div>
         </div>
+        <hr/>
+        <div class="row">
+          <div class="col-6">
+            <label for="wrongGuessedLetters" class="col-4 col-form-label">Falsche Buchstaben</label>
+            <div class="col-8">
+              <input type="text" class="form-control" id="wrongGuessedLetters" [disabled]="!timer.isStarted"
+                     [(ngModel)]="wrongGuessedLetters">
+            </div>
+          </div>
+          <div class="col-9"></div>
+        </div>
       </div>
     </div>
   </div>

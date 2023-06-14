@@ -23,6 +23,7 @@ export class GallowsGameComponent {
   points: number = 0;
   solvedWords: GallowsGameWord[] = []
   unsolvedWords: GallowsGameWord[] = []
+  wrongGuessedLetters: string = "-";
   category: GallowsGameCategory;
 
   categories() {
@@ -36,6 +37,7 @@ export class GallowsGameComponent {
   start() {
     this.category.nextWord();
     this.timer.start();
+    this.wrongGuessedLetters = "-";
     this.send();
   }
 
@@ -54,6 +56,7 @@ export class GallowsGameComponent {
     if (this.errors == GallowsGameData.pointsPerWord) {
       this.unsolvedWords.push(this.category.word);
       this.errors = 0;
+      this.wrongGuessedLetters = "-";
       this.category.nextWord();
     }
 
@@ -81,8 +84,10 @@ export class GallowsGameComponent {
       return;
     }
 
+    this.wrongGuessedLetters = "-"
     this.send();
   }
+
 
   private prepareData(): GameData {
 
@@ -90,6 +95,7 @@ export class GallowsGameComponent {
       timer: this.timer,
       points: this.points,
       errors: this.errors,
+      wrongGuessedLetters: this.wrongGuessedLetters,
       category: this.category
     }
 

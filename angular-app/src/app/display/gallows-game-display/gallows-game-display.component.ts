@@ -21,6 +21,7 @@ export class GallowsGameDisplayComponent {
     points: 0,
     timer: new Timer(),
     errors: 0,
+    wrongGuessedLetters: "",
     category: new GallowsGameCategory()
   }
 }
