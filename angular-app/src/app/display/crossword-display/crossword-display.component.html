@@ -4,7 +4,7 @@
       <ng-container *ngIf="crosswordGameData.timer.isStarted">
         <table class="crossword float-end">
           <tr *ngFor="let row of crosswordGameData.crossword.rows; let rowIndex=index;">
-            <td *ngFor="let letter of row.split(''); let colIndex=index;" class="text-uppercase" [ngClass]="{'bg-success': highlightLetter(rowIndex, colIndex)}">{{letter}}</td>
+            <td *ngFor="let letter of row.split(''); let colIndex=index;" class="text-uppercase" [ngClass]="{'bg-normal': !highlightLetter(rowIndex, colIndex),'bg-success': highlightLetter(rowIndex, colIndex)}">{{letter}}</td>
           </tr>
         </table>
       </ng-container>

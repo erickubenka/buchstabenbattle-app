@@ -1,7 +1,7 @@
 @import "src/assets/styles/app.scss";
 
 $circle-wrapper-color: #FFFFF;
-$circle-color: #278f87;
+$circle-color: #34b9af;
 $circle-font-color: #ffffff;
 $circle-color-correctly: rgb(23, 169, 0);
 $circle-color-wrong: rgb(232, 64, 64);
@@ -30,8 +30,8 @@ body {
   color: $circle-font-color;
   font-weight: bold;
 
-  border: silver 2px solid;
-  box-shadow: inset #ffffff 3px 1px 5px 1px;
+  border: #737373 2px solid;
+  box-shadow: inset #71f1e4 4px 4px 10px 0px;
 
   &.mini-circle {
 

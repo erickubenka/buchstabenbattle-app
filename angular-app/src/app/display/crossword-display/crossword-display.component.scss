@@ -1,10 +1,10 @@
 @import "src/assets/styles/app.scss";
 @import "../display/display.component.scss";
 
-$cell-size: 7vh;
+$cell-size: 8vh;
 
 table, th, td {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 table.crossword {
@@ -14,10 +14,22 @@ table.crossword {
 td {
   height: $cell-size;
   width: $cell-size;
-  line-height: $cell-size;
+  line-height: $cell-size/1.1;
   text-align: center;
   font-weight: bold;
   font-size: $cell-size/1.2;
+
+  &.bg-normal {
+    color: #ffffff;
+    background-color: #34b9af;
+    box-shadow: inset #71f1e4 5px 5px 10px 0px;
+  }
+
+  &.bg-success {
+    color: #ffffff;
+    background-color: $circle-color-correctly;
+    box-shadow: inset #91f881 5px 5px 10px 0px;
+  }
 }
 
 h3.category {

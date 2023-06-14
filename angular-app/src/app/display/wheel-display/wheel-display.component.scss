@@ -36,20 +36,23 @@ $translate-size: ($circle-wrapper-size/2)+1;
   color: #ffffff;
   text-shadow: 0px 0px 10px #000000;
 
-  border: silver 1px solid;
-  box-shadow: inset #ffffff 1px 1px 5px 1px;
+  border: #737373 2px solid;
+  box-shadow: inset #71f1e4 1px 1px 5px 1px;
   font-weight: bold;
 
   &.circle-correctly {
     background: $circle-color-correctly;
+    box-shadow: inset #91f881 1px 1px 5px 1px;;
   }
 
   &.circle-wrong {
     background: $circle-color-wrong;
+    box-shadow: inset #ff8686 1px 1px 5px 1px;;
   }
 
   &.circle-current {
     background: $circle-color-current;
+    box-shadow: inset #fdb179 1px 1px 5px 1px;;
   }
 
 }
