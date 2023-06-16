@@ -8,7 +8,7 @@
           </h3>
         </div>
         <ng-container *ngIf="crucialHintGameData.singlePlayer">
-          <img *ngIf="crucialHintGameData.timer.isStarted" class="card-img"
+          <img *ngIf="crucialHintGameData.timer.isStarted" class="card-img ch-img img-fluid"
                [src]="crucialHintGameData.crucialHint.imagePath" alt="Card image cap">
           <div class="card-body">
             <div class="row">
@@ -36,7 +36,7 @@
           </div>
         </ng-container>
         <ng-container *ngIf="!crucialHintGameData.singlePlayer">
-          <img *ngIf="gameData.isStarted" class="card-img" [src]="crucialHintGameData.crucialHint.imagePath"
+          <img *ngIf="gameData.isStarted" class="card-img ch-img img-fluid" [src]="crucialHintGameData.crucialHint.imagePath"
                alt="Card image cap">
           <div class="card-body">
             <div class="row">

@@ -1,1 +1,9 @@
 @import "src/assets/styles/app.scss";
+
+
+img.ch-img {
+  object-fit: scale-down;
+  width: 100%;
+  height: 50vh;
+  max-height: 50vh;
+}

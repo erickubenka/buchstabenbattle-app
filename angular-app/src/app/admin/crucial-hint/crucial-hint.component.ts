@@ -26,7 +26,7 @@ export class CrucialHintComponent {
   isStarted: boolean = false;
 
   constructor(private webSocketService: WebSocketService) {
-    this.timer = Timer.create(120, () => this.send());
+    this.timer = Timer.create(90, () => this.send());
     this.crucialHint = CrucialHint.next();
     this.send();
   }
