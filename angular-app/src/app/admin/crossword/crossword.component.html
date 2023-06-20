@@ -51,6 +51,8 @@
                         [disabled]="crossword.solvedWords.includes(word) || !timer.isStarted">{{word}}</button>
                 <button class="btn btn-danger" [disabled]="!timer.isStarted" (click)="addError()">Weiter/Falsch
                 </button>
+                <hr/>
+                <button class="btn btn-danger" (click)="resetScore()">Reset Score</button>
               </div>
             </div>
           </div>

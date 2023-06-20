@@ -46,6 +46,7 @@ export class IntroComponent {
     this.isStarted = false;
     this.isVideoShown = false;
     this.isImageShown = false;
+    this.send();
   }
 
   send() {

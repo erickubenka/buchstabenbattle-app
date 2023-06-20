@@ -39,7 +39,6 @@ export class CrosswordComponent {
         this.lettersToHighlight.push(letter);
       }
     }
-    console.log(this.lettersToHighlight);
 
     if (this.crossword.solvedWords.length == this.crossword.words.length) {
       this.crossword = Crossword.next();
@@ -74,6 +73,18 @@ export class CrosswordComponent {
 
   send() {
     this.webSocketService.sendMessage("demo", this.prepareData());
+  }
+
+  /**
+   * Reset scores for second player
+   */
+  resetScore() {
+    this.timer = Timer.create(CrosswordGameData.timeInSeconds, () => this.send());
+    this.crossword = Crossword.next();
+    this.points = 0;
+    this.errors = 0;
+    this.lettersToHighlight = [];
+    this.send();
   }
 
   private prepareData(): GameData {
@@ -212,7 +223,6 @@ export class CrosswordComponent {
       }
     }
 
-    console.log(lettersToHighlight);
     return lettersToHighlight;
   }
 
