@@ -24,7 +24,7 @@ export class CrucialHint {
     CrucialHint.create("Brandenburger Tor", "Sehenswürdigkeit", "/assets/images/crucial-hint/brandenburger-tor.jpg", ["Ich bin ein frühklassizistisches Triumphtor", "Ich wurde zwischen 1789 und 1793 auf Anweisung des preußisches Königs Friedrich Wilhelm II erbaut", "Die Straße \"Unter den Linden \" führt zu mir.", "An meiner Westflanke befindet sich der Pariser Platz in Berlin."]),
     // Leipzig Bildreferenz: https://pixabay.com/de/photos/leipzig-geb%C3%A4ude-sachsen-deutschland-6367607/
     CrucialHint.create("Leipzig", "Stadt", "/assets/images/crucial-hint/leipzig.jpg", ["Ich belegte 2021 den 8. Platz der Großstädte Deutschlands.", "Ich bin die einwohnerreichste Stadt Sachsens.", "Ich bin ein traditioneller Messestandort.", "Ich bin das Zuhause von Rasenballsport."]),
-    // TODO
+    // https://cdn.pixabay.com/photo/2021/05/28/19/24/river-6291833_1280.jpg
     CrucialHint.create("Schwarze Elster", "Fluss", "/assets/images/crucial-hint/schwarze-elster.jpg", ["Ich bin 179 Kilometer lang.", "Ich fließe durch Sachsen, Brandenburg und Sachsen-Anhalt.", "Ich münde in die Elbe.", "Es gibt mich auch in weiß."]),
     // https://cdn.pixabay.com/photo/2017/09/14/07/24/spreewald-2748202_1280.jpg
     CrucialHint.create("Spreewald", "Naturlandschaft", "/assets/images/crucial-hint/spreewald.jpg", ["Ich bin eine historische Kulturlandschaft in Brandenburg.", "Ich habe knapp 300 Kilometer klassifizierte Wasserstraßen.", "Ich bin ein Erholungs- und Urlaubsgebiet und bekannt durch Kahnfahrten und Kanu-Gruppen.", "Der Hauptfluss meiner Natur- und Moorlandschaft ist mein Namensgeber."]),
