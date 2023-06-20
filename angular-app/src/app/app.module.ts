@@ -22,6 +22,7 @@ import {CrucialHintComponent} from './admin/crucial-hint/crucial-hint.component'
 import {CrucialHintDisplayComponent} from './display/crucial-hint-display/crucial-hint-display.component';
 import {ScoreComponent} from './admin/score/score.component';
 import { ScoreDisplayComponent } from './display/score-display/score-display.component';
+import { IntroComponent } from './admin/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ScoreDisplayComponent } from './display/score-display/score-display.com
     CrucialHintComponent,
     CrucialHintDisplayComponent,
     ScoreComponent,
-    ScoreDisplayComponent
+    ScoreDisplayComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,7 @@ import { ScoreDisplayComponent } from './display/score-display/score-display.com
       {path: 'admin/connection-wanted', component: ConnectionWantedComponent},
       {path: 'admin/crucial-hint', component: CrucialHintComponent},
       {path: 'admin/score', component: ScoreComponent},
+      {path: 'admin/intro', component: IntroComponent},
       {path: 'display', component: DisplayComponent}
     ]),
     FormsModule

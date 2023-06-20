@@ -8,9 +8,14 @@
       <!-- Black Screen -->
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 99 && displayData.data.isStarted">
-      <p>
-        INTRO!
-      </p>
+      <ng-container *ngIf="displayData.data.specificData.isVideoShown">
+        <video controls autoplay>
+          <source src="assets/images/intro-with-sound.mp4" type="video/mp4">
+        </video>
+      </ng-container>
+      <ng-container *ngIf="displayData.data.specificData.isImageShown">
+        <img src="assets/images/intro-screen.jpg" alt="Intro Screen">
+      </ng-container>
     </ng-container>
     <ng-container *ngIf="displayData.data.currentScreenSelected == 0 && displayData.data.isStarted">
       <p>

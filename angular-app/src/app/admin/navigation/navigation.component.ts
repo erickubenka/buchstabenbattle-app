@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 export class NavigationComponent {
 
   public items: NavItem[] = [
+    new NavItem("Intro", "/admin/intro"),
     new NavItem("Spielstand", "/admin/score"),
     new NavItem("Mut zur Lücke", "/admin/gallows-game"),
     new NavItem("Buchstabensalat", "/admin/crossword"),
