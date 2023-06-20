@@ -4,12 +4,16 @@
       <div class="card card-question">
         <div class="card-header text-center">
           <h3>
-            Was suchen wir?
+            Welche/n <strong>{{crucialHintGameData.crucialHint.category}}</strong> suchen wir?
           </h3>
         </div>
         <ng-container *ngIf="crucialHintGameData.singlePlayer">
-          <img *ngIf="crucialHintGameData.timer.isStarted" class="card-img ch-img img-fluid"
-               [src]="crucialHintGameData.crucialHint.imagePath" alt="Card image cap">
+          <div class="card-body">
+            <img *ngIf="gameData.isStarted" class="card-img ch-img img-fluid"
+                 [src]="crucialHintGameData.crucialHint.imagePath"
+                 [alt]="crucialHintGameData.crucialHint.name">
+          </div>
+          <hr/>
           <div class="card-body">
             <div class="row">
               <div class="col-3">
@@ -36,8 +40,12 @@
           </div>
         </ng-container>
         <ng-container *ngIf="!crucialHintGameData.singlePlayer">
-          <img *ngIf="gameData.isStarted" class="card-img ch-img img-fluid" [src]="crucialHintGameData.crucialHint.imagePath"
-               alt="Card image cap">
+          <div class="card-body">
+            <img *ngIf="gameData.isStarted" class="card-img ch-img img-fluid"
+                 [src]="crucialHintGameData.crucialHint.imagePath"
+                 [alt]="crucialHintGameData.crucialHint.name">
+          </div>
+          <hr/>
           <div class="card-body">
             <div class="row">
               <div class="col-3">
@@ -49,7 +57,7 @@
                 </div>
               </div>
               <div class="col-6">
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush text-center">
                   <li *ngFor="let hint of crucialHintGameData.hintsGiven" class="list-group-item">{{ hint }}</li>
                 </ul>
               </div>
