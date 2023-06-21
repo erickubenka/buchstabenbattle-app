@@ -32,16 +32,20 @@ export class GallowsGameCategory {
   }
 
   static categories: GallowsGameCategory[] = [
-    GallowsGameCategory.create("Kleine Tiere", ["Maus", "Ameise", "Fliege", "Goldfisch", "Spinne", "Kakerlake", "Libelle", "Biene", "Wespe", "Schnecke", "Skorpion", "Heuschrecke", "Schmetterling", "Hummel"]),
-    GallowsGameCategory.create("Wildtiere", ["Elefant", "Giraffe", "Leopard", "Krokodil", "Zebra", "Fledermaus", "Feldhase", "Wildschwein", "Biber", "Fischotter", "Waldkauz", "Ringelnatter"]),
-    GallowsGameCategory.create("Außen am Körper", ["Arm", "Ohr", "Kopf", "Hand", "Brust", "Hals", "Finger", "Bauch", "Augen", "Nase", "Haut", "Füße", "Beine", "Schulter"]),
-    GallowsGameCategory.create("Innen im Körper", ["Herz", "Darm", "Leber", "Niere", "Milz", "Lunge", "Gehirn", "Magen", "Blase", "Nerven", "Blut", "Knochen", "Gelenke", "Zunge"]),
-    GallowsGameCategory.create("Küchenutensilien ohne Strom", ["Messer", "Topf", "Schere", "Suppenkelle", "Korkenzieher", "Geschirr", "Gabel", "Pfanne", "Wok"]),
-    GallowsGameCategory.create("Haushaltsgeräte mit Strom", ["Waschmaschine", "Herd", "Toaster", "Fernseher", "Mikrowelle", "Staubsauger", "Haartrockner", "Stabmixer", "Kaffeemaschine", "Radio", "Wasserkocher", "Eierkocher"]),
-    GallowsGameCategory.create("Aus Glas", ["Flasche", "Aquarium", "Fenster", "Spiegel", "Karaffe", "Vase", "TBD"]),
-    GallowsGameCategory.create("Aus Metall", ["Hammer", "Felge", "Tresor", "Alufolie", "Schraube", "Zange", "Gabel", "TBD"]),
-    GallowsGameCategory.create("Fast Food", ["Hamburger", "Gyros", "Pommes", "HotDog", "Currywurst", "Sandwich", "Kebap", "Burrito", "Pizza", "Taco", "TBD"]),
-    GallowsGameCategory.create("Star Küche", ["Rosin", "Schubeck", "Herrmann", "Raue", "Rach", "Lafer", "Kumptner", "Poletto"]),
+    GallowsGameCategory.create("Kleine Tiere", ["Maus", "Ameise", "Fliege", "Goldfisch", "Spinne", "Kakerlake", "Libelle", "Biene", "Wespe", "Schnecke"]),
+    GallowsGameCategory.create("Wildtiere", ["Elefant", "Giraffe", "Leopard", "Krokodil", "Zebra", "Fledermaus", "Feldhase", "Wildschwein", "Biber", "Fischotter"]),
+    GallowsGameCategory.create("Außen am Körper", ["Arm", "Ohr", "Kopf", "Hand", "Brust", "Hals", "Finger", "Bauch", "Augen", "Nase"]),
+    GallowsGameCategory.create("Innen im Körper", ["Herz", "Darm", "Leber", "Niere", "Milz", "Lunge", "Gehirn", "Magen", "Blase", "Nerven"]),
+    GallowsGameCategory.create("Küchenutensilien ohne Strom", ["Messer", "Topf", "Schere", "Suppenkelle", "Korkenzieher", "Geschirr", "Gabel", "Pfanne", "Wok", "Teller"]),
+    GallowsGameCategory.create("Haushaltsgeräte mit Strom", ["Waschmaschine", "Herd", "Toaster", "Fernseher", "Mikrowelle", "Staubsauger", "Haartrockner", "Stabmixer", "Kaffeemaschine", "Radio"]),
+    GallowsGameCategory.create("Aus Glas", ["Flasche", "Aquarium", "Fenster", "Spiegel", "Karaffe", "Vase", "Brille", "Lampe", "Vitrine", "Terrarium"]),
+    GallowsGameCategory.create("Aus Metall", ["Hammer", "Felge", "Tresor", "Alufolie", "Schraube", "Zange", "Gabel", "Messer", "Schmuck", "Nagel"]),
+    GallowsGameCategory.create("Fast Food", ["Hamburger", "Gyros", "Pommes", "HotDog", "Currywurst", "Sandwich", "Kebap", "Burrito", "Pizza", "Taco"]),
+    GallowsGameCategory.create("Star Köche", ["Rosin", "Schuhbeck", "Herrmann", "Raue", "Rach", "Lafer", "Kumptner", "Poletto", "Müller", "Oliver"]),
+    GallowsGameCategory.create("Schulfächer", ["Deutsch", "Mathematik", "Sport", "Biologie", "Chemie", "Englisch", "Religion", "Musik", "Geschichte", "Erdkunde"]),
+    GallowsGameCategory.create("Berufe", ["Polizist", "Lehrer", "Pilot", "Arzt", "Friseur", "Koch", "Maler", "Maurer", "Schreiner", "Fleischer"]),
+    GallowsGameCategory.create("Heißgetränk", ["Tee", "Cappuccino", "Kakao", "Punsch", "Milchkaffee", "Espresso", "Grog", "Glühwein", "Kaffee", "Met"]),
+    GallowsGameCategory.create("Kaltgetränk", ["Wasser", "Limonade", "Eistee", "Bowle", "Saft", "Milchshake", "Radler", "Hefeweizen", "Energydrink", "Cola"]),
   ]
 
   static random() {
