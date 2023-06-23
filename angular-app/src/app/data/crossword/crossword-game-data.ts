@@ -5,7 +5,7 @@ import {Timer} from "../timer";
 export class CrosswordGameData {
 
   public static readonly pointsPerCrossword: number = 5;
-  public static readonly timeInSeconds: number = 90;
+  public static readonly timeInSeconds: number = 120;
 
   public timer: Timer = new Timer();
   public points: number = 0;

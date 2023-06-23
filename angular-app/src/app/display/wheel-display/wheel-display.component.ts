@@ -14,8 +14,8 @@ export class WheelDisplayComponent {
 
   @Input() gameData: GameData = {currentScreenSelected: Screens.Wheel, isStarted: false, specificData: {}};
 
-  @Input() wheelgameData: WheelGameData = {
+  @Input() wheelGameData: WheelGameData = {
     isStarted: false,
-    activePlayer: new WheelData(0)
+    activePlayer: new WheelData(0, 0),
   };
 }

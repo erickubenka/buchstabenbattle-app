@@ -9,8 +9,10 @@ export class WheelData {
   answersGiven = 0;
   questionIndex = 0;
   timer: Timer;
+  playerIndex: number = 0;
 
-  constructor(timeInSeconds: number) {
+  constructor(timeInSeconds: number, playerIndex: number) {
+    this.playerIndex = playerIndex;
     this.timer = Timer.create(timeInSeconds, () => {
     });
   }

@@ -33,8 +33,8 @@ export class WheelComponent {
     let player1Score: number = score ? 100 + PlayerScore.readFromObject(score.player1).sum() : 100;
     let player2Score: number = score ? 100 + PlayerScore.readFromObject(score.player2).sum() : 100;
 
-    this.player1 = new WheelData(player1Score);
-    this.player2 = new WheelData(player2Score);
+    this.player1 = new WheelData(player1Score, 1);
+    this.player2 = new WheelData(player2Score, 2);
     this.player1.questionSet = QuestionSet.sets[0];
     this.player2.questionSet = QuestionSet.sets[0];
     this.activePlayer = this.player1;

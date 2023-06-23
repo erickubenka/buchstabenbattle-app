@@ -195,7 +195,7 @@ export class QuestionSet {
       new Question("H", "Wie heißt ein bekannter, orientalischer Dip aus Kichererbsen- und Sesam-Basis?", "Hummus", false, false),
       new Question("I", "Welche Balearen-Insel ist vor allem als Club- und Party-HotSpot bekannt?", "Ibiza", false, false),
       new Question("J", "Vorbild für viele Hollywood-Western war real existierende Bandit und Revolverheld Jessie ...?", "James", false, false),
-      new Question("K", "Was wird Erfrischungsgetränken zugesetzt damit si schön sprudeln und prickeln? ", "Kohlensäure", false, false),
+      new Question("K", "Was wird Erfrischungsgetränken zugesetzt damit sie schön sprudeln und prickeln? ", "Kohlensäure", false, false),
       new Question("L", "In welchem Organ verzweigen sich dei Bronchien?", "Lunge", false, false),
       new Question("M", "Welche Schneestiefel ähneln dem Schuhwerk der Apollo-Astronauten und haben daher ihren Namen?", "Moonboots", false, false),
       new Question("N", "Welches elektrische Gerät nutzt ein Schneider um Stoffe mittels Nadel und Faden miteinander zu verbindern?", "Nähmaschine", false, false),
@@ -208,7 +208,7 @@ export class QuestionSet {
       new Question("U", "Die erfolgreichste, irische Rockband aller Zeiten heißt kurz und knapp ...?", "U2", false, false),
       new Question("V", "Die Abkürzung für e.V. steht für?", "Eingetragener Verein", false, false),
       new Question("W", "Bei welcher beliebten Freizeitbeschäftigung bewegt man sich sportlich gehend mehrere Stunden in freier Natur?", "Walken", false, false),
-      new Question("X", "Um was für Verkehrsmittel handelt es bei den in London zu Tausenden umherfahrenden Black Caps", "Taxi", false, false),
+      new Question("X", "Um was für Verkehrsmittel handelt es bei den in London zu Tausenden umherfahrenden Black Caps. X im Wort.", "Taxi", false, false),
       new Question("Y", "Der wohl kleinste, aber auch bekannteste Jedi-Ritter im Star Wars Universum ist Meister ...?", "Yoda", false, false),
       new Question("Z", "Wie nennt sich die oberirdische Anlage auf Tankstellen der man den Kraftstoff für sein Fahrzeug entnimmt?", "Zapfsäule", false, false),
     ]),
@@ -323,7 +323,7 @@ export class QuestionSet {
       new Question("X", "Eine Gruppe von zusammenhängenden Bauwerken, wie eine Flughafen oder die Museumsinsel in Berlin nennt man auch Gebäude-...? X Am Ende des Wortes.", "komplex", false, false),
       new Question("Y", "Wie nennt man einen Heiligen, der für seinen Glauben gestorben ist? Y im Wort.", "Märtyrer", false, false),
       new Question("Z", "Was tauscht man redensartlich gegen die Peitsche aus, wenn man Andere belohnen möchte?", "Zuckerbrot", false, false),
-    ]),
+    ])
   ];
 }
 
