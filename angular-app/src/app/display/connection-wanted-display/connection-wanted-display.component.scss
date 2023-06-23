@@ -23,6 +23,7 @@ $cwd-answer-bg-color-incorrect: #e84040;
     //background-color: $cwd-answer-bg-color-correct;
     background-color: $cwd-answer-bg-color-transparent;
     color: $cwd-answer-bg-color-transparent;
+    text-shadow: none;
   }
 
   &.cwd-answer-incorrect {
