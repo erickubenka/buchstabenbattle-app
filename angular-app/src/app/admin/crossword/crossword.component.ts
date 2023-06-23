@@ -40,11 +40,21 @@ export class CrosswordComponent {
       }
     }
 
+
     if (this.crossword.solvedWords.length == this.crossword.words.length) {
-      this.crossword = Crossword.next();
-      this.lettersToHighlight = [];
-      this.points = this.points + (5 - this.errors);
-      this.errors = 0;
+
+      // if crossword is finished, sned now, wait 2 sec, continue
+      this.send();
+
+      //sleep 2 sec
+      setTimeout(() => {
+        this.crossword = Crossword.next();
+        this.lettersToHighlight = [];
+        this.points = this.points + (5 - this.errors);
+        this.errors = 0;
+        this.send();
+      }, 1000);
+
     }
 
     this.send();
