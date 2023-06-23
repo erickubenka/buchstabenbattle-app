@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <div class="circle-wrapper"
-           [ngClass]="{'player1': wheelGameData.activePlayer.playerIndex == 1, 'player2': wheelGameData.activePlayer.playerIndex == 2}">
+           [ngClass]="{'player1': wheelGameData.activePlayer.playerIndex == 1 && wheelGameData.isStarted, 'player2': wheelGameData.activePlayer.playerIndex == 2 && wheelGameData.isStarted}">
         <div *ngFor="let question of wheelGameData.activePlayer.questionSet.questionList; let index=index;"
              class="circle deg-{{index}}"
              [ngClass]="{'circle-correctly': question.isAnswered && question.isAnsweredCorrectly, 'circle-wrong': question.isAnswered && !question.isAnsweredCorrectly, 'circle-current': wheelGameData.activePlayer.questionIndex != -1 && question.letter == wheelGameData.activePlayer.questionSet.questionList[wheelGameData.activePlayer.questionIndex].letter}">

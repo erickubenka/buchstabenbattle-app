@@ -63,6 +63,7 @@ export class WheelComponent {
   }
 
   startPlayer() {
+    this.start();
     this.activePlayer.start();
     this.send();
   }
@@ -101,12 +102,12 @@ export class WheelComponent {
 
     let wheelGameData: WheelGameData = {
       activePlayer: this.activePlayer,
-      isStarted: false
+      isStarted: this.isStarted
     }
 
     return {
       currentScreenSelected: Screens.Wheel,
-      isStarted: true,
+      isStarted: this.isStarted,
       specificData: wheelGameData
     }
   }
